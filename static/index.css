@@ -12,4 +12,12 @@ a, a:visited {
     background-color: rgb(183, 183, 183);
     padding: 20px;
     border-radius: 25px;
+    grid-column: 2;
+}
+.grid {
+    display:grid;
+    grid-template-columns: 40% 60%;
+}
+.information {
+    grid-column: 1;
 }
