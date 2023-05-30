@@ -8,3 +8,6 @@ a {
 a, a:visited {
     color: black;
 }
+.project {
+    background-color: rgb(183, 183, 183);
+}
