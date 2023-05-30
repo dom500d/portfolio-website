@@ -23,6 +23,7 @@ a, a:visited {
 }
 .projectgrid{
     display: grid;
+    grid-template-columns: repeat(3, 1fr);
 }
 .pro {
     background-color: rgb(183, 183, 183);
