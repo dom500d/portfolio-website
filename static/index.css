@@ -5,3 +5,6 @@ a {
     text-decoration:none;
     background: #c3c3bd16;
 }
+a, a:visited {
+    color: black;
+}
