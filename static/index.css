@@ -22,6 +22,8 @@ a, a:visited {
     grid-column: 1;
 }
 .projectgrid{
+    margin-left: 20%;
+    margin-right: 20%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
