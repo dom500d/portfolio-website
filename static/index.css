@@ -86,3 +86,6 @@ body {
     grid-row: 3/ span 1;
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
