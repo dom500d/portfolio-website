@@ -4,6 +4,8 @@
         <title>Dominic Orlando</title>
         <link rel="icon" type="image/x-icon" href="static/favicon.ico">
         <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css"/>
     </head>
     <body>
         <div class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0">
@@ -56,7 +58,11 @@
                                     </a>
                                   </h3>
                                 </div>
-                              </div>
+                            </div>
+                            <div class="mt-2 w-full flex flex-col items-center justify-center">
+                                <div class="calendar">
+                                </div>
+                            </div>  
                         </div>
                     </div>
                 </div>
@@ -79,15 +85,15 @@
                                         <div class="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
                                             <img src="static/1654741544294.jpg" alt="Wood table with porcelain mug, leather journal, brass pen, leather key ring, and a houseplant." class="h-full w-full object-cover object-center">
                                         </div>
-                                        <p class="text-base font-semibold text-gray-900">BMW e46 Drift Car</p>
+                                        <p class="mt-3 text-base font-semibold text-gray-900">BMW e46 Drift Car</p>
                                         </a>
                                     </div>
                                     <div class="group relative">
-                                        <a href="">
+                                        <a href="https://github.com/dom500d/Discord-MC-Bot">
                                         <div class="relative h-80 w-full overflow-hidden rounded-lg bg-white sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
                                             <img src="https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg" alt="Collection of four insulated travel bottles on wooden shelf." class="h-full w-full object-cover object-center">
                                         </div>
-                                        <p class="text-base font-semibold text-gray-900">Daily commute essentials</p>
+                                        <p class="mt-3 text-base font-semibold text-gray-900">Discord Bot</p>
                                         </a>
                                     </div>
                                 </div>
@@ -95,7 +101,15 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>    
+            
         </div>
+            
+        
+        <script>
+            GitHubCalendar(".calendar", "dom500d");
+            // or enable responsive functionality
+            GitHubCalendar(".calendar", "dom500d", { responsive: true });
+        </script>
     </body>
 </html>
