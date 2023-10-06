@@ -11,7 +11,9 @@ img {
 .project-holder {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: [row-1] 1fr [row-2];
 }
+
 .project-holder img {
     max-width: 90%;
     padding-left: 5%;
@@ -20,4 +22,29 @@ img {
 
 .project-holder h3 {
     text-align: center;
+}
+
+#headshot {
+    border-radius: 50%;
+    max-width: 20%;
+}
+
+.hard-hack {
+    grid-row-start: row-1;
+    grid-row-end: row-2;
+}
+
+.aegis {
+    grid-row-start: row-1;
+    grid-row-end: row-2;
+}
+
+.project-cars {
+    grid-row-start: row-1;
+    grid-row-end: row-2;
+}
+
+.one-spot {
+    grid-row-start: row-2;
+    grid-row-end: row-2;
 }
