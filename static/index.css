@@ -1,91 +1,23 @@
-#image {
-    grid-row: 3 / span 2;
-    grid-column: 2 / 5;
-    border-radius: 50%;
+img {
     max-width: 100%;
+    
 }
-a {
-    text-decoration:none;
-    background: #c3c3bd16;
-}
-a, a:visited {
-    color: black;
-    background-color: transparent;
-}
-.project {
-    background-color: rgb(183, 183, 183);
-    padding: 20px;
-    border-radius: 25px;
-    grid-column: 2;
-}
-.grid {
-    display:grid;
-    grid-template-columns: 40% 60%;
-}
-.information {
-    grid-column: 1;
-}
-.projectgrid{
-    margin-left: 20%;
-    margin-right: 20%;
+
+.link-holder {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    column-gap: 1%;
+    grid-template-columns: 1fr 1fr 1fr;
 }
-.pro {
-    background-color: rgb(76, 0, 255);
-    padding: 20px;
-    border-radius: 25px;
-    color: white;
-    margin: 0;
-}
-body {
-    background: white;
-    font-size: 40px;
-}
-.icon {
-    max-width: 100%;
-    max-height: 100%;
-    grid-column: span 1;
 
-}
-.icon-holder {
+.project-holder {
     display: grid;
-    grid-template-columns: 15% 4% 4% 4% 10% 1fr;
-    grid-template-rows: 5% 25% 1fr;
-    row-gap: 40px;
-    column-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
 }
-#icon1 {
-    grid-column: 2 / span 1;
-    grid-row: 2 / span 1;
-    object-fit: cover;
-}
-#icon2 {
-    grid-column: 3 / span 1;
-    grid-row: 2 / span 1;
-    object-fit: cover;
-}
-#icon3 {
-    grid-column: 4 / span 1;
-    grid-row: 2 / span 1;
-    object-fit: cover;
-}
-#icon3i {
-    object-fit: cover;
-}
-#icon2i {
-    object-fit: cover;
-}
-#icon1i {
-    object-fit: cover;
+.project-holder img {
+    max-width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
-#name {
-    grid-column: 6/ span 1;
-    grid-row: 3/ span 1;
+.project-holder h3 {
+    text-align: center;
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
