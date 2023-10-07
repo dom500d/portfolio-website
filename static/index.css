@@ -1,41 +1,15 @@
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
 .links {
     display: inline-grid;
     width: 100%;
     grid-template-columns: 25% [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4] 60% [col-5];
     background-color: lightseagreen;
 }
-
-.profile-info {
-    display: grid;
-    height: 40%;
-    width: 100%;
-    grid-template-columns: 15% [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4] 40% [col-5] 10% [col-6];
-    background-color: lightseagreen;
-    padding-bottom: 10px;
-}
-
-.bio {
-    display: grid;
-    grid-template-columns: 30% [col-1] 1fr [col-2] 30% [col-3];
-    background-color: darkolivegreen;
-    padding-bottom: 10px;
-    color: bisque;
-}
-
-.bio h1 {
-    grid-column-start: col-1;
-    grid-column-end: col-2;
-}
-
-.bio a {
-    color: inherit;
-}
-.bio span {
-    grid-column-start: col-1;
-    grid-column-end: col-2;
-    font-size: larger;
-}
-
 
 .links a {
     max-height: 100%;
@@ -63,6 +37,15 @@
     grid-row: 1;
 }
 
+.profile-info {
+    display: grid;
+    height: 40%;
+    width: 100%;
+    grid-template-columns: 15% [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4] 40% [col-5] 10% [col-6];
+    background-color: lightseagreen;
+    padding-bottom: 10px;
+}
+
 .profile-info #headshot {
     grid-column-start: col-1;
     grid-column-end: col-4;
@@ -82,37 +65,63 @@
     font-size: xxx-large;
 }
 
-.projects h1 {
-    text-align: center;
+.bio {
+    display: grid;
+    grid-template-columns: 30% [col-1] 1fr [col-2] 30% [col-3];
+    background-color: seagreen;
+    padding-bottom: 10px;
+    color: bisque;
 }
 
-.project-holder {
+.bio h1 {
+    grid-column-start: col-1;
+    grid-column-end: col-2;
+}
+
+.bio a {
+    color: inherit;
+}
+.bio span {
+    grid-column-start: col-1;
+    grid-column-end: col-2;
+    font-size: larger;
+}
+
+.projects {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: [row-1] 1fr [row-2];
 }
 
-.project-holder img {
+.projects h1 {
+    text-align: center;
+    grid-template-rows: 1;
+}
+
+.projects img {
     max-width: 90%;
     padding-left: 5%;
     padding-right: 5%;
 }
 
-.project-holder h3 {
+.projects h3 {
     text-align: center;
 }
 
 .hard-hack {
+    grid-column: 1;
     grid-row-start: row-1;
     grid-row-end: row-2;
 }
 
 .aegis {
+    grid-column: 2;
     grid-row-start: row-1;
     grid-row-end: row-2;
 }
 
 .project-cars {
+    grid-column: 3;
     grid-row-start: row-1;
     grid-row-end: row-2;
 }
