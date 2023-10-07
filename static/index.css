@@ -33,6 +33,7 @@
 .bio span {
     grid-column-start: col-1;
     grid-column-end: col-2;
+    font-size: larger;
 }
 
 
