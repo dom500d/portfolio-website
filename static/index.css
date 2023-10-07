@@ -1,11 +1,63 @@
-img {
-    max-width: 100%;
+.links {
+    display: inline-grid;
+    width: 100%;
+    grid-template-columns: 15% [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4] 50% [col-5];
+    
     
 }
 
-.link-holder {
+.profile-info {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    height: 40%;
+    width: 100%;
+    grid-template-columns: 15% [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4] 50% [col-5];
+    
+}
+
+.links a {
+    max-height: 100%;
+    max-width: 50%;
+    margin: auto;
+}
+
+.links img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.links #linkedin {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.links #github {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.links #resume {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.profile-info #headshot {
+    grid-column-start: col-1;
+    grid-column-end: col-4;
+    max-width: 100%;
+    border-radius: 50%;
+}
+
+.profile-info p {
+    grid-column-start: col-1;
+    grid-column-end: col-4;
+}
+
+.profile-info h1 {
+    margin: auto;
+}
+
+.projects h1 {
+    text-align: center;
 }
 
 .project-holder {
@@ -22,11 +74,6 @@ img {
 
 .project-holder h3 {
     text-align: center;
-}
-
-#headshot {
-    border-radius: 50%;
-    max-width: 20%;
 }
 
 .hard-hack {
