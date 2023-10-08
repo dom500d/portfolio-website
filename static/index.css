@@ -63,70 +63,46 @@ body {
 .profile-info h1 {
     margin: auto;
     font-size: xxx-large;
+    margin-left: 10%;
 }
 
 .bio {
-    display: grid;
-    grid-template-columns: 30% [col-1] 1fr [col-2] 30% [col-3];
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: seagreen;
-    padding-bottom: 10px;
     color: bisque;
 }
 
-.bio h1 {
-    grid-column-start: col-1;
-    grid-column-end: col-2;
+.bio-text {
+    max-width: 50rem;
+    margin: 0 2rem 2rem 2rem;
 }
 
-.bio a {
-    color: inherit;
-}
-.bio span {
-    grid-column-start: col-1;
-    grid-column-end: col-2;
-    font-size: larger;
+.projects-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .projects {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: [row-1] 1fr [row-2];
+    margin: 2rem min(5%, 7rem);
+}
+
+.project {
+    margin: 1rem;
+}
+
+.project-main-img {
+    width: 30rem;
+    height: auto;
 }
 
 .projects h1 {
     text-align: center;
-    grid-template-rows: 1;
-}
-
-.projects img {
-    max-width: 90%;
-    padding-left: 5%;
-    padding-right: 5%;
 }
 
 .projects h3 {
+    font-size: min(1.5rem, 15vw); 
     text-align: center;
-}
-
-.hard-hack {
-    grid-column: 1;
-    grid-row-start: row-1;
-    grid-row-end: row-2;
-}
-
-.aegis {
-    grid-column: 2;
-    grid-row-start: row-1;
-    grid-row-end: row-2;
-}
-
-.project-cars {
-    grid-column: 3;
-    grid-row-start: row-1;
-    grid-row-end: row-2;
-}
-
-.one-spot {
-    grid-row-start: row-2;
-    grid-row-end: row-2;
 }
