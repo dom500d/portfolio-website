@@ -173,3 +173,36 @@ footer {
 .footer-text {
     margin: 0;
 }
+
+.bio-classes {
+    width: min(80vw, 50rem);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 1rem 1rem 1rem;
+    
+}
+
+.bio-classes-summary {
+    list-style: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.bio-classes-link {
+    height: 5vh;
+    max-width: min(80vw, 20rem);
+    padding: 0.5vh 0.5rem 0.5vh 0.5rem;
+    background-color: #084C61;
+    margin: 0.5vh 0 0 0; 
+    text-decoration: none;
+    color: azure;
+    text-align: center;
+}
+
+.bio-classes-link-p {
+    max-width: 100%;
+    font-size: 1rem;
+    
+}
