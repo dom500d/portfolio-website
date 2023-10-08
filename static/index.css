@@ -98,6 +98,12 @@ body {
     height: auto;
 }
 
+@media only screen and (max-width: 600px) {
+    .project-main-img {
+        width: 80vw;
+    }
+}
+
 .projects h1 {
     text-align: center;
 }
