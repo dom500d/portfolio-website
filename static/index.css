@@ -36,6 +36,7 @@ body {
 }
 
 .links img {
+    width: 
     max-height: 100%;
     max-width: 100%;
 }
@@ -56,32 +57,24 @@ body {
 }
 
 .profile-info {
-    display: grid;
+    display: flex;
     height: 40%;
     width: 100%;
+    align-items: center;
     grid-template-columns: 15% [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4] 40% [col-5] 10% [col-6];
     background-color: #72BDA3;
     padding-bottom: 10px;
 }
 
-.profile-info #headshot {
-    grid-column-start: col-1;
-    grid-column-end: col-4;
-    max-width: 100%;
-    max-height: 500px;
+.profile-info-headshot {
+    width: 30vw;
+    height: auto;
     border-radius: 50%;
-    margin: auto;
+    margin: 5vw;
 }
 
-.profile-info p {
-    grid-column-start: col-1;
-    grid-column-end: col-4;
-}
-
-.profile-info h1 {
-    margin: auto;
-    font-size: xxx-large;
-    margin-left: 10%;
+.profile-info-name  {
+    font-size: 3rem;
 }
 
 .bio {
@@ -185,7 +178,6 @@ footer {
 
 .bio-classes-link {
     width: 30vw;
-    
     background-color: #084C61;
     margin: 0.5vh 0.5vh 0 0; 
     text-decoration: none;
