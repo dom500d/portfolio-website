@@ -148,13 +148,6 @@ body {
     margin: 0 1rem 1rem 1rem;
 }
 
-
-@media only screen and (max-width: 600px) {
-    .project-main-img {
-        width: 80vw;
-    }
-}
-
 .projects h1 {
     text-align: center;
 }
@@ -175,27 +168,26 @@ footer {
 }
 
 .bio-classes {
-    width: min(80vw, 50rem);
+    width: min(80vw, 100rem);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     margin: 0 1rem 1rem 1rem;
-    
 }
 
 .bio-classes-summary {
     list-style: none;
     cursor: pointer;
     text-align: center;
+    margin: 0 0 1rem 0;
 }
 
 .bio-classes-link {
-    height: 5vh;
-    max-width: min(80vw, 20rem);
-    padding: 0.5vh 0.5rem 0.5vh 0.5rem;
+    width: 30vw;
+    
     background-color: #084C61;
-    margin: 0.5vh 0 0 0; 
+    margin: 0.5vh 0.5vh 0 0; 
     text-decoration: none;
     color: azure;
     text-align: center;
@@ -205,4 +197,21 @@ footer {
     max-width: 100%;
     font-size: 1rem;
     
+}
+
+
+@media only screen and (max-width: 800px) {
+    .bio-classes-link {
+        width: 60vw;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .project-main-img {
+        width: 80vw;
+    }
+
+    .bio-classes-link {
+        width: 80vw;
+    }
 }
