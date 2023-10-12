@@ -3,6 +3,41 @@
     src: url(/static/fonts/Manrope-VariableFont_wght.ttf);
 }
 
+header {
+    box-sizing: border-box;
+    height: 100vh;
+    padding: 20vh 0 0 0;
+    background-color: #72BDA3;
+}
+
+.icon {
+    width: 3rem;
+    margin: 0 1vw 0 1vw
+}
+
+.icon-link {
+    text-decoration: none;
+}
+
+.profile-info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.profile-info-headshot {
+    border-radius: 50%;
+    width: 20rem;
+    flex-basis: 100%;
+}
+
+.profile-info-name {
+    font-size: 3rem;
+    margin: 1vh;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -12,6 +47,12 @@ body {
     font-family: manrope, sans-serif;
 }
 
+footer {
+    background-color: #A9714B;
+    padding: 1rem;
+    text-align: center;
+}
+
 .nav-bar {
     display: flex;
     background-color: #72BDA3;
@@ -19,11 +60,6 @@ body {
     flex-direction: column;
     align-content: flex-start;
     flex-wrap: wrap;
-}
-
-.nav-link {
-    color: azure;
-    text-decoration: none;
 }
 
 .links {
@@ -42,7 +78,7 @@ body {
 }
 
 .links img {
-    width: 
+    width: 50rem;
     max-height: 100%;
     max-width: 100%;
 }
@@ -60,28 +96,6 @@ body {
 .links #resume {
     grid-column: 2;
     grid-row: 1;
-}
-
-.profile-info {
-    display: flex;
-    height: auto;
-    
-    padding: 0 0 1vh 20vw;
-    align-items: center;
-    background-color: #72BDA3;
-}
-
-.profile-info-headshot {
-    width: 25vw;
-    height: auto;
-    border-radius: 50%;
-    /*margin: 0 0 0 min(20vw, 20rem);
-    */
-}
-
-.profile-info-name  {
-    font-size: 3rem;
-    padding: 0 0 0 5vw;
 }
 
 .bio {
@@ -157,18 +171,14 @@ body {
     text-align: center;
 }
 
-footer {
-    background-color: #A9714B;
-    padding: 1rem;
-    text-align: center;
-}
+
 
 .footer-text {
     margin: 0;
 }
 
 .bio-classes {
-    width: min(61vw, 100rem);
+    width: min(63.5vw, 100rem);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -189,11 +199,13 @@ footer {
 .bio-classes-link {
     width: 30vw;
     background-color: #084C61;
-    margin: 0.5vh 0.5vh 0 0; 
+    margin: 0.5vh 0.5vh 0.5vh 0.5vh; 
+    padding: 0 0.5vw 0 0.5vw;
     text-decoration: none;
     color: azure;
     text-align: center;
 }
+
 
 .bio-classes-link-p {
     max-width: 100%;
@@ -201,10 +213,20 @@ footer {
     
 }
 
+.no-decor-link {
+    color: azure;
+}
+
+#class-dropdown {
+    text-decoration: underline;
+}
 
 @media only screen and (max-width: 800px) {
     .bio-classes-link {
         width: 60vw;
+    }
+    .bio-classes {
+        width: 65vw;
     }
 }
 
@@ -213,7 +235,8 @@ footer {
         width: 80vw;
     }
 
-    .bio-classes-link {
-        width: 80vw;
+    .bio-classes-link,
+    .bio-classes {
+        width: 85vw;
     }
 }

@@ -4,34 +4,31 @@
         <meta charset=”utf-8″>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Dominic Orlando's Portfolio Website">
-        <base href="https://www.dorlando.tech/" target="_blank">
         <title>Dominic Orlando</title>
         <link rel="icon" type="image/x-icon" href="static/home/icons/favicon.ico">
         <link rel="stylesheet" href="static/index.css">
     </head>
     <body>
-        <header id="links">
-            <div id="links-holder">
-                <section class="links" aria-labelledby="s1-h2">
-                    <a href="https://www.github.com/dom500d" class="icon" id="github">
-                        <img src="static/home/icons/github-transparent.png" alt="Github Link">
+        <header id="profile-info">
+            <section class="profile-info" aria-labelledby="s1-h1">
+                <img class="profile-info-headshot" src="static/home/personal/IMG_3740_cropped.jpg" alt="Picture of Dominic Orlando with an ocean background.">
+                <h1 class="profile-info-name" id="s1-h1">Dominic Orlando</h1> 
+                <div class="link-holder">
+                    <a href="https://www.github.com/dom500d" class="icon-link" id="github">
+                        <img src="static/home/icons/github-transparent.png" alt="Github Link" class="icon">
                     </a>
-                    <a href="https://www.linkedin.com/in/dominic-orlando-" class="icon" id="linkedin">
-                        <img src="static/home/icons/61109.png" alt="LinkedIn Link">
+                    <a href="https://www.linkedin.com/in/dominic-orlando-" class="icon-link" id="linkedin">
+                        <img src="static/home/icons/61109.png" alt="LinkedIn Link" class="icon">
                     </a>
-                    <a href="static/Resume.pdf" class="icon" id="resume">
-                        <img src="static/home/icons/output-onlinepngtools.png" alt="Resume Link">
-                    </a>
-                </section>
-                <section class="profile-info" aria-labelledby="s2-h1">
-                    <img class="profile-info-headshot" src="static/home/personal/IMG_3740_cropped.jpg" alt="Picture of Dominic Orlando with an ocean background.">
-                    <h1 class="profile-info-name" id="s1-h1">Dominic Orlando</h1> 
-                </section>
-            </div>
+                    <a href="static/Resume.pdf" class="icon-link" id="resume">
+                        <img src="static/home/icons/output-onlinepngtools.png" alt="Resume Link" class="icon">
+                    </a> 
+                </div>
+            </section>  
         </header>
         <main>
             <section class="bio" aria-labelledby="s3-h1">
-                <h1 id="s3-h1">Bio</h1>
+                <h2 id="s3-h1">Bio</h2>
                 <p class="bio-text">
                     Hi, I'm Dominic, an Electrical Engineering student at UC San Diego specializing in Machine Learning and Controls.
                     I'm currently exploring my options as to what I will be doing after I complete my undergraduate degree. 
@@ -39,7 +36,7 @@
                 </p>
                 <details class="bio-class-details">
                     <summary class="bio-classes-summary">
-                        <h1>Courses Taken</h1>
+                        <h2 id="class-dropdown">Courses Taken</h2>
                     </summary>
                     <div class="bio-classes">
                         <a href="https://catalog.ucsd.edu/courses/ECE.html#ece148" class="bio-classes-link">
@@ -112,11 +109,9 @@
             </section>
         </main>
         <footer>
-            <address>
-                Created by <a href="mailto:dorlando@ucsed.edu">Dominic Orlando</a>.<br>
-                &copy; 2023 Dominic Orlando
-            </address>
+            <p>
+                &copy; 2023 <a href="mailto:dorlando@ucsd.edu" class="no-decor-link">Dominic Orlando</a>.<br>
+            </p>
         </footer>
-
     </body>
 </html>
