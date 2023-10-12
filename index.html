@@ -3,12 +3,100 @@
     <head>
         <meta charset=”utf-8″>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="insert description here">
+        <meta name="description" content="Dominic Orlando's Portfolio Website">
+        <base href="https://www.dorlando.tech/" target="_blank">
         <title>Dominic Orlando</title>
         <link rel="icon" type="image/x-icon" href="static/home/icons/favicon.ico">
         <link rel="stylesheet" href="static/index.css">
     </head>
     <body>
+        <header id="links">
+            <div id="links-holder">
+
+            </div>
+        </header>
+        <main>
+            <section class="bio" aria-labelledby="s3-h1">
+                <h1 id="s3-h1">Bio</h1>
+                <p class="bio-text">
+                    Hi, I'm Dominic, an Electrical Engineering student at UC San Diego specializing in Machine Learning and Controls.
+                    I'm currently exploring my options as to what I will be doing after I complete my undergraduate degree. 
+                    If you wish to contact me, please email me at <a class="bio-email-link" href="mailto:dorlando@ucsd.edu">dorlando@ucsd.edu</a>.
+                </p>
+                <details class="bio-class-details">
+                    <summary class="bio-classes-summary">
+                        <h1>Courses Taken</h1>
+                    </summary>
+                    <div class="bio-classes">
+                        <a href="https://catalog.ucsd.edu/courses/ECE.html#ece148" class="bio-classes-link">
+                            <p class="bio-classes-link-p"><b>ECE 148:</b> Autonomous Vehicles</p>
+                        </a>
+                        <a href="https://catalog.ucsd.edu/courses/ECE.html#ece140a" class="bio-classes-link">
+                            <p class="bio-classes-link-p"><b>ECE 140A/B:</b> Product Engineering</p>
+                        </a>
+                        <a href="https://catalog.ucsd.edu/courses/ECE.html#ece176" class="bio-classes-link">
+                            <p class="bio-classes-link-p"><b>ECE 176:</b> Deep Learning & Applications</p>
+                        </a>
+                        <a href="https://catalog.ucsd.edu/courses/ECE.html#ece175a" class="bio-classes-link">
+                            <p class="bio-classes-link-p"><b>ECE 175A:</b> M.L. and Pattern Recognition</p>
+                        </a>
+                        <a href="https://catalog.ucsd.edu/courses/ECE.html#ece174" class="bio-classes-link">
+                            <p class="bio-classes-link-p"><b>ECE 174:</b> Linear and Nonlinear Optimization</p>
+                        </a>
+                        <a href="https://catalog.ucsd.edu/courses/ECE.html#ece171a" class="bio-classes-link">
+                            <p class="bio-classes-link-p"><b>ECE 171A:</b> Linear Control Theory</p>
+                        </a>
+                        <a href="https://catalog.ucsd.edu/courses/ECE.html#ece101" class="bio-classes-link">
+                            <p class="bio-classes-link-p"><b>ECE 101:</b> Linear Systems</p>
+                        </a>
+                        <a href="https://catalog.ucsd.edu/courses/ECE.html#ece109" class="bio-classes-link">
+                            <p class="bio-classes-link-p"><b>ECE 109:</b> Engineering Probability & Stats</p>
+                        </a>
+                        <a href="https://catalog.ucsd.edu/courses/ECE.html#ece35" class="bio-classes-link">
+                            <p class="bio-classes-link-p"><b>ECE 35/45/65:</b> Analog Circuits & Systems</p>
+                        </a>
+                        <a href="https://catalog.ucsd.edu/courses/ECE.html#ece17" class="bio-classes-link">
+                            <p class="bio-classes-link-p"><b>ECE 17:</b> OOP Design & Dev with C++</p>
+                        </a>
+                        <a href="https://catalog.ucsd.edu/courses/ECE.html#ece15" class="bio-classes-link">
+                            <p class="bio-classes-link-p"><b>ECE 15:</b> C Programming</p>
+                        </a>
+                        <a href="https://catalog.ucsd.edu/courses/ECE.html#ece30" class="bio-classes-link">
+                            <p class="bio-classes-link-p"><b>ECE 30:</b> Computer Engineering (LegV8)</p>
+                        </a>
+                    </div>
+                </details>
+            </section>
+            <section class="projects" aria-labelledby="s4-h1">
+                <h1>Projects</h1>
+                <div class="projects-wrapper">
+                    <section class="hard-hack project" aria-labelledby="s5-h3">
+                        <h3>ProstheTech (HARD Hack)</h3>
+                        <a href="https://github.com/ymorsi7/ProstheTech">
+                            <img src="static/home/projects/hard-hack-edited.jpg" alt="Dominic Orlando with his team after being overall runnerup at HARD Hack 2023, a UCSD student run Hackathon." class="project-main-img">
+                        </a>
+                    </section>
+                    <section class="aegis project" aria-labelledby="s6-h3">
+                        <h3>Aegis Home</h3>
+                        <a href="aegis.html">
+                            <img src="static/home/projects/aegis-editted.jpg" alt="Dominic Orlando with the Aegis team presenting the first iteration of their home energy monitoring solution. They won best MVP award."  class="project-main-img">
+                        </a>
+                    </section>
+                    <section class="project-cars project" aria-labelledby="s7-h3">
+                        <h3>Project Cars</h3>
+                        <a href="cars.html">
+                            <img src="static/home/projects/1654741544294.jpg" alt="Dominic Orlando in his 2001 BMW e46 that has been heavily modified at a drift event"  class="project-main-img">
+                        </a>
+                    </section>
+                    <section class="one-spot project" aria-labelledby="s8-h3">
+                        <h3 id="s8-h3">OneSpot</h3>
+                        <a href="onespot.html">
+                            <img src="static/home/projects/python.png" alt="Python coding language logo" class="project-main-img">
+                        </a>
+                    </section>
+                </div>
+            </section>
+        </main>
         <section class="links" aria-labelledby="s1-h2">
             <a href="https://www.github.com/dom500d" class="icon" id="github">
                 <img src="static/home/icons/github-transparent.png" alt="Github Link">
@@ -24,90 +112,12 @@
             <img class="profile-info-headshot" src="static/home/personal/IMG_3740_cropped.jpg" alt="Picture of Dominic Orlando with an ocean background.">
             <h1 class="profile-info-name" id="s1-h1">Dominic Orlando</h1> 
         </section>
-        <section class="bio" aria-labelledby="s3-h1">
-            <h1 id="s3-h1">Bio</h1>
-            <p class="bio-text">
-                Hi, I'm Dominic, an Electrical Engineering student at UC San Diego specializing in Machine Learning and Controls.
-                I'm currently exploring my options as to what I will be doing after I complete my undergraduate degree. 
-                If you wish to contact me, please email me at <a class="bio-email-link" href="mailto:dorlando@ucsd.edu">dorlando@ucsd.edu</a>.
-            </p>
-            <details class="bio-class-details">
-                <summary class="bio-classes-summary">
-                    <h1>Courses Taken</h1>
-                </summary>
-                <div class="bio-classes">
-                    <a href="https://catalog.ucsd.edu/courses/ECE.html#ece148" class="bio-classes-link">
-                        <p class="bio-classes-link-p"><b>ECE 148:</b> Autonomous Vehicles</p>
-                    </a>
-                    <a href="https://catalog.ucsd.edu/courses/ECE.html#ece140a" class="bio-classes-link">
-                        <p class="bio-classes-link-p"><b>ECE 140A/B:</b> Product Engineering</p>
-                    </a>
-                    <a href="https://catalog.ucsd.edu/courses/ECE.html#ece176" class="bio-classes-link">
-                        <p class="bio-classes-link-p"><b>ECE 176:</b> Deep Learning & Applications</p>
-                    </a>
-                    <a href="https://catalog.ucsd.edu/courses/ECE.html#ece175a" class="bio-classes-link">
-                        <p class="bio-classes-link-p"><b>ECE 175A:</b> M.L. and Pattern Recognition</p>
-                    </a>
-                    <a href="https://catalog.ucsd.edu/courses/ECE.html#ece174" class="bio-classes-link">
-                        <p class="bio-classes-link-p"><b>ECE 174:</b> Linear and Nonlinear Optimization</p>
-                    </a>
-                    <a href="https://catalog.ucsd.edu/courses/ECE.html#ece171a" class="bio-classes-link">
-                        <p class="bio-classes-link-p"><b>ECE 171A:</b> Linear Control Theory</p>
-                    </a>
-                    <a href="https://catalog.ucsd.edu/courses/ECE.html#ece101" class="bio-classes-link">
-                        <p class="bio-classes-link-p"><b>ECE 101:</b> Linear Systems</p>
-                    </a>
-                    <a href="https://catalog.ucsd.edu/courses/ECE.html#ece109" class="bio-classes-link">
-                        <p class="bio-classes-link-p"><b>ECE 109:</b> Engineering Probability & Stats</p>
-                    </a>
-                    <a href="https://catalog.ucsd.edu/courses/ECE.html#ece35" class="bio-classes-link">
-                        <p class="bio-classes-link-p"><b>ECE 35/45/65:</b> Analog Circuits & Systems</p>
-                    </a>
-                    <a href="https://catalog.ucsd.edu/courses/ECE.html#ece17" class="bio-classes-link">
-                        <p class="bio-classes-link-p"><b>ECE 17:</b> OOP Design & Dev with C++</p>
-                    </a>
-                    <a href="https://catalog.ucsd.edu/courses/ECE.html#ece15" class="bio-classes-link">
-                        <p class="bio-classes-link-p"><b>ECE 15:</b> C Programming</p>
-                    </a>
-                    <a href="https://catalog.ucsd.edu/courses/ECE.html#ece30" class="bio-classes-link">
-                        <p class="bio-classes-link-p"><b>ECE 30:</b> Computer Engineering (LegV8)</p>
-                    </a>
-                </div>
-            </details>
-            
-
-        </section>
-        <section class="projects" aria-labelledby="s4-h1">
-            <h1>Projects</h1>
-            <div class="projects-wrapper">
-                <section class="hard-hack project" aria-labelledby="s5-h3">
-                    <h3>ProstheTech (HARD Hack)</h3>
-                    <a href="https://github.com/ymorsi7/ProstheTech">
-                        <img src="static/home/projects/hard-hack-edited.jpg" alt="Dominic Orlando with his team after being overall runnerup at HARD Hack 2023, a UCSD student run Hackathon." class="project-main-img">
-                    </a>
-                </section>
-                <section class="aegis project" aria-labelledby="s6-h3">
-                    <h3>Aegis Home</h3>
-                    <a href="aegis.html">
-                        <img src="static/home/projects/aegis-editted.jpg" alt="Dominic Orlando with the Aegis team presenting the first iteration of their home energy monitoring solution. They won best MVP award."  class="project-main-img">
-                    </a>
-                </section>
-                <section class="project-cars project" aria-labelledby="s7-h3">
-                    <h3>Project Cars</h3>
-                    <a href="cars.html">
-                        <img src="static/home/projects/1654741544294.jpg" alt="Dominic Orlando in his 2001 BMW e46 that has been heavily modified at a drift event"  class="project-main-img">
-                    </a>
-                </section>
-                <section class="one-spot project" aria-labelledby="s8-h3">
-                    <h3 id="s8-h3">OneSpot</h3>
-                    <a href="onespot.html">
-                        <img src="static/home/projects/python.png" alt="Python coding language logo" class="project-main-img">
-                    </a>
-                </section>
-            </div>
-        </section>
+        
         <footer>
-            <p class="footer-text">Dominic Orlando &copy; 2023</p>
+            <address>
+                Created by <a href="mailto:dorlando@ucsed.edu">Dominic Orlando</a>.<br>
+                &copy; 2023 Dominic Orlando
+            </address>
         </footer>
 
     </body>
