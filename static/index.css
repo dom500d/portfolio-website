@@ -171,8 +171,6 @@ footer {
     text-align: center;
 }
 
-
-
 .footer-text {
     margin: 0;
 }
@@ -189,11 +187,16 @@ footer {
     align-items: center;
 }
 
+.bio-class-details {
+    margin: 0 0 2vh 0;
+}
+
 .bio-classes-summary {
-    list-style: none;
     cursor: pointer;
     text-align: center;
     margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 .bio-classes-link {
