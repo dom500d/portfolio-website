@@ -3,11 +3,16 @@
     src: url(/static/fonts/Manrope-VariableFont_wght.ttf);
 }
 
+:root {
+    --main-color: #72BDA3;
+    --secondary-color: #5E8C61;
+}
+
 header {
     box-sizing: border-box;
     height: max(100vh, 40rem);
     padding: 20vh 0 0 0;
-    background-color: #72BDA3;
+    background-color: var(--main-color);
 }
 
 .icon {
@@ -55,7 +60,7 @@ footer {
 
 .nav-bar {
     display: flex;
-    background-color: #72BDA3;
+    background-color: var(--main-color);
     padding: 1rem;
     flex-direction: column;
     align-content: flex-start;
@@ -67,7 +72,7 @@ footer {
     display: inline-grid;
     width: 100%;
     grid-template-columns: 25% [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4] 60% [col-5];
-    background-color: #72BDA3;
+    background-color: var(--main-color);
     
 }
 
@@ -102,7 +107,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #5E8C61;
+    background-color: var(--secondary-color);
     
 }
 
