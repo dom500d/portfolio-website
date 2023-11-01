@@ -53,7 +53,7 @@ body {
 }
 
 footer {
-    background-color: #A9714B;
+    background-color: var(--main-color);
     padding: 1rem;
     text-align: center;
 }
