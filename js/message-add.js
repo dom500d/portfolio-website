@@ -1,3 +1,21 @@
+
+let accessToken = "87812d7a016c213b1a43f796e5c0fc10f97bcb12"
+
+
+var id = 79925918; // {Long} The identifier of the athlete. Must match the authenticated athlete.
+let url = 'https://www.strava.com/api/v3';
+let headers = {
+    method: 'POST',
+    client_id: '109478',
+    client_secret: '345a1929ebc69389d58d092f221df9d68255a831',
+    code: '87812d7a016c213b1a43f796e5c0fc10f97bcb12',
+    grant_type: 'authorization_code'
+};
+console.log(headers);
+
+fetch('https://www.strava.com/oauth/token', headers).then((response) => {
+    console.log(response);
+})
 document.addEventListener("DOMContentLoaded", (event) => {
     let theme_picker = document.querySelector('body main section #nav-holder #theme-picker');
     let div = document.createElement('div');

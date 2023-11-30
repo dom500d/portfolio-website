@@ -24,7 +24,7 @@ html {
             width: 24vw;
             height: 100vh;
             background-color: var(--left-color, blue);
-            color: var(--left-text-color);
+            color: var(--left-text-color, azure);
             --nested-color-demo: rgb(45, 215, 68);
 
             & > * {
@@ -35,31 +35,39 @@ html {
             & #experiment-page li {
                 color: black;
                 &:nth-child(1) {
-                    background-color: color-mix(in srgb, var(--nested-color-demo) 0%, white);
+                    background-color: color-mix(in srgb, var(--nested-color-demo, green) 0%, white);
                 }
 
                 &:nth-child(2) {
-                    background-color: color-mix(in srgb, var(--nested-color-demo) 14.2%, white);
+                    background-color: color-mix(in srgb, var(--nested-color-demo, green) 14.2%, white);
                 }
 
                 &:nth-child(3) {
-                    background-color: color-mix(in srgb, var(--nested-color-demo) 28.6%, white);
+                    background-color: color-mix(in srgb, var(--nested-color-demo, green) 28.6%, white);
                 }
 
                 &:nth-child(4) {
-                    background-color: color-mix(in srgb, var(--nested-color-demo) 42.9%, white);
+                    background-color: color-mix(in srgb, var(--nested-color-demo, green) 42.9%, white);
                 }  
 
                 &:nth-child(5) {
-                    background-color: color-mix(in srgb, var(--nested-color-demo) 57.1%, white);
+                    background-color: color-mix(in srgb, var(--nested-color-demo, green) 57.1%, white);
                 }
 
                 &:nth-child(6) {
-                    background-color: color-mix(in srgb, var(--nested-color-demo) 71.4%, white);
+                    background-color: color-mix(in srgb, var(--nested-color-demo, green) 71.4%, white);
                 }
 
                 &:nth-child(7) {
-                    background-color: color-mix(in srgb, var(--nested-color-demo) 85.7%, white);
+                    background-color: color-mix(in srgb, var(--nested-color-demo, green) 85.7%, white);
+                }
+
+                &:nth-child(8) {
+                    background-color: color-mix(in srgb, var(--nested-color-demo, green) 100%, white);
+                }
+
+                &:nth-child(9) {
+                    background-color: color-mix(in srgb, var(--nested-color-demo, green) 100%, white);
                 }
             }
         }
@@ -67,8 +75,8 @@ html {
         & main {
             flex: 1;
             height: 100vh;
-            background-color: var(--right-color);
-            color: var(--right-text-color);
+            background-color: var(--right-color, azure);
+            color: var(--right-text-color, black);
 
             & h2 {
                 margin-left: 1rem;
@@ -86,8 +94,8 @@ html {
                     display: flex;
                     flex-wrap: wrap;
                     margin: 0 1rem 1rem 1rem;
-                    background-color: var(--message-color);
-                    border-radius: var(--border-radius);
+                    background-color: var(--message-color, azure);
+                    border-radius: var(--border-radius, 15px);
 
                     &:last-child {
                         margin-bottom: 5rem;
@@ -134,7 +142,7 @@ a {
         left: 0;
         width: 100%;
         height: 0.1em;
-        background-color: var(--underline-color);
+        background-color: var(--underline-color, gray);
         opacity: 0;
         transition: opacity 300ms, transform 300ms;
     }
@@ -212,7 +220,7 @@ hr {
 }
 
 img {
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius, 15px);
 }
 
 details {
@@ -254,7 +262,7 @@ details {
         & div {
             position:relative;
             z-index: 100;
-            background-color: var(--nav-background);
+            background-color: var(--nav-background, rgb(65, 65, 65));
             margin-top: 0.5em;
             padding: 0.25vw;
 
@@ -346,11 +354,11 @@ header section details summary h2 {
     position: absolute;
     margin-left: 1rem;
     margin-right: 1rem;
-    color: var(--left-text-color);
+    color: var(--left-text-color, #e0e0e0);
     bottom: 1rem;
     width: 73vw;
-    background-color: var(--left-color);
-    border-radius: var(--border-radius);
+    background-color: var(--left-color, #a80ea1);
+    border-radius: var(--border-radius, 15px);
     height: 7rem;
     padding: 1vh 1vw;
 }
@@ -492,7 +500,7 @@ main section details {
             & nav {
                 position:absolute;
                 z-index: 100;
-                background-color: var(--nav-background);
+                background-color: var(--nav-background, rgb(91, 91, 91));
                 width: calc(100vw - 1rem);
                 padding-left: 1rem;
                 padding-bottom: 0.5rem;
