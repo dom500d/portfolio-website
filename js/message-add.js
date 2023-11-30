@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
     theme_picker.removeChild(theme_picker.querySelector('p'));
     div.innerHTML = '<label>Mode Toggle:<input type="checkbox" id="color-theme-toggle"></label><label>Left Background Color:<input type="color" id="left-background-color"></label><label>Left Text Color:<input type="color" id="left-text-color"></label><label>Right Background Color:<input type="color" id="right-background-color"></label><label>Right Text Color:<input type="color" id="right-text-color"></label><button type="button" id="reset-theme">Reset Theme</button>';
     theme_picker.appendChild(div);
-    theme_picker = null;
     div = null;
 
     let form = document.getElementsByTagName('form')[0];
@@ -21,6 +20,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     let reset_theme_button = document.querySelector('#reset-theme');
     
     let stored_theme = localStorage.getItem('theme') || null;
+
     theme_apply(stored_theme);
 
     get_existing_messages();
@@ -56,6 +56,22 @@ document.addEventListener("DOMContentLoaded", (event) => {
         stored_messages = null;
         new_message = null;
         form.reset();
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if(event.key === 'Escape') {
+            if(theme_picker.getAttribute('open') !== null) {
+                theme_picker.removeAttribute('open');
+            }
+        }
+    });
+
+    document.addEventListener('click', (event) => {
+        if(theme_picker.contains(event.target) === false) {
+            if(theme_picker.getAttribute('open') !== null) {
+                theme_picker.removeAttribute('open');
+            }
+        }
     });
 
     document.getElementById('remove-messages').addEventListener('click', (event) => {
