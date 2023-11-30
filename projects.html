@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dominic Orlando</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Google SEO Meta Tags -->
+        <meta name="description" content="Author: Dominic Orlando, Illustrator: Dominic Orlando, Category: Website">
+        <meta name="google-site-verification" content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34=">
+
+        <!-- Use https:// except for images and css since I don't know how to do it for images or how to add
+        a hash for css defined in style tag and not in external stylesheet-->
+        <meta http-equiv="content-security-policy" 
+            content="default-src https:; 
+                     img-src http:; 
+                     style-src 'self' 'unsafe-inline'; 
+                     font-src http:;
+                     script-src 'self' 'unsafe-inline';
+                     connect-src 'self';
+                     media-src http:;">
+
+        <!-- Facebook SEO Meta Tags Sample -->
+        <meta property="og:url" content="index.html">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Dominic Orlando">
+        <meta property="og:description" content="Portfolio Website">
+        
+        <meta name="robots" content="noindex nofollow">
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+        <link rel="stylesheet" href="css/index.css" media="screen">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <script src="js/message-add.js"></script>
+        
+        <style>
+            /* Testing out certain styles! */
+            @font-face {
+                font-family: manrope;
+                src: url(assets/fonts/Manrope-VariableFont_wght.ttf);
+            }
+
+            body {
+                font-family: manrope, sans-serif;
+            }
+          
+        </style>
+    </head>
+    <body>
+        <div>
+            <header>
+                <div id="introduction">
+                    <h1>Dominic Orlando</h1>
+                    <picture title="Dominic Orlando">
+                        <source srcset="assets/IMG_3740_cropped.webp 250w" type="image/webp" sizes="(max-width: 600px) 200px, 300px">
+                        <img alt="Picture of Dominic Orlando" src="assets/IMG_3740_cropped.jpg" height="250" id="bio-picture">
+                    </picture>
+                </div>
+                <div id="navigation">
+                    <details open>
+                        <summary>Channels</summary>
+                        <nav>
+                            <ul>
+                                <li><a href="index.html"># Biography</a></li>
+                                <li><a href="index.html#classes"># Classes</a></li>
+                                <li><a href="projects.html"># Projects</a></li>
+                                <li><a href="experiments.html"># Experiments</a></li>
+                                <li><a href="contact-me.html"># Contact Me</a></li>
+                                <li><a href="old_website/old-site.html"># Old Site</a></li>
+                                <li><a href="https://www.linkedin.com/in/dominic-orlando-/" target="_blank"># Linkedin</a></li>
+                                <li><a href="/assets/Resume.pdf" target="_blank"># Resume</a></li>
+                                <li><a href="https://github.com/dom500d" target="_blank"># Github</a></li>
+                            </ul>
+                        </nav>
+                    </details>
+                </div>
+            </header>
+            <footer>
+                <p id="copyright">&copy; <a href="mailto:dorlando@ucsd.edu">Dominic Orlando</a></p>
+            </footer>
+        </div>
+        <main id="right-side">
+            <section id="bio-section" aria-labelledby="page-header">
+                <!-- Using an article below looks like i can't use the h2 to label the section. This is why I decided to use a div here.
+                I could use a section but I feel like again I then can't use the heading to label the over-arching section here. -->
+                <div id="nav-holder">
+                    <details class="disabled">
+                        <summary tabindex="-1">
+                            <h2 id="page-header"> # Projects </h2>
+                        </summary>
+                        <nav>
+                            <ul>
+                                <li><a href="index.html"># Biography</a></li>
+                                <li><a href="index.html#classes"># Classes</a></li>
+                                <li><a href="projects.html"># Projects</a></li>
+                                <li><a href="experiments.html"># Experiments</a></li>
+                                <li><a href="https://www.linkedin.com/in/dominic-orlando-/" target="_blank"># Linkedin</a></li>
+                                <li><a href="/assets/Resume.pdf" target="_blank"># Resume</a></li>
+                                <li><a href="https://github.com/dom500d" target="_blank"># Github</a></li>
+                            </ul>
+                        </nav>
+                    </details>
+                    <details id="theme-picker">
+                        <summary>
+                            <h3>Theme picker</h3>
+                        </summary>
+                        <p>Unfortunately JavaScript needs to be enabled for this to work :/</p>
+                    </details>
+                </div>
+                <hr>
+                <article id="message-wrapper" aria-labelledby="messages-from-dominic">
+                    <h3 class="visually-hidden" id="messages-from-dominic">Messages from Dominic</h3>
+                    <div class="message">
+                        <picture title="Dominic Orlando">
+                            <source srcset="assets/IMG_3740_cropped.webp 250w" type="image/webp" sizes="(max-width: 600px) 200px, 300px">
+                            <img alt="Picture of Dominic Orlando" src="assets/IMG_3740_cropped.jpg" height="250" class="message-pic">
+                        </picture>
+                        <div class="message-content-holder">
+                            <p class="message-sender">Dominic Orlando <time datetime="2023-10-31 23:12:52">11:12pm</time></p>
+                            <article class="message-content" aria-labelledby="aegis">
+                                <h3 class="project-heading" id="aegis">Aegis</h3>
+                                <iframe 
+                                    width="560" 
+                                    height="315" 
+                                    src="https://www.youtube.com/embed/niIIZu8sXBk?si=FEQf9YUhk7LXYjef" 
+                                    title="YouTube video player" 
+                                    allowfullscreen>
+                                </iframe>
+                                <figure>
+                                    <img src="assets/aegis-hardware.png" width="300" data-info="picture">
+                                    <figcaption>Hardware Setup for Aegis</figcaption>
+                                </figure>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <picture title="Dominic Orlando">
+                            <source srcset="assets/IMG_3740_cropped.webp 250w" type="image/webp" sizes="(max-width: 600px) 200px, 300px">
+                            <img alt="Picture of Dominic Orlando" src="assets/IMG_3740_cropped.jpg" height="250" class="message-pic">
+                        </picture>
+                        <div class="message-content-holder">
+                            <p class="message-sender">Dominic Orlando <time datetime="2023-10-31 23:23:47">11:23pm</time></p>
+                            <article class="message-content" aria-labelledby="project-cars">
+                                <h3 class="project-heading" id="project-cars">Project Cars</h3>
+                                <p class="project-info-description">
+                                    This is my first project car, my 2002 BMW e46 325ci. 
+                                    This car started off its 
+                                    life as an automatic, but didn't stay
+                                    that way for long once I got the car. 
+                                </p>
+                                <iframe 
+                                    width="560" 
+                                    height="315" 
+                                    src="https://www.youtube.com/embed/rlOBfDDA1Ss?si=wedM7xbSyJlAEPog" 
+                                    title="YouTube video player" 
+                                    allowfullscreen>
+                                </iframe>
+                                <ul>
+                                    <li>Manual swapped with a 5-speed from an e46
+                                        <ul>
+                                            <li>Lightened flywheel</li>
+                                            <li>Stronger clutch and pressure plate</li>
+                                        </ul>
+                                    </li>
+                                    <li>Custom exhaust header and downpipe</li>
+                                    <li>GT35-clone turbocharger</li>
+                                    <li>Electronic boost control</li>
+                                    <li>Wideband O2 sensor</li>
+                                    <li>Custom MS43 (ECU) tuning</li>
+                                    <li>MAF from an Audi RS4</li>
+                                    <li>M50 manifold conversion</li>
+                                    <li>Freshly built engine
+                                        <ul>
+                                            <li>3.0L assembly</li>
+                                            <li>New gaskets with a thicker headgasket with cutting rings</li>
+                                        </ul>
+                                    </li>
+                                    <li>Welded differential for drifting (3.46 ratio)</li>
+                                </ul>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <picture title="Dominic Orlando">
+                            <source srcset="assets/IMG_3740_cropped.webp 250w" type="image/webp" sizes="(max-width: 600px) 200px, 300px">
+                            <img alt="Picture of Dominic Orlando" src="assets/IMG_3740_cropped.jpg" height="250" class="message-pic">
+                        </picture>
+                        <div class="message-content-holder">
+                            <p class="message-sender">Dominic Orlando <time datetime="2023-10-31 23:34:15">11:34pm</time></p>
+                            <article class="message-content" aria-labelledby="prosthetech">
+                                <h3 class="project-heading" id="prosthetech">ProstheTech (HARD Hack)</h3>
+                                <a href="https://github.com/ymorsi7/ProstheTech" target="_blank">
+                                    <picture>
+                                        <source srcset="assets/hard-hack-edited.webp 300w" type="image/webp" sizes="(max-width: 600px) 200px, 300px">
+                                        <img    
+                                            src="assets/hard-hack-edited.jpg" 
+                                            alt="Dominic Orlando with his team after being overall runnerup at HARD Hack 2023, a UCSD student run Hackathon." 
+                                            width="250"
+                                            data-info="picture">
+                                    </picture>
+                                </a>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <picture title="Dominic Orlando">
+                            <source srcset="assets/IMG_3740_cropped.webp 250w" type="image/webp" sizes="(max-width: 600px) 200px, 300px">
+                            <img alt="Picture of Dominic Orlando" src="assets/IMG_3740_cropped.jpg" height="250" class="message-pic">
+                        </picture>
+                        <div class="message-content-holder">
+                            <p class="message-sender">Dominic Orlando <time datetime="2023-10-31 23:45:06">11:45pm</time></p>
+                            <article class="message-content" aria-labelledby="website-project">
+                                <h3 class="project-heading" id="website-project">Portfolio Website</h3>
+                                <iframe
+                                    src="https://dorlando.tech"
+                                    title="Dominic Orlando's Portfolio Website at dorlando.tech"
+                                    width="400"
+                                    height="300"
+                                    id="portfolio-website">
+                                </iframe>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <picture title="Dominic Orlando">
+                            <source srcset="assets/IMG_3740_cropped.webp 250w" type="image/webp" sizes="(max-width: 600px) 200px, 300px">
+                            <img alt="Picture of Dominic Orlando" src="assets/IMG_3740_cropped.jpg" height="250" class="message-pic">
+                        </picture>
+                        <div class="message-content-holder">
+                            <p class="message-sender">Dominic Orlando <time datetime="2023-10-31 21:45:03">9:45pm</time></p>
+                            <p class="message-content">
+                                <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                                    <img style="border:0;width:88px;height:31px;border-radius:0"
+                                        src="assets/funny-w3c-css-validation.gif"  
+                                        alt="Valid CSS!">
+                                </a>
+                            </p>
+                        </div>
+                    </div>  
+                </article>
+                <section id="contact-me" aria-labelledby="contact-header">
+                    <form action="https://httpbin.org/get" method="get" id="contact-form">
+                        <div id="form-header">
+                            <h3 id="contact-header">Message Dominic Orlando</h3>
+                            <button id="remove-messages" type="button">Remove messages</button>
+                        </div>
+                        <div id="form-name-email">
+                            <div class="form-name-email-wrapper">
+                                <label id="contact-form-name-label" for="contact-form-name" title="Your name">Name: </label>
+                                <input id="contact-form-name" name="name" type="text" required title="Your name" placeholder="Dominic Orlando">
+                                <output name="name-error"></output>
+                                <output name="name-info"></output>
+                            </div>
+                            <div class="form-name-email-wrapper">
+                                <label id="contact-form-email-label" for="contact-form-email" title="Your email">Email: </label>
+                                <input id="contact-form-email" name="email" type="email" required title="Your email" placeholder="example@abc.com">
+                                <output name="email-error"></output>
+                                <output name="email-info"></output>
+                            </div>
+                        </div>
+                        <div id="form-message">
+                            <label for="contact-form-comments" title="Your comments">Comments: </label>
+                            <input id="contact-form-comments" name="comments" type="text" required title="Your comments" placeholder="I love your website!">
+                            <output name="comments-error"></output>
+                            <output name="comments-info"></output>
+                            <button type="submit" id="submit">Submit</button>
+                            <input name="possible_bot" type="text" value="true" hidden>
+                        </div>
+                    </form>
+                </section> 
+            </section>
+        </main>
+        <template>
+            <div class="message">
+                <picture>
+                    <source>
+                    <img>
+                </picture>
+                <div class="message-content-holder">
+                    <p class="message-sender"><time datetime="2023-10-31 21:34:03"></time></p>
+                    <p class="message-content">
+                    </p>
+                </div>
+                
+            </div>
+        </template>
+    </body>
+</html>

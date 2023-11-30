@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Dominic Orlando</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Google SEO Meta Tags -->
+        <meta name="description" content="Author: Dominic Orlando, Illustrator: Dominic Orlando, Category: Website">
+        <meta name="google-site-verification" content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34=">
+
+        <!-- Use https:// except for images and css since I don't know how to do it for images or how to add
+        a hash for css defined in style tag and not in external stylesheet-->
+        <meta http-equiv="content-security-policy" 
+            content="default-src https:; 
+                     img-src http:; 
+                     style-src 'self' 'unsafe-inline'; 
+                     font-src http:;
+                     script-src 'self' 'unsafe-inline';
+                     connect-src 'self' https:;
+                     media-src http:;">
+
+        <!-- Facebook SEO Meta Tags Sample -->
+        <meta property="og:url" content="index.html">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Dominic Orlando">
+        <meta property="og:description" content="Portfolio Website">
+        
+        <meta name="robots" content="noindex nofollow">
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    
+        <style>
+            @keyframes flash {
+                50% {background: red;}
+                100% {background: white;}
+            }
+
+            @keyframes fade {
+                0%, 100% {opacity: 0;}
+                50% {opacity: 1;}
+            }
+
+            @font-face {
+                font-family: manrope;
+                src: url(assests/fonts/Manrope-VariableFont_wght.ttf);
+            }
+
+            body {
+                font-family: manrope, sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background-color: blanchedalmond;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                margin: 5dvh 25dvw;
+                background-color: beige;
+                padding: 1em;
+            }
+
+            h1 {
+                margin-top: 5vh;
+            }
+            
+            input, textarea {
+                border: 2px black solid;
+                &:user-invalid {
+                    border: 2px red solid;
+                }
+
+                &:user-valid {
+                    border: 2px green solid;
+                }
+
+                &:placeholder-shown {
+                    font-style: italic;
+                }
+
+                &:out-of-range {
+                    background-color: orange;
+                }
+            }
+
+            textarea {
+                width: 20dvw;
+            }
+
+            .invalid {
+                animation-name: flash;
+                animation-duration: 0.3s;
+                border: 2px red solid;
+            }
+
+            .error-message {
+                animation: fade 2s cubic-bezier(0.000, 0.957, 0.250, 1.000);
+            }
+
+        </style>
+    </head>
+    <body>
+        <h1>Contact Dominic Orlando</h1>
+        <a href="/contact-me.html">Back</a>
+        <form action="https://httpbin.org/post" method="post" id="contact-form">
+            <label id="contact-form-name-label" for="contact-form-name" title="Your name">Name: </label>
+            <input id="contact-form-name" name="name" type="text" required title="Allowed: a-z, A-Z, -" placeholder="Dominic Orlando" pattern="[a-zA-Z\- ]*">
+            <output name="name-error"></output>
+            <output name="name-info"></output>
+
+            <label id="contact-form-email-label" for="contact-form-email" title="Your email">Email: </label>
+            <input id="contact-form-email" name="email" type="email" required title="Your email" placeholder="example@abc.com">
+            <output name="email-error"></output>
+            <output name="email-info"></output>
+
+            <label for="contact-form-comments" title="Your comments">Comments: </label>
+            <textarea id="contact-form-comments" name="comments" type="text" required title="Allowed: a-z, A-Z, &, !, ., 0-9" placeholder="I love your website!" maxlength="100" pattern="[a-zA-Z\- .!?\n,]*"></textarea>
+            <output name="comments-error"></output>
+            <output name="comments-info"></output>
+
+            <button type="submit" id="submit">Submit</button>
+            <input name="possible-bot" type="text" value="true" hidden>
+            <input name="form-errors" type="text" hidden>
+        </form>
+    </body>
+</html>

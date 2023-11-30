@@ -1,0 +1,16 @@
+body > div *:not(footer), #contact-me, iframe, img:not(img[data-info="picture"]) {
+    display: none;
+}
+
+#message-wrapper {
+    overflow-y: auto;
+}
+
+main section div#nav-holder details summary {
+    pointer-events: none;
+    user-select: none;
+
+    &::marker {
+        content: '';
+    }
+}

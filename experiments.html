@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Dominic Orlando</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Google SEO Meta Tags -->
+        <meta name="description" content="Author: Dominic Orlando, Illustrator: Dominic Orlando, Category: Website">
+        <meta name="google-site-verification" content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34=">
+
+        <!-- Use https:// except for images and css since I don't know how to do it for images or how to add
+        a hash for css defined in style tag and not in external stylesheet-->
+        <meta http-equiv="content-security-policy" 
+            content="default-src https:; 
+                     img-src http:; 
+                     style-src 'self' 'unsafe-inline'; 
+                     font-src http:;
+                     script-src 'self' 'unsafe-inline';
+                     connect-src 'self';
+                     media-src http:;">
+
+        <!-- Facebook SEO Meta Tags Sample -->
+        <meta property="og:url" content="index.html">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Dominic Orlando">
+        <meta property="og:description" content="HTML/CSS Experiments">
+        
+        <meta name="robots" content="noindex nofollow">
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+        <link rel="stylesheet" href="css/index.css" media="screen">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <script src="js/message-add.js"></script>
+        
+        <style>
+            @font-face {
+                font-family: manrope;
+                src: url(assets/fonts/Manrope-VariableFont_wght.ttf);
+            }
+
+            body {
+                font-family: manrope, sans-serif;
+            }
+        </style>
+
+        <script nonce="ranom">
+            document.addEventListener("DOMContentLoaded", (event) => {
+                console.log("Hi!");
+                const canvas = document.querySelector("canvas");
+                const ctx = canvas.getContext("2d");
+                ctx.fillStyle = "black";
+                ctx.fillRect(10, 10, 100, 100);
+            });
+        </script>
+    </head>
+    <body>
+        <div>
+            <header>
+                <section id="introduction">
+                    <h1>Dominic Orlando</h1>
+                    <picture title="Dominic Orlando">
+                        <source srcset="assets/IMG_3740_cropped.webp 250w" type="image/webp" sizes="(max-width: 600px) 200px, 300px">
+                        <img alt="Picture of Dominic Orlando" src="assets/IMG_3740_cropped.jpg" height="250" id="bio-picture">
+                    </picture>
+                </section>
+                <section id="navigation">
+                    <details open id="experiment-page">
+                        <summary><h2>Channels</h2></summary>
+                        <nav>
+                            <ul>
+                                <li><a href="index.html"># Biography</a></li>
+                                <li><a href="index.html#classes"># Classes</a></li>
+                                <li><a href="projects.html"># Projects</a></li>
+                                <li><a href="experiments.html"># Experiments</a></li>
+                                <li><a href="contact-me.html"># Contact Me</a></li>
+                                <li><a href="old_website/old-site.html"># Old Site</a></li>
+                                <li><a href="https://www.linkedin.com/in/dominic-orlando-/" target="_blank"># Linkedin</a></li>
+                                <li><a href="/assets/Resume.pdf" target="_blank"># Resume</a></li>
+                                <li><a href="https://github.com/dom500d" target="_blank"># Github</a></li>
+                            </ul>
+                        </nav>
+                    </details>
+                </section>
+            </header>
+            <footer>
+                <p id="copyright">&copy; <a href="mailto:dorlando@ucsd.edu">Dominic Orlando</a></p>
+            </footer>
+        </div>
+        <main>
+            <section id="bio-section" aria-labelledby="page-header">
+                <!-- Using an article below looks like i can't use the h2 to label the section. This is why I decided to use a div here.
+                I could use a section but I feel like again I then can't use the heading to label the over-arching section here. -->
+                <div id="nav-holder">
+                    <details class="disabled">
+                        <summary tabindex="-1">
+                            <h2 id="page-header"> # Experiments </h2>
+                        </summary>
+                        <nav>
+                            <ul>
+                                <li><a href="index.html"># Biography</a></li>
+                                <li><a href="index.html#classes"># Classes</a></li>
+                                <li><a href="projects.html"># Projects</a></li>
+                                <li><a href="experiments.html"># Experiments</a></li>
+                                <li><a href="https://www.linkedin.com/in/dominic-orlando-/" target="_blank"># Linkedin</a></li>
+                                <li><a href="/assets/Resume.pdf" target="_blank"># Resume</a></li>
+                                <li><a href="https://github.com/dom500d" target="_blank"># Github</a></li>
+                            </ul>
+                        </nav>
+                    </details>
+                    <details id="theme-picker">
+                        <summary>
+                            <h3>Theme picker</h3>
+                        </summary>
+                        <p>Unfortunately JavaScript needs to be enabled for this to work :/</p> 
+                    </details>  
+                </div>
+                <hr>
+                <article id="message-wrapper" aria-labelledby="messages-from-dominic">
+                    <h3 class="visually-hidden" id="messages-from-dominic">Messages from Dominic</h3>
+                    <div class="message">
+                        <picture title="Dominic Orlando">
+                            <source srcset="assets/IMG_3740_cropped.webp 250w" type="image/webp" sizes="(max-width: 600px) 200px, 300px">
+                            <img alt="Picture of Dominic Orlando" src="assets/IMG_3740_cropped.jpg" height="250" class="message-pic">
+                        </picture>
+                        <div class="message-content-holder">
+                            <p class="message-sender">Dominic Orlando <time datetime="2023-10-31 21:55:07">9:55pm</time></p>
+                            <article aria-labelledby="gaming" class="message-content">
+                                <h3 id="gaming">Katarina Gaming</h3>
+                                <video controls src="assets/13-13_NA1-4714193734_01.webm" width="700">
+                                    Dominic playing Katarina in League of Legends
+                                </video>
+                            </article>
+                        </div>
+                    </div>  
+                    <div class="message">
+                        <picture title="Dominic Orlando">
+                            <source srcset="assets/IMG_3740_cropped.webp 250w" type="image/webp" sizes="(max-width: 600px) 200px, 300px">
+                            <img alt="Picture of Dominic Orlando" src="assets/IMG_3740_cropped.jpg" height="250" class="message-pic">
+                        </picture>
+                        <div class="message-content-holder">
+                            <p class="message-sender">Dominic Orlando <time datetime="2023-10-31 22:22:03">10:22pm</time></p>
+                            <article aria-labelledby="sound" class="message-content">
+                                <h3 id="sound">Here's some sound!</h3>
+                                <!-- Maybe have the audio be how to pronounce my name? -->
+                                <audio controls src="assets/mixkit-arcade-retro-game-over-213.wav">
+                                    Video game game over effect.
+                                </audio>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <picture title="Dominic Orlando">
+                            <source srcset="assets/IMG_3740_cropped.webp 250w" type="image/webp" sizes="(max-width: 600px) 200px, 300px">
+                            <img alt="Picture of Dominic Orlando" src="assets/IMG_3740_cropped.jpg" height="250" class="message-pic">
+                        </picture>
+                        <div class="message-content-holder">
+                            <p class="message-sender">Dominic Orlando <time datetime="2023-10-31 10:33:46">10:33pm</time></p>
+                            <article aria-labelledby="math" class="message-content">
+                                <h3 id="math">Here's some <em>math!</em></h3>
+                                <math xmlns='http://www.w3.org/1998/Math/MathML'>
+                                    <mrow>
+                                        <mi>e</mi>
+                                        <mo>=</mo>
+                                        <mi>m</mi>
+                                        <mo>&InvisibleTimes;</mo>
+                                        <msup>
+                                            <mi>c</mi>
+                                            <mn>2</mn>
+                                        </msup>
+                                    </mrow>
+                                </math>
+                                <p>MathML couldn't be used until recently due to Chrome (and Edge probably as well) not supporting it until eariler this year, according to <strong>caniuse.com</strong>. Since these browsers weren't compataible with MathML,
+                                    developers couldn't use it since these two browsers have a considerable amount of market share.
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <picture title="Dominic Orlando">
+                            <source srcset="assets/IMG_3740_cropped.webp 250w" type="image/webp" sizes="(max-width: 600px) 200px, 300px">
+                            <img alt="Picture of Dominic Orlando" src="assets/IMG_3740_cropped.jpg" height="250" class="message-pic">
+                        </picture>
+                        <div class="message-content-holder">
+                            <p class="message-sender">Dominic Orlando <time datetime="2023-10-31 22:55:23">10:55pm</time></p>
+                            <article aria-labelledby="random" class="message-content">
+                                <h3 id="random">Random</h3>
+                                <pre>Hello  there     I    like style</pre>
+                                <p>I can't wait until I can use <code>console.log();</code>, when we put JavaScript on our website!</p>
+                                <p>I'm going to <span class="italics">test</span> the use of the <code>&lt;svg&gt;</code> tag! 
+                                    <svg
+                                    viewbox="0 0 500 100"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    stroke="red"
+                                    fill="grey">
+                                        <circle cx = "50" cy="50" r="10"></circle>
+                                    </svg>
+                                </p>
+                                <h3>I don't know how to use a Canvas tag</h3>
+                                <canvas>
+                                    This is a canvas displaying a black square.
+                                </canvas>
+                                <p>
+                                    I have deteremined, through extensive eperiemntation, that the maximum recursion depth of an 
+                                    iframe is 4.
+                                </p>
+                            </article>
+                        </div>
+                    </div>  
+                    <div class="message">
+                        <picture title="Dominic Orlando">
+                            <source srcset="assets/IMG_3740_cropped.webp 250w" type="image/webp" sizes="(max-width: 600px) 200px, 300px">
+                            <img alt="Picture of Dominic Orlando" src="assets/IMG_3740_cropped.jpg" height="250" class="message-pic">
+                        </picture>
+                        <div class="message-content-holder">
+                            <p class="message-sender">Dominic Orlando <time datetime="2023-10-31 21:45:03">9:45pm</time></p>
+                            <p class="message-content">
+                                <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                                    <img style="border:0;width:88px;height:31px;border-radius:0"
+                                        src="assets/funny-w3c-css-validation.gif"
+                                        alt="Valid CSS!">
+                                </a>
+                            </p>
+                        </div>
+                    </div>  
+                    <div class="message">
+                        <picture title="Bob">
+                            <source srcset="assets/random/15.jpg" type="image/jpeg" sizes="(max-width: 600px) 200px, 300px">
+                            <img alt="Picture of Bob (random recruiter)" src="assets/no-picture.png" height="250" class="message-pic">
+                        </picture>
+                        <div class="message-content-holder">
+                            <p class="message-sender">Bob (Random Recruiter) <time datetime="2023-11-8 21:50:43">9:50pm</time></p>
+                            <p class="message-content">
+                               Wow this is a cool portfolio website you've made! Let me give you a job! 
+                               <cite>Picture gotten from <a href="https://thispersondoesnotexist.com" target="_blank">thispersondoesnotexist.com</a></cite>
+                            </p>
+                        </div>
+                    </div>          
+                </article>
+                <section id="contact-me" aria-labelledby="contact-header">
+                    <form action="https://httpbin.org/get" method="get" id="contact-form">
+                        <div id="form-header">
+                            <h3 id="contact-header">Message Dominic Orlando</h3>
+                            <button id="remove-messages" type="button">Remove messages</button>
+                        </div>
+                        <div id="form-name-email">
+                            <div class="form-name-email-wrapper">
+                                <label id="contact-form-name-label" for="contact-form-name" title="Your name">Name: </label>
+                                <input id="contact-form-name" name="name" type="text" required title="Your name" placeholder="Dominic Orlando">
+                                <output name="name-error"></output>
+                                <output name="name-info"></output>
+                            </div>
+                            <div class="form-name-email-wrapper">
+                                <label id="contact-form-email-label" for="contact-form-email" title="Your email">Email: </label>
+                                <input id="contact-form-email" name="email" type="email" required title="Your email" placeholder="example@abc.com">
+                                <output name="email-error"></output>
+                                <output name="email-info"></output>
+                            </div>
+                        </div>
+                        <div id="form-message">
+                            <label for="contact-form-comments" title="Your comments">Comments: </label>
+                            <input id="contact-form-comments" name="comments" type="text" required title="Your comments" placeholder="I love your website!">
+                            <output name="comments-error"></output>
+                            <output name="comments-info"></output>
+                            <button type="submit" id="submit">Submit</button>
+                            <input name="possible_bot" type="text" value="true" hidden>
+                        </div>
+                    </form>
+                </section>   
+            </section>
+        </main>
+        <template>
+            <div class="message">
+                <picture>
+                    <source>
+                    <img>
+                </picture>
+                <div class="message-content-holder">
+                    <p class="message-sender"><time datetime="2023-10-31 21:34:03"></time></p>
+                    <p class="message-content">
+                    </p>
+                </div>
+            </div>
+        </template>
+    </body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Switch Savings Calculator</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Inline styles and JavaScript will be added later -->
+</head>
+<body>
+    <div class="container" x-data="savingsCalculator">
+        <h1>Smart Switch Savings Calculator</h1>
+
+        <div>
+            <label class="select-label" for="device-select">Select Device:</label>
+            <select id="device-select" x-model="selectedDevice">
+                <option value="light">Light</option>
+                <option value="fan">Fan</option>
+                <option value="heater">Heater</option>
+                <option value="ac">Air Conditioner</option>
+                <option value="fridge">Refrigerator</option>
+                <option value="washer">Washing Machine</option>
+                <option value="dryer">Dryer</option>
+                <option value="dishwasher">Dishwasher</option>
+                <option value="tv">Television</option>
+                <option value="computer">Computer</option>
+                <option value="apartment">Apartment</option>
+                <option value="smallHouse">Small House</option>
+                <option value="mediumHouse">Medium House</option>
+                <option value="largeHouse_2500">Large House 2500sqft</option>
+                <option value="largeHouse_3500">Large House 3500sqft</option>
+                <option value="largeHouse_4500">Large House 4500sqft</option>
+
+            </select>
+        </div>
+
+        <!-- Plan Selection -->
+        <div>
+            <label class="select-label" for="plan-select">Select Plan:</label>
+            <select id="plan-select" x-model="selectedPlan">
+                <option value="SDGE1">SDG&E TOU-DR1</option>
+                <option value="SDGE2">SDG&E TOU-DR2</option>
+                <option value="SDGE3">SDG&E TOU-ELEC</option>
+                <option value="SDGE4">SDG&E TOU-DR</option>
+            </select>
+        </div>
+
+        <!-- Device Usage Information -->
+        <div x-show="selectedDevice">
+            <h3>Device Usage</h3>
+            <p>Expected Monthly Usage: <span x-text="fixedMonthlyCost"></span>$</p>
+            <h3>Device Usage after switch</h3>
+            <p>Expected Monthly Usage: <span x-text="fixedMonthlyCostSwitch"></span> $</p>
+        </div>
+
+
+        <button @click="updateUsage">Calculate Savings</button>
+
+        <!-- Results Display -->
+        <div id="results" x-text="resultsMessage">
+            <!-- Results will be displayed here -->
+        </div>
+
+        <!-- Graphics and Visuals -->
+        <div id="graphics">
+            <div style="display: flex; justify-content: space-around; align-items: flex-end; height: 200px; border: 1px solid #ccc;">
+                <template x-for="(cost, index) in hourlyCosts" :key="index">
+                    <div :style="'height: ' + (20/500*cost) + 'px; width: 20px; background-color: blue; margin: 1px;'"></div>
+                </template>
+            </div>
+
+            <!-- Graph for smart switch usage -->
+            <div style="display: flex; justify-content: space-around; align-items: flex-end; height: 200px; border: 1px solid #ccc;">
+                <template x-for="(cost, index) in hourlyCostsWithSwitch" :key="index">
+                    <div :style="'height: ' + (20/500*cost) + 'px; width: 20px; background-color: green; margin: 1px;'"></div>
+                </template>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inline script will be added later -->
+</body>
+<script>
+    function calculateDailyCosts(deviceUsage, plansMap, selectedPlan, offPeakPercentage) {
+        let hourlyCosts = [];
+        let hourlyCostsWithSwitch = [];
+        let currentRate = 0;
+        let totalCost = 0;
+        let totalCostWithSwitch = 0;
+
+        for (let hour = 0; hour < 24; hour++) {
+            currentRate = Object.entries(plansMap[selectedPlan])
+                                .reverse()
+                                .find(([startHour,]) => hour >= startHour)[1];
+
+            let cost = deviceUsage.hourly * currentRate;
+            totalCost += cost;
+            hourlyCosts.push(totalCost);
+
+            if (hour >= 16 && hour < 21 && Math.random() < offPeakPercentage / 100) {
+                totalCostWithSwitch += 0;
+                hourlyCostsWithSwitch.push(totalCostWithSwitch); // Device off during peak hours
+            } else {
+                totalCostWithSwitch += cost;
+                hourlyCostsWithSwitch.push(totalCostWithSwitch);
+            }
+        }
+
+        return { hourlyCosts, hourlyCostsWithSwitch, totalCost, totalCostWithSwitch };
+    }
+
+
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('savingsCalculator', () => ({
+            selectedDevice: '',
+            selectedPlan: '',
+            averageHourlyUsage: 0,
+            expectedMonthlyUsage: 0,
+            resultsMessage: '',
+            offPeakPercentage: 75,
+            averageHourlyUsageSwitch: 0,
+            expectedMonthlyUsageSwitch: 0,
+            fixedHourlyCost: 0,
+            fixedMonthlyCost: 0,
+            fixedHourlyCostSwitch: 0,
+            fixedMonthlyCostSwitch: 0,
+            // Placeholder for actual usage values based on the selected device
+            usageMap : {
+                    'light': { hourly: 0.01, monthly: 3 }, // 10 watts LED bulb [17]
+                    'fan': { hourly: 0.033, monthly: 22.39 }, // Ceiling Fan [23][24]
+                    'heater': { hourly: 0.5, monthly: 180 }, // 500w heater [30]
+                    'ac': { hourly: 1.2, monthly: 864 }, // 12,000 BTU air conditioner [37]
+                    'fridge': { hourly: 0.1, monthly: 67.3 }, // French Door Refrigerator [43]
+                    'washer': { hourly: 0.793, monthly: 14.53 }, // Washing Machine [49][50]
+                    'dryer': { hourly: 3, monthly: 39 }, // 3,000 W clothes dryer [EnergySage]
+                    'dishwasher': { hourly: 0.04875, monthly: 20.98 }, // Dishwasher [63]
+                    'tv': { hourly: 0.1, monthly: 9.1 }, // Television [69][70]
+                    'computer': { hourly: 0.2, monthly: 48 }, // Desktop Computer [76][88]
+                    'apartment': { hourly: 1.20, monthly: 350 }, // Small House [U.S. Energy Information Administration][20†source][22†source][29†source]
+                     'smallHouse': { hourly: 1.20, monthly: 877 }, // Small House [U.S. Energy Information Administration][20†source][22†source][29†source]
+                     'mediumHouse': { hourly: 1.25, monthly: 912.5 }, // Medium House (2,000 sq ft) [U.S. Energy Information Administration][20†source][42†source]
+                     'largeHouse_2500': { hourly: 2 , monthly: 1460 }, // Large House (2,500 sq ft) [ComparePower.com][41†source]
+                     'largeHouse_3500': { hourly: 4, monthly: 2920 }, // Large House (3,500 sq ft) [ComparePower.com][41†source]
+                    'largeHouse_4500': { hourly: 5, monthly: 3650 } // Large House (4,500 sq ft) [ComparePower.com][41†source]
+
+                },
+            plansMap : {
+                    'SDGE1':{0: 41, 6:43.5, 16:51.9, 21: 41 },
+                    'SDGE2':{0: 42.3, 16:51.9, 21: 42.3 },
+                    'SDGE3':{0: 31.7, 6: 36.1, 16:50.2, 21:36.1},
+                    'SDGE4':{0: 45.3},
+            },
+
+            init() {
+                // Initialize with default values
+                this.selectedDevice = 'light';
+                this.selectedPlan = 'SDGE1';
+                this.updateUsage();
+            },
+
+            updateUsage() {
+                this.hourlyCosts=0;
+                this.hourlyCostsWithSwitch=0;
+                this.averageHourlyUsage=0;
+                this.expectedMonthlyUsage=0;
+                this.fixedHourlyCost=0;
+                this.fixedMonthlyCost=0;
+                this.averageHourlyUsageSwitch=0;
+                this.expectedMonthlyUsageSwitch=0;
+                this.fixedHourlyCostSwitch=0;
+                this.fixedMonthlyCostSwitch=0;
+
+                if (this.selectedDevice in this.usageMap) {
+                    const deviceUsage = this.usageMap[this.selectedDevice];
+                    for(let i=0; i<30; i++) {
+                        const costs = calculateDailyCosts(deviceUsage, this.plansMap, this.selectedPlan, this.offPeakPercentage);
+                        // for the graph
+                        this.hourlyCosts = costs.hourlyCosts;
+                        this.hourlyCostsWithSwitch = costs.hourlyCostsWithSwitch;
+
+
+
+                        this.expectedMonthlyUsage = (this.expectedMonthlyUsage+costs.totalCost);
+                        this.averageHourlyUsage = (this.expectedMonthlyUsage/i);
+                        this.fixedHourlyCost = this.averageHourlyUsage.toFixed(2)/100;
+                        this.fixedMonthlyCost = this.expectedMonthlyUsage.toFixed(2)/100;
+
+
+
+                        this.expectedMonthlyUsageSwitch = (this.expectedMonthlyUsageSwitch+costs.totalCostWithSwitch);
+                        this.averageHourlyUsageSwitch = (this.expectedMonthlyUsageSwitch/i);
+                        this.fixedHourlyCostSwitch = this.averageHourlyUsageSwitch.toFixed(2)/100;
+                        this.fixedMonthlyCostSwitch = this.expectedMonthlyUsageSwitch.toFixed(2)/100;
+
+                        // wait for quarter of a second
+                    }
+                }
+            },
+
+            calculateSavings() {
+
+            },
+        }));
+    });
+</script>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .container {
+        max-width: 600px;
+        margin: 40px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    select, button {
+        width: 80%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+    }
+    .select-label {
+        text-align: left;
+        margin: 10px 0;
+        width: 10rem;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    #results, #graphics {
+        margin-top: 20px;
+    }
+
+    #results {
+        color: #4CAF50;
+        font-size: 18px;
+    }
+
+</style>
+</html>

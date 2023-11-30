@@ -1,0 +1,250 @@
+@font-face {
+    font-family: manrope;
+    src: url(/static/fonts/Manrope-VariableFont_wght.ttf);
+}
+
+:root {
+    --main-color: #72BDA3;
+    --secondary-color: #5E8C61;
+}
+
+header {
+    box-sizing: border-box;
+    height: max(100vh, 40rem);
+    padding: 20vh 0 0 0;
+    background-color: var(--main-color);
+}
+
+.icon {
+    width: 3rem;
+    margin: 0 1vw 0 1vw
+}
+
+.icon-link {
+    text-decoration: none;
+}
+
+.profile-info {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.profile-info-headshot {
+    border-radius: 50%;
+    width: 20rem;
+    flex-basis: 100%;
+}
+
+.profile-info-name {
+    font-size: 3rem;
+    margin: 1vh;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    color: azure;
+    font-size: large;
+    font-family: manrope, sans-serif;
+}
+
+footer {
+    background-color: var(--main-color);
+    padding: 1rem;
+    text-align: center;
+}
+
+.nav-bar {
+    display: flex;
+    background-color: var(--main-color);
+    padding: 1rem;
+    flex-direction: column;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.links {
+    padding-top: 1rem;
+    display: inline-grid;
+    width: 100%;
+    grid-template-columns: 25% [col-1] 1fr [col-2] 1fr [col-3] 1fr [col-4] 60% [col-5];
+    background-color: var(--main-color);
+    
+}
+
+.links a {
+    max-height: 100%;
+    max-width: 50%;
+    margin: auto;
+}
+
+.links img {
+    width: 50rem;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.links #linkedin {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.links #github {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.links #resume {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.bio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--secondary-color);
+    
+}
+
+.bio-text {
+    text-align: center;
+    max-width: 50rem;
+    margin: 0 2rem 2rem 2rem;
+}
+
+.bio-email-link {
+    color: azure;
+    text-decoration: underline;
+}
+
+.projects-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.project-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #084C61;
+    padding: 2rem min(5%, 7rem);
+}
+
+.project-info-holder {
+    width: 40rem;
+    padding: 0 1rem 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.projects {
+    background-color: #084C61;
+    padding: 2rem min(5%, 7rem);
+}
+
+.project {
+    margin: 1rem;
+    background-color: #0F084B;
+}
+
+.project-main-img {
+    width: 30rem;
+    height: auto;
+    margin: 0 1rem 1rem 1rem;
+}
+
+.project-info-img {
+    width: min(80vw, 34rem);
+    height: auto;
+    margin: 0 1rem 1rem 1rem;
+}
+
+.projects h1 {
+    text-align: center;
+}
+
+.projects h3 {
+    font-size: min(1.5rem, 15vw); 
+    text-align: center;
+}
+
+.footer-text {
+    margin: 0;
+}
+
+.bio-classes {
+    width: min(63.5vw, 100rem);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    padding: 0.5vh;
+    margin: 0 0 1vh 0;
+    background-color: black;
+    align-items: center;
+}
+
+.bio-class-details {
+    margin: 0 0 2vh 0;
+}
+
+.bio-classes-summary {
+    cursor: pointer;
+    text-align: center;
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.bio-classes-link {
+    width: 30vw;
+    background-color: #084C61;
+    margin: 0.5vh 0.5vh 0.5vh 0.5vh; 
+    padding: 0 0.5vw 0 0.5vw;
+    text-decoration: none;
+    color: azure;
+    text-align: center;
+}
+
+
+.bio-classes-link-p {
+    max-width: 100%;
+    font-size: 1rem;
+    
+}
+
+.no-decor-link {
+    color: azure;
+}
+
+#class-dropdown {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 800px) {
+    .bio-classes-link {
+        width: 60vw;
+    }
+    .bio-classes {
+        width: 65vw;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .project-main-img {
+        width: 80vw;
+    }
+
+    .bio-classes-link,
+    .bio-classes {
+        width: 85vw;
+    }
+}
