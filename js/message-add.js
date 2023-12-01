@@ -179,11 +179,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     function change_theme() {
         let theme = theme_toggle.checked ? 'dark' : 'light'
-        localStorage.setItem('theme', theme);
         theme_apply(theme);
     }
 
     function theme_apply(state) {
+        localStorage.setItem('theme', state);
         if(state === 'dark') {
             theme_toggle.checked = true;
             root.style.setProperty('--left-color', localStorage.getItem('dark--left-color'));
