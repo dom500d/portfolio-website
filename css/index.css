@@ -97,7 +97,7 @@ main section > article {
 }
 
 #message-wrapper .message:last-child {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 main section > article .message img {
@@ -590,32 +590,32 @@ main section details {
     }
 } */
 
-/* @media (prefers-color-scheme: dark) {
-    hr {
+@media (prefers-color-scheme: dark) {
+    hr.dark {
         border-color: var(--left-text-color, azure);
     }
-    #page-header {
+    #page-header.dark {
         color: var(--left-text-color, azure);
     }
-    html body main {
+    html body main.dark {
         background-color: var(--dark-mode-background, gray);
         color: var(--left-text-color, azure);
     }
 
-    #message-wrapper .message {
+    #message-wrapper .message .dark {
         background-color: var(--dark-mode-background, gray);
     }
     
-    table {
+    table.dark {
         border-color: var(--left-text-color, azure);
     }
 
-    table td {
+    table td.dark {
         padding: 0.5rem;
         border-color: var(--left-text-color, azure);
     }
 
-    table caption {
+    table caption.dark {
         margin-bottom: 0.5vh;
     }
-} */
+}

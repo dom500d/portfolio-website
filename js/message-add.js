@@ -114,7 +114,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
             image = null;
             clone = null;
         }
-        
     }
 
     function get_existing_messages() {
@@ -174,7 +173,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 console.log('Something went wrong when changing the color theme');
             }
         }
-        
     }
 
     function change_theme() {
