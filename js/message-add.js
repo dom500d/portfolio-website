@@ -21,6 +21,12 @@ document.addEventListener("DOMContentLoaded", (event) => {
     
     let stored_theme = localStorage.getItem('theme') || null;
 
+    let dark_mode_query = window.matchMedia('(prefers-color-scheme: dark)');
+
+    dark_mode_query.addEventListener('change', dark_mode_listener);
+
+    dark_mode_listener(dark_mode_query);
+
     theme_apply(stored_theme);
 
     get_existing_messages();
@@ -216,6 +222,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
         left_text_color.value = getComputedStyle(root).getPropertyValue('--left-text-color');
         right_background_color.value = getComputedStyle(root).getPropertyValue('--right-color');
         right_text_color.value = getComputedStyle(root).getPropertyValue('--right-text-color');
+    }
+
+    function dark_mode_listener(mql) {
+        if(mql.matches) {
+            theme_apply('dark');
+        } else {
+            theme_apply('light');
+        }
     }
 });
 

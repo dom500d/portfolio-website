@@ -590,7 +590,7 @@ main section details {
     }
 } */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     hr {
         border-color: var(--left-text-color, azure);
     }
@@ -602,14 +602,14 @@ main section details {
         color: var(--left-text-color, azure);
     }
 
-    html body main section > article .message {
+    #message-wrapper .message {
         background-color: var(--dark-mode-background, gray);
     }
     
     table {
         border-color: var(--left-text-color, azure);
     }
-    
+
     table td {
         padding: 0.5rem;
         border-color: var(--left-text-color, azure);
@@ -618,4 +618,4 @@ main section details {
     table caption {
         margin-bottom: 0.5vh;
     }
-}
+} */
