@@ -485,11 +485,19 @@ main section details {
     }
   
     #contact-me {
-        width: calc(100% - 2rem);
+        display: none;
     }
 
     iframe {
         width: 100%;
+    }
+
+    #message-wrapper {
+        height: calc(100vh - (2vh + 1vh + 0.2em + 3rem));
+
+        & .message:last-child {
+            margin-bottom: 0;
+        }
     }
 
     main section div#nav-holder{
@@ -510,6 +518,12 @@ main section details {
                 pointer-events: all;
                 user-select: auto;
                 display: list-item;
+
+                &::-webkit-details-marker {
+                    content: '=';
+                    content: '\2261';
+                    font-size: 2.5rem;
+                }
              
                 &::marker {
                     content: '=';
@@ -537,6 +551,9 @@ main section details {
 }
 
 @media screen and (max-width: 600px) {
+    #page-header {
+        font-size: 2rem;
+    }
     #form-name-email {
         flex-direction: column;
         height: inherit;
