@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Dominic Orlando</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Google SEO Meta Tags -->
+        <meta name="description" content="Author: Dominic Orlando, Illustrator: Dominic Orlando, Category: Website">
+        <meta name="google-site-verification" content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34=">
+
+        <!-- Use https:// except for images and css since I don't know how to do it for images or how to add
+        a hash for css defined in style tag and not in external stylesheet-->
+        <meta http-equiv="content-security-policy" 
+            content="default-src https:; 
+                     img-src http:; 
+                     style-src 'self' 'unsafe-inline'; 
+                     font-src http:;
+                     script-src 'self' 'unsafe-inline';
+                     connect-src 'self' https:;
+                     media-src http:;">
+
+        <!-- Facebook SEO Meta Tags Sample -->
+        <meta property="og:url" content="index.html">
+        <meta property="og:type" content="article">
+        <meta property="og:title" content="Dominic Orlando">
+        <meta property="og:description" content="Portfolio Website">
+        
+        <meta name="robots" content="noindex nofollow">
+
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+        <script type="module" src="js/weather-widget.js"></script>
+        
+        <style>
+            body {
+                font-family: sans-serif;
+                background-color: antiquewhite;
+            }
+
+            current-weather {
+                --rating-widget-image-height: 10vh;
+                --rating-widget-background-color: bisque;
+                --rating-widget-border-radius: 15px;
+                --rating-widget-padding: 15px;
+                --weather-widget-font: 'Times New Roman', Times, serif;
+            }
+        </style>
+    </head>
+    <body>
+        <a href="/contact-me.html" style="display: block;">&lt; Back</a>
+        <current-weather>
+            <p>Current Weather Conditions Unavailable</p>
+        </current-weather>
+    </body>
+</html>

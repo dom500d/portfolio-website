@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", (event) => {
+    let contact_me = document.querySelectorAll('input, button');
+    for(let c of contact_me) {
+        c.removeAttribute('disabled');
+        // console.log(c);
+    }
     let theme_picker = document.querySelector('body main section #nav-holder #theme-picker');
     let div = document.createElement('div');
     theme_picker.removeChild(theme_picker.querySelector('p'));

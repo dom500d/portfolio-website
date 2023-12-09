@@ -43,6 +43,11 @@
                 font-family: manrope, sans-serif;
             }
         </style>
+
+        <script>
+            
+
+        </script>
     </head>
     <body>
         <div>
@@ -106,8 +111,6 @@
                         </summary>
                         <p>Unfortunately JavaScript needs to be enabled for this to work :/</p>
                     </details>
-<!--                     
-                    <label for="mode-switch">Color Mode Toggle: <input type="checkbox" id="mode-switch"></label> -->
                 </div>
                 <hr class="dark">
                 <article id="message-wrapper" aria-labelledby="messages-from-dominic">
@@ -122,7 +125,9 @@
                             <p class="message-content">
                                 Hi there, I'm <strong>Dominic Orlando</strong>, a 4th year Electrical Engineering student at UC San Diego. My Bachelor's degree specialization is in
                                 Machine Learning and Controls. I'm currently planning on doing my Masters in Electrical Engineering at UC San Diego as well. My research conecntration 
-                                will be in Machine Learning and Data Science.
+                                will be in Machine Learning and Data Science. This is my portfolio website I created. As you might notice, it's quite similar to the Slack UI, but unlike Slack,
+                                the messages sent (if you have JavaScript enabled), won't actually reach me or be visibile on any other machine but your own. There's a theme picker as well, which
+                                also requires JavaScript to be enabled. Enjoy!
                             </p>
                         </div>
                     </div>
@@ -197,25 +202,25 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <a href="https://catalog.ucsd.edu/courses/ECE.html#ece101" target="_blank">
-                                                <p class="bio-classes-link-p"><strong>ECE 101:</strong> Linear Systems</p>
+                                            <a href="https://catalog.ucsd.edu/courses/ECE.html#ece100" target="_blank">
+                                                <p class="bio-classes-link-p"><strong>ECE 100:</strong> Linear Electronic Systems</p>
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="https://catalog.ucsd.edu/courses/ECE.html#ece109" target="_blank">
-                                                <p class="bio-classes-link-p"><strong>ECE 109:</strong> Engineering Probability & Stats</p>
+                                            <a href="https://catalog.ucsd.edu/courses/CSE.html#cse134b" target="_blank">
+                                                <p class="bio-classes-link-p"><strong>CSE 134B:</strong> Engineering Probability & Stats</p>
                                             </a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            <a href="https://catalog.ucsd.edu/courses/ECE.html#ece101" target="_blank">
-                                                <p class="bio-classes-link-p"><strong>ECE 101:</strong> Linear Systems</p>
+                                            <a href="https://catalog.ucsd.edu/courses/ECE.html#ece141a" target="_blank">
+                                                <p class="bio-classes-link-p"><strong>ECE 141A:</strong> Software Foundations</p>
                                             </a>
                                         </td>
                                         <td>
-                                            <a href="https://catalog.ucsd.edu/courses/ECE.html#ece109" target="_blank">
-                                                <p class="bio-classes-link-p"><strong>ECE 109:</strong> Engineering Probability & Stats</p>
+                                            <a href="https://catalog.ucsd.edu/courses/MGT.html#mgt103" target="_blank">
+                                                <p class="bio-classes-link-p"><strong>MGT 103:</strong> Product Marketing and Management</p>
                                             </a>
                                         </td>
                                     </tr>
@@ -234,26 +239,13 @@
                                 <h3>Outside of Classes: </h3>
                                 <ol>
                                     <li>President of the UCSD Cycling team</li>
+                                    <li>Software Engineering Intern at Agile Displays</li>
                                     <li>Former Road Captain of the UCSD Cycling team</li>
-                                    <li>Internship experience (check resume)!</li>
+                                    <li>Hardware Engineering Intern at Capsulaser</li>
                                 </ol>
                             </aside>
                         </div>
                     </div>
-                    <div class="message dark">
-                        <picture title="Dominic Orlando">
-                            <source srcset="assets/IMG_3740_cropped.webp 250w" type="image/webp" sizes="(max-width: 600px) 200px, 300px">
-                            <img alt="Picture of Dominic Orlando" src="assets/IMG_3740_cropped.jpg" height="250" class="message-pic">
-                        </picture>
-                        <div class="message-content-holder">
-                            <p class="message-sender">Dominic Orlando <time datetime="2023-10-31 21:45:03">9:45pm</time></p>
-                            <p class="message-content">
-                                Hi there, I'm <strong>Dominic Orlando</strong>, a 4th year Electrical Engineering student at UC San Diego. My Bachelor's degree specialization is in
-                                Machine Learning and Controls. I'm currently planning on doing my Masters in Electrical Engineering at UC San Diego as well. My research conecntration 
-                                will be in Machine Learning and Data Science.
-                            </p>
-                        </div>
-                    </div>  
                     <div class="message dark">
                         <picture title="Dominic Orlando">
                             <source srcset="assets/IMG_3740_cropped.webp 250w" type="image/webp" sizes="(max-width: 600px) 200px, 300px">
@@ -273,28 +265,28 @@
                     <form action="https://httpbin.org/get" method="get" id="contact-form">
                         <div id="form-header">
                             <h3 id="contact-header">Message Dominic Orlando</h3>
-                            <button id="remove-messages" type="button">Remove messages</button>
+                            <button id="remove-messages" type="button" disabled>Remove messages</button>
                         </div>
                         <div id="form-name-email">
                             <div class="form-name-email-wrapper">
                                 <label id="contact-form-name-label" for="contact-form-name" title="Your name">Name: </label>
-                                <input id="contact-form-name" name="name" type="text" required title="Your name" placeholder="Dominic Orlando">
+                                <input id="contact-form-name" name="name" type="text" required title="Your name" placeholder="Dominic Orlando" disabled>
                                 <output name="name-error"></output>
                                 <output name="name-info"></output>
                             </div>
                             <div class="form-name-email-wrapper">
                                 <label id="contact-form-email-label" for="contact-form-email" title="Your email">Email: </label>
-                                <input id="contact-form-email" name="email" type="email" required title="Your email" placeholder="example@abc.com">
+                                <input id="contact-form-email" name="email" type="email" required title="Your email" placeholder="example@abc.com" disabled>
                                 <output name="email-error"></output>
                                 <output name="email-info"></output>
                             </div>
                         </div>
                         <div id="form-message">
                             <label for="contact-form-comments" title="Your comments">Comments: </label>
-                            <input id="contact-form-comments" name="comments" type="text" required title="Your comments" placeholder="I love your website!">
+                            <input id="contact-form-comments" name="comments" type="text" required title="Your comments" placeholder="I love your website!" disabled>
                             <output name="comments-error"></output>
                             <output name="comments-info"></output>
-                            <button type="submit" id="submit">Submit</button>
+                            <button type="submit" id="submit" disabled>Submit</button>
                             <input name="possible_bot" type="text" value="true" hidden>
                         </div>
                     </form>
