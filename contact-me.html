@@ -30,16 +30,6 @@
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     
         <style>
-            @keyframes flash {
-                50% {background: red;}
-                100% {background: white;}
-            }
-
-            @keyframes fade {
-                0%, 100% {opacity: 0;}
-                50% {opacity: 1;}
-            }
-
             @font-face {
                 font-family: manrope;
                 src: url(assets/fonts/Manrope-VariableFont_wght.ttf);
@@ -53,51 +43,9 @@
                 background-color: blanchedalmond;
             }
 
-            form {
-                display: flex;
-                flex-direction: column;
-                margin: 5dvh 25dvw;
-                background-color: beige;
-                padding: 1em;
-            }
-
             h1 {
                 margin-top: 5vh;
             }
-            
-            input, textarea {
-                border: 2px black solid;
-                &:user-invalid {
-                    border: 2px red solid;
-                }
-
-                &:user-valid {
-                    border: 2px green solid;
-                }
-
-                &:placeholder-shown {
-                    font-style: italic;
-                }
-
-                &:out-of-range {
-                    background-color: orange;
-                }
-            }
-
-            textarea {
-                width: 20dvw;
-            }
-
-            .invalid {
-                animation-name: flash;
-                animation-duration: 0.3s;
-                border: 2px red solid;
-            }
-
-            .error-message {
-                animation: fade 2s cubic-bezier(0.000, 0.957, 0.250, 1.000);
-            }
-
         </style>
     </head>
     <body>
