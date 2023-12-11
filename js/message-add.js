@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     let contact_me = document.querySelectorAll('input, button');
     for(let c of contact_me) {
         c.removeAttribute('disabled');
-        // console.log(c);
     }
+    init_colors();
     let theme_picker = document.querySelector('body main section #nav-holder #theme-picker');
     let div = document.createElement('div');
     theme_picker.removeChild(theme_picker.querySelector('p'));
@@ -232,6 +232,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
             theme_apply('dark');
         } else {
             theme_apply('light');
+        }
+    }
+
+    function init_colors() {
+        if(localStorage.getItem('dark--left-color') === null) {
+            localStorage.setItem('dark--left-color', '#454545');
+            localStorage.setItem('dark--left-text-color', '#e0e0e0');
+            localStorage.setItem('dark--right-color', '#6f6d6d');
+            localStorage.setItem('dark--right-text-color', '#e0e0e0');
         }
     }
 });
