@@ -9,6 +9,14 @@ html {
     height: -webkit-fill-avaiable;
 }
 
+details.disabled summary::-webkit-details-marker { 
+    display: none !important;
+} 
+details.disabled summary {
+    list-style: none !important;
+    margin-left: 1dvw;
+}
+
 body {
     width: 100vw;
     height: 100vh;
@@ -590,7 +598,7 @@ main section details {
     }
 } */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     hr.dark {
         border-color: var(--left-text-color, azure);
     }
@@ -618,4 +626,4 @@ main section details {
     table caption.dark {
         margin-bottom: 0.5vh;
     }
-}
+} */
