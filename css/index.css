@@ -47,7 +47,8 @@ body > div > * {
 body > div > #experiment-page li {
     color: black;
 }
-#experiment-page li:nth-child(1) {
+
+/* #experiment-page li:nth-child(1) {
     background-color: color-mix(in srgb, var(--nested-color-demo, green) 0%, white);
 }
 #experiment-page li:nth-child(2) {
@@ -74,7 +75,7 @@ body > div > #experiment-page li {
 }
 #experiment-page li:nth-child(9) {
     background-color: color-mix(in srgb, var(--nested-color-demo, green) 100%, white);
-}
+} */
 
 main {
     flex: 1;
