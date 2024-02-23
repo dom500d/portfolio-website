@@ -7,7 +7,7 @@
 
 html {
     height: -webkit-fill-avaiable;
-    -webkit-font-smoothing: antialiased;
+    
 }
 
 details.disabled summary::-webkit-details-marker { 
@@ -30,6 +30,7 @@ body {
     color: var(--text-color);
     overflow-x: hidden;
     overflow-y: hidden;
+    -webkit-font-smoothing: antialiased;
 }
 
 body > div {
