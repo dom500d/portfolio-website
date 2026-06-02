@@ -1,299 +1,379 @@
 <!DOCTYPE html>
-<html lang="en-US">
-    <head>
-        <title>Dominic Orlando</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        
-        <!-- Google SEO Meta Tags -->
-        <meta name="description" content="Author: Dominic Orlando, Illustrator: Dominic Orlando, Category: Website">
-        <meta name="google-site-verification" content="+nxGUDJ4QpAZ5l9Bsjdi102tLVC21AIh5d1Nl23908vVuFHs34=">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dominic Orlando | Engineer & Builder</title>
 
-        <!-- Use https:// except for images and css since I don't know how to do it for images or how to add
-        a hash for css defined in style tag and not in external stylesheet-->
-        <meta http-equiv="content-security-policy" 
-            content="default-src https:; 
-                     img-src http:; 
-                     style-src 'self' 'unsafe-inline'; 
-                     font-src http:;
-                     script-src 'self' 'unsafe-inline';
-                     connect-src 'self' https:;
-                     media-src http:;">
+  <!-- SEO -->
+  <meta name="description" content="Electrical Engineer specializing in Machine Learning, Controls, and building things that go fast. UCSD graduate, cycling team president, car enthusiast.">
+  <meta name="author" content="Dominic Orlando">
 
-        <!-- Facebook SEO Meta Tags Sample -->
-        <meta property="og:url" content="index.html">
-        <meta property="og:type" content="article">
-        <meta property="og:title" content="Dominic Orlando">
-        <meta property="og:description" content="Portfolio Website">
-        
-        <meta name="robots" content="noindex nofollow">
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-        <link rel="stylesheet" href="css/index.css" media="screen">
-        <link rel="stylesheet" href="css/print.css" media="print">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dominic Orlando | Engineer & Builder">
+  <meta property="og:description" content="Electrical Engineer specializing in Machine Learning, Controls, and building things that go fast.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dorlando.tech">
 
-        <script src="js/message-add.js"></script>
-        
-        <style>
-            @font-face {
-                font-family: manrope;
-                src: url(assets/fonts/Manrope-VariableFont_wght.ttf);
-            }
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 
-            body {
-                font-family: manrope, sans-serif;
-            }
-        </style>
-    </head>
-    <body>
-        <div>
-            <header>
-                <section id="introduction">
-                    <h1>Dominic Orlando</h1>
-                    <picture title="Dominic Orlando">
-                        <source srcset="assets/IMG_3740_cropped.webp 250w" type="image/webp" sizes="(max-width: 600px) 200px, 300px">
-                        <img alt="Picture of Dominic Orlando" src="assets/IMG_3740_cropped.jpg" height="250" id="bio-picture">
-                    </picture>
-                </section>
-                <section id="navigation">
-                    <details open>
-                        <summary><h2>Channels</h2></summary>
-                        <nav>
-                            <ul>
-                                <li><a href="index.html"># Biography</a></li>
-                                <li><a href="#classes"># Classes</a></li>
-                                <li><a href="projects.html"># Projects</a></li>
-                                <li><a href="experiments.html"># Experiments</a></li>
-                                <li><a href="contact-me.html"># Contact Me</a></li>
-                                <li><a href="old_website/old-site.html" target="_blank"># Old Site</a></li>
-                                <li><a href="https://www.linkedin.com/in/dominic-orlando-/" target="_blank"># Linkedin</a></li>
-                                <li><a href="/assets/Resume.pdf" target="_blank"># Resume</a></li>
-                                <li><a href="https://github.com/dom500d" target="_blank"># Github</a></li>
-                            </ul>
-                        </nav>
-                    </details>
-                </section>
-            </header>
-            <footer>
-                <p id="copyright">&copy; <a href="mailto:dorlando@ucsd.edu">Dominic Orlando</a></p>
-            </footer>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <!-- Navigation Overlay (Mobile) -->
+  <div class="nav-overlay" id="navOverlay"></div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="/" class="header__logo">
+        <span class="text-gradient">DO</span>
+      </a>
+
+      <nav class="header__nav" id="mainNav">
+        <a href="#projects" class="header__link">Projects</a>
+        <a href="#about" class="header__link">About</a>
+        <a href="#experience" class="header__link">Experience</a>
+        <a href="#contact" class="header__link">Contact</a>
+        <a href="assets/Resume.pdf" target="_blank" class="header__link">Resume</a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero section" id="hero">
+      <div class="hero__background">
+        <div class="hero__gradient"></div>
+        <div class="hero__lines"></div>
+      </div>
+
+      <div class="container hero__content">
+        <p class="hero__eyebrow">Engineer / Builder / Cyclist</p>
+
+        <h1 class="hero__title">
+          <span class="hero__title-line">Dominic</span>
+          <span class="hero__title-line text-gradient">Orlando</span>
+        </h1>
+
+        <p class="hero__subtitle">
+          Electrical Engineer specializing in <strong>Machine Learning</strong> and <strong>Controls</strong>.
+          I build autonomous systems, turbo cars, and web experiences.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
         </div>
-        <main class="dark">
-            <section id="bio-section" aria-labelledby="page-header">
-                <!-- Using an article below looks like i can't use the h2 to label the section. This is why I decided to use a div here.
-                I could use a section but I feel like again I then can't use the heading to label the over-arching section here. -->
-                <div id="nav-holder">
-                    <details class="disabled">
-                        <summary>
-                            <h2 id="page-header" class="dark"> # Biography </h2>
-                        </summary>
-                        <nav>
-                            <ul>
-                                <li><a href="index.html"># Biography</a></li>
-                                <li><a href="#classes"># Classes</a></li>
-                                <li><a href="projects.html"># Projects</a></li>
-                                <li><a href="experiments.html"># Experiments</a></li>
-                                <li><a href="contact-me.html"># Contact Me</a></li>
-                                <li><a href="old_website/old-site.html" target="_blank"># Old Site</a></li>
-                                <li><a href="https://www.linkedin.com/in/dominic-orlando-/" target="_blank"># Linkedin</a></li>
-                                <li><a href="/assets/Resume.pdf" target="_blank"># Resume</a></li>
-                                <li><a href="https://github.com/dom500d" target="_blank"># Github</a></li>
-                            </ul>
-                        </nav>
-                    </details>
-                    <details id="theme-picker">
-                        <summary>
-                            <h3>Theme picker</h3>
-                        </summary>
-                        <p>Unfortunately JavaScript needs to be enabled for this to work :/</p>
-                    </details>
-                </div>
-                <hr class="dark">
-                <article id="message-wrapper" aria-labelledby="messages-from-dominic">
-                    <h3 class="visually-hidden" id="messages-from-dominic">Messages from Dominic</h3>
-                    <div class="message dark">
-                        <picture title="Dominic Orlando">
-                            <source srcset="assets/IMG_3740_cropped.webp 250w" type="image/webp" sizes="(max-width: 600px) 200px, 300px">
-                            <img alt="Picture of Dominic Orlando" src="assets/IMG_3740_cropped.jpg" height="250" class="message-pic">
-                        </picture>
-                        <div class="message-content-holder">
-                            <p class="message-sender">Dominic Orlando <time datetime="2023-10-31 21:34:03">9:34pm</time></p>
-                            <p class="message-content">
-                                Hi there, I'm <strong>Dominic Orlando</strong>, a 4th year Electrical Engineering student at UC San Diego. My Bachelor's degree specialization is in
-                                Machine Learning and Controls. I'm currently planning on doing my Masters in Electrical Engineering at UC San Diego as well. My research concentration 
-                                will be in Machine Learning and Data Science. This is my portfolio website I created. As you might notice, it's quite similar to the Slack UI, but unlike Slack,
-                                the messages sent (if you have JavaScript enabled), won't actually reach me or be visible on any other machine but your own. There's a theme picker as well, which
-                                also requires JavaScript to be enabled. Enjoy!
-                            </p>
-                        </div>
-                    </div>
-                    <div class="message dark">
-                        <picture title="Dominic Orlando">
-                            <source srcset="assets/IMG_3740_cropped.webp 250w" type="image/webp" sizes="(max-width: 600px) 200px, 300px">
-                            <img alt="Picture of Dominic Orlando" src="assets/IMG_3740_cropped.jpg" height="250" class="message-pic">
-                        </picture>
-                        <div class="message-content-holder">
-                            <p class="message-sender">Dominic Orlando <time datetime="2023-10-31 21:37:03">9:37pm</time></p>
-                            <table id="classes" class="message-content">
-                                <caption>
-                                    Education Information
-                                </caption>
-                                <colgroup>
-                                    <col span="1" class="left-side">
-                                    <col span="1" class="right-side">
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th colspan="2">Courses Taken</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <a href="https://catalog.ucsd.edu/courses/ECE.html#ece148" target="_blank">
-                                                <p class="bio-classes-link-p"><strong>ECE 148:</strong> Autonomous Vehicles</p>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="https://catalog.ucsd.edu/courses/ECE.html#ece176" target="_blank">
-                                                <p class="bio-classes-link-p"><strong>ECE 176:</strong> Deep Learning & Applications</p>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="https://catalog.ucsd.edu/courses/ECE.html#ece176" target="_blank">
-                                                <p class="bio-classes-link-p"><strong>ECE 140A/B:</strong> Product Engineering</p>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="https://catalog.ucsd.edu/courses/ECE.html#ece174" target="_blank">
-                                                <p class="bio-classes-link-p"><strong>ECE 174:</strong> Linear and Nonlinear Optimization</p>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="https://catalog.ucsd.edu/courses/ECE.html#ece175a" target="_blank">
-                                                <p class="bio-classes-link-p"><strong>ECE 175A:</strong> M.L. and Pattern Recognition</p>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="https://catalog.ucsd.edu/courses/ECE.html#ece171a" target="_blank">
-                                                <p class="bio-classes-link-p"><strong>ECE 171A:</strong> Linear Control Theory</p>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="https://catalog.ucsd.edu/courses/ECE.html#ece101" target="_blank">
-                                                <p class="bio-classes-link-p"><strong>ECE 101:</strong> Linear Systems</p>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="https://catalog.ucsd.edu/courses/ECE.html#ece109" target="_blank">
-                                                <p class="bio-classes-link-p"><strong>ECE 109:</strong> Engineering Probability & Stats</p>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="https://catalog.ucsd.edu/courses/ECE.html#ece100" target="_blank">
-                                                <p class="bio-classes-link-p"><strong>ECE 100:</strong> Linear Electronic Systems</p>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="https://catalog.ucsd.edu/courses/CSE.html#cse134b" target="_blank">
-                                                <p class="bio-classes-link-p"><strong>CSE 134B:</strong> Web Client Languages</p>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <a href="https://catalog.ucsd.edu/courses/ECE.html#ece141a" target="_blank">
-                                                <p class="bio-classes-link-p"><strong>ECE 141A:</strong> Software Foundations</p>
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <a href="https://catalog.ucsd.edu/courses/MGT.html#mgt103" target="_blank">
-                                                <p class="bio-classes-link-p"><strong>MGT 103:</strong> Product Marketing and Management</p>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="message dark">
-                        <picture title="Dominic Orlando">
-                            <source srcset="assets/IMG_3740_cropped.webp 250w" type="image/webp" sizes="(max-width: 600px) 200px, 300px">
-                            <img alt="Picture of Dominic Orlando" src="assets/IMG_3740_cropped.jpg" height="250" class="message-pic">
-                        </picture>
-                        <div class="message-content-holder">
-                            <p class="message-sender">Dominic Orlando <time datetime="2023-10-31 21:41:03">9:41pm</time></p>
-                            <aside class="message-content">
-                                <h3>Outside of Classes: </h3>
-                                <ol>
-                                    <li>President of the UCSD Cycling team</li>
-                                    <li>Software Engineering Intern at Agile Displays</li>
-                                    <li>Former Road Captain of the UCSD Cycling team</li>
-                                    <li>Hardware Engineering Intern at Capsulaser</li>
-                                </ol>
-                            </aside>
-                        </div>
-                    </div>
-                    <div class="message dark">
-                        <picture title="Dominic Orlando">
-                            <source srcset="assets/IMG_3740_cropped.webp 250w" type="image/webp" sizes="(max-width: 600px) 200px, 300px">
-                            <img alt="Picture of Dominic Orlando" src="assets/IMG_3740_cropped.jpg" height="250" class="message-pic">
-                        </picture>
-                        <div class="message-content-holder">
-                            <p class="message-sender">Dominic Orlando <time datetime="2023-10-31 21:45:03">9:45pm</time></p>
-                            <p class="message-content">
-                                <img style="border:0;width:88px;height:31px;border-radius:0" 
-                                    src="assets/funny-w3c-css-validation.gif"
-                                    alt="Valid CSS!">
-                            </p>
-                        </div>
-                    </div>
-                </article>
-                <section id="contact-me" aria-labelledby="contact-header">
-                    <form action="https://httpbin.org/get" method="get" id="contact-form">
-                        <div id="form-header">
-                            <h3 id="contact-header">Message Dominic Orlando</h3>
-                            <button id="remove-messages" type="button" disabled>Remove messages</button>
-                        </div>
-                        <div id="form-name-email">
-                            <div class="form-name-email-wrapper">
-                                <label id="contact-form-name-label" for="contact-form-name" title="Your name">Name: </label>
-                                <input id="contact-form-name" name="name" type="text" required title="Your name" placeholder="Dominic Orlando" disabled>
-                            </div>
-                            <div class="form-name-email-wrapper">
-                                <label id="contact-form-email-label" for="contact-form-email" title="Your email">Email: </label>
-                                <input id="contact-form-email" name="email" type="email" required title="Your email" placeholder="example@abc.com" disabled>
-                            </div>
-                        </div>
-                        <div id="form-message">
-                            <label for="contact-form-comments" title="Your comments">Comments: </label>
-                            <input id="contact-form-comments" name="comments" type="text" required title="Your comments" placeholder="I love your website!" disabled>
-                            <button type="submit" id="submit" disabled>Submit</button>
-                            <input name="possible_bot" type="text" value="true" hidden>
-                        </div>
-                    </form>
-                </section> 
-            </section>
-        </main>
-        <template>
-            <div class="message">
-                <picture>
-                    <source srcset="assets/no-picture.png">
-                    <img src="assets/no-picture.png" class="message-pic">
-                </picture>
-                <div class="message-content-holder">
-                    <p class="message-sender"><time datetime="2023-10-31 21:34:03"></time></p>
-                    <p class="message-content">
-                    </p>
-                </div>
+      </div>
+
+      <div class="hero__scroll scroll-indicator">
+        <span class="scroll-indicator__text">Scroll</span>
+        <div class="scroll-indicator__arrow"></div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects section" id="projects">
+      <div class="container">
+        <header class="section-header" data-animate>
+          <p class="section-label">Featured Work</p>
+          <h2 class="section-title">Projects</h2>
+        </header>
+
+        <div class="projects-grid">
+          <!-- Project 1: Aegis -->
+          <article class="project-card card" data-animate data-delay="1">
+            <div class="project-card__image-wrapper">
+              <img
+                src="assets/aegis-hardware.png"
+                alt="Aegis autonomous vehicle hardware setup"
+                class="project-card__image"
+                loading="lazy"
+              >
+              <div class="project-card__overlay"></div>
+              <span class="project-card__number">01</span>
             </div>
-        </template>
-    </body>
+            <div class="card__content">
+              <div class="project-card__tags">
+                <span class="tag">Autonomous Vehicles</span>
+                <span class="tag">Deep Learning</span>
+              </div>
+              <h3 class="project-card__title">Aegis</h3>
+              <p class="project-card__description">
+                End-to-end autonomous vehicle project using computer vision and deep learning for real-time navigation and obstacle avoidance.
+              </p>
+            </div>
+          </article>
+
+          <!-- Project 2: BMW E46 Turbo Build -->
+          <article class="project-card card" data-animate data-delay="2">
+            <div class="project-card__image-wrapper">
+              <img
+                src="assets/hard-hack-edited.jpg"
+                alt="BMW E46 turbo project"
+                class="project-card__image"
+                loading="lazy"
+              >
+              <div class="project-card__overlay"></div>
+              <span class="project-card__number">02</span>
+            </div>
+            <div class="card__content">
+              <div class="project-card__tags">
+                <span class="tag">Automotive</span>
+                <span class="tag">ECU Tuning</span>
+              </div>
+              <h3 class="project-card__title">E46 Turbo Build</h3>
+              <p class="project-card__description">
+                Manual-swapped 2002 BMW 325ci with custom turbo setup, GT35 turbo, rebuilt 3.0L engine, and custom MS43 ECU tuning.
+              </p>
+            </div>
+          </article>
+
+          <!-- Project 3: ProstheTech -->
+          <article class="project-card card" data-animate data-delay="3">
+            <div class="project-card__image-wrapper">
+              <img
+                src="assets/hard-hack-edited.jpg"
+                alt="ProstheTech hackathon project"
+                class="project-card__image"
+                loading="lazy"
+              >
+              <div class="project-card__overlay"></div>
+              <span class="project-card__number">03</span>
+            </div>
+            <div class="card__content">
+              <div class="project-card__tags">
+                <span class="tag">Hardware</span>
+                <span class="tag">Hackathon</span>
+              </div>
+              <h3 class="project-card__title">ProstheTech</h3>
+              <p class="project-card__description">
+                Overall runner-up at HARD Hack 2023. Prosthetic technology project combining hardware engineering with accessible design.
+              </p>
+            </div>
+          </article>
+
+          <!-- Project 4: Portfolio Website -->
+          <article class="project-card card" data-animate data-delay="4">
+            <div class="project-card__image-wrapper">
+              <div class="project-card__image" style="background: var(--graphite); display: flex; align-items: center; justify-content: center;">
+                <span class="text-gradient" style="font-size: 3rem; font-family: var(--font-display);">DO</span>
+              </div>
+              <div class="project-card__overlay"></div>
+              <span class="project-card__number">04</span>
+            </div>
+            <div class="card__content">
+              <div class="project-card__tags">
+                <span class="tag">Web Dev</span>
+                <span class="tag">Design</span>
+              </div>
+              <h3 class="project-card__title">This Website</h3>
+              <p class="project-card__description">
+                Custom-built portfolio with dynamic motion design, CSS animations, and a performance-focused architecture.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about section" id="about">
+      <div class="container">
+        <header class="section-header" data-animate>
+          <p class="section-label">Who I Am</p>
+          <h2 class="section-title">About</h2>
+        </header>
+
+        <div class="about__content">
+          <div class="about__image-wrapper" data-animate="fade-left">
+            <img
+              src="assets/IMG_3740_cropped.jpg"
+              alt="Dominic Orlando"
+              class="about__image"
+            >
+            <div class="about__image-accent"></div>
+          </div>
+
+          <div class="about__info" data-animate="fade-right">
+            <div class="about__text">
+              <p>
+                I'm an <span class="about__highlight">Electrical Engineer</span> with a deep focus on
+                <span class="about__highlight">Machine Learning</span> and <span class="about__highlight">Control Systems</span>.
+                I recently completed my Bachelor's at UC San Diego and am continuing my Master's there,
+                researching ML and Data Science applications.
+              </p>
+              <p>
+                Outside of academics, I lead the <span class="about__highlight">UCSD Cycling Team</span> as president
+                and spend my weekends either on the bike or under the hood of my turbo E46. I believe the best
+                engineers are the ones who build things with their hands.
+              </p>
+              <p>
+                I'm drawn to problems at the intersection of hardware and software, whether that's
+                autonomous vehicles, embedded systems, or custom ECU tuning. If it moves fast and
+                requires precision, I'm interested.
+              </p>
+            </div>
+
+            <div class="about__stats">
+              <div class="stat">
+                <p class="stat__number">5+</p>
+                <p class="stat__label">Years Coding</p>
+              </div>
+              <div class="stat">
+                <p class="stat__number">10+</p>
+                <p class="stat__label">Projects Built</p>
+              </div>
+              <div class="stat">
+                <p class="stat__number">2</p>
+                <p class="stat__label">Internships</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience section" id="experience">
+      <div class="container">
+        <header class="section-header" data-animate>
+          <p class="section-label">Where I've Worked</p>
+          <h2 class="section-title">Experience</h2>
+        </header>
+
+        <div class="experience__content">
+          <div class="timeline">
+            <article class="timeline__item" data-animate data-delay="1">
+              <p class="timeline__date">2023 - Present</p>
+              <h3 class="timeline__title">Software Engineering Intern</h3>
+              <p class="timeline__company">Agile Displays</p>
+              <p>
+                Developing software solutions for display technology. Working on embedded systems
+                and user interfaces for industrial applications.
+              </p>
+            </article>
+
+            <article class="timeline__item" data-animate data-delay="2">
+              <p class="timeline__date">2022 - 2023</p>
+              <h3 class="timeline__title">Hardware Engineering Intern</h3>
+              <p class="timeline__company">Capsulaser</p>
+              <p>
+                Worked on laser systems hardware. Gained hands-on experience with precision
+                instrumentation and control electronics.
+              </p>
+            </article>
+
+            <article class="timeline__item" data-animate data-delay="3">
+              <p class="timeline__date">2021 - Present</p>
+              <h3 class="timeline__title">President</h3>
+              <p class="timeline__company">UCSD Cycling Team</p>
+              <p>
+                Leading a competitive cycling team. Managing logistics, organizing events,
+                and building team culture. Previously served as Road Captain.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <header class="section-header" data-animate>
+          <p class="section-label">Get in Touch</p>
+          <h2 class="section-title">Contact</h2>
+        </header>
+
+        <div class="contact__content">
+          <div class="contact__info" data-animate="fade-left">
+            <h3>Let's build something together.</h3>
+            <p>
+              Whether you have a project idea, job opportunity, or just want to chat about
+              cars and bikes, I'd love to hear from you.
+            </p>
+
+            <div class="social-links">
+              <a href="https://github.com/dom500d" target="_blank" class="social-link" aria-label="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                </svg>
+              </a>
+              <a href="https://www.linkedin.com/in/dominic-orlando-/" target="_blank" class="social-link" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                  <rect x="2" y="9" width="4" height="12"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+              </a>
+              <a href="mailto:dorlando@ucsd.edu" class="social-link" aria-label="Email">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <form class="contact__form" data-animate="fade-right">
+            <div class="form-group">
+              <label class="form-label" for="name">Name</label>
+              <input type="text" id="name" name="name" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email</label>
+              <input type="email" id="email" name="email" class="form-input" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Message</label>
+              <textarea id="message" name="message" class="form-textarea" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p class="footer__text">
+        &copy; 2024 Dominic Orlando. Built with precision.
+      </p>
+      <div class="social-links">
+        <a href="https://github.com/dom500d" target="_blank" class="social-link" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/dominic-orlando-/" target="_blank" class="social-link" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
 </html>
