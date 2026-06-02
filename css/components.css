@@ -109,11 +109,13 @@
   background: transparent;
   color: var(--white);
   border: 1px solid var(--steel);
+  clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
 }
 
 .btn-secondary:hover {
   border-color: var(--velocity);
   color: var(--velocity);
+  transform: translateX(4px);
 }
 
 .btn-ghost {
