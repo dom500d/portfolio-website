@@ -135,8 +135,25 @@ async function handleStats(env, corsHeaders) {
 
   const stats = await response.json();
 
+  // Count current KOMs/QOMs (segment efforts where the athlete holds the crown).
+  // Strava's stats endpoint doesn't include this, so fetch the koms list and count.
+  let komsCount = 0;
+  try {
+    const komsResp = await fetch(
+      `${STRAVA_API_BASE}/athletes/${env.ATHLETE_ID}/koms?per_page=200`,
+      { headers: { Authorization: `Bearer ${accessToken}` } }
+    );
+    if (komsResp.ok) {
+      const komsList = await komsResp.json();
+      komsCount = Array.isArray(komsList) ? komsList.length : 0;
+    }
+  } catch (e) {
+    komsCount = 0;
+  }
+
   // Transform to only what we need
   const transformed = {
+    koms_count: komsCount,
     ytd_ride: {
       count: stats.ytd_ride_totals?.count || 0,
       distance_miles: Math.round((stats.ytd_ride_totals?.distance || 0) / 1609.34),

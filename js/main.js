@@ -437,6 +437,8 @@ function initStravaStats() {
     miles: document.getElementById('statMiles'),
     elevation: document.getElementById('statElevation'),
     hours: document.getElementById('statHours'),
+    koms: document.getElementById('statKoms'),
+    careerMiles: document.getElementById('statCareerMiles'),
   };
 
   // Check if all elements exist
@@ -457,14 +459,13 @@ function initStravaStats() {
       animateNumber(statElements.miles, data.ytd_ride.distance_miles, ',');
       animateNumber(statElements.elevation, data.ytd_ride.elevation_feet, ',');
       animateNumber(statElements.hours, data.ytd_ride.moving_time_hours);
+      animateNumber(statElements.koms, data.koms_count);
+      animateNumber(statElements.careerMiles, data.all_ride.distance_miles, ',');
 
     } catch (error) {
       console.warn('Could not load Strava stats:', error);
       // Show placeholder values on error
-      statElements.rides.textContent = '--';
-      statElements.miles.textContent = '--';
-      statElements.elevation.textContent = '--';
-      statElements.hours.textContent = '--';
+      Object.values(statElements).forEach(el => { el.textContent = '--'; });
     }
   }
 
