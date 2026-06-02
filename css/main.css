@@ -8,7 +8,8 @@
 @import 'base.css';
 @import 'components.css';
 @import 'animations.css';
-@import 'responsive.css';
+/* responsive.css is linked separately in index.html AFTER this file so its
+   media-query overrides win over the section rules defined below. */
 
 /* ========================================
    PAGE-SPECIFIC STYLES
