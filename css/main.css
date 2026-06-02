@@ -304,3 +304,57 @@
   border-radius: var(--radius-md);
   border: 1px solid var(--steel);
 }
+
+/* ---- Simplified Contact ---- */
+
+.contact__simple {
+  max-width: 600px;
+}
+
+.contact__text {
+  font-size: var(--text-h3);
+  color: var(--smoke);
+  margin-bottom: var(--space-xl);
+}
+
+.social-links--large {
+  gap: var(--space-lg);
+}
+
+.social-links--large .social-link {
+  width: auto;
+  padding: var(--space-sm) var(--space-lg);
+  gap: var(--space-sm);
+}
+
+.social-links--large .social-link span {
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ---- Placeholders ---- */
+
+.project-card__placeholder {
+  background: var(--graphite);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  color: var(--steel);
+  letter-spacing: 0.05em;
+}
+
+.project-card__placeholder .text-gradient {
+  font-size: var(--text-h1);
+}
+
+.about__placeholder {
+  background: var(--graphite);
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+}
