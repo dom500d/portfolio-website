@@ -270,4 +270,21 @@ function initContactForm() {
 
 // Initialize additional features
 initActiveNavLink();
-initContactForm();
+initEmailObfuscation();
+
+/* ---- Email Obfuscation ---- */
+
+function initEmailObfuscation() {
+  const emailLink = document.getElementById('emailLink');
+  if (!emailLink) return;
+
+  // Split up to avoid scrapers
+  const user = 'dorlando';
+  const domain = 'ucsd';
+  const tld = 'edu';
+
+  emailLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.location.href = 'mailto:' + user + '@' + domain + '.' + tld;
+  });
+}
