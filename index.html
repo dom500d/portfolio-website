@@ -6,14 +6,21 @@
   <title>Dominic Orlando</title>
 
   <!-- SEO -->
-  <meta name="description" content="Software Engineer. UCSD Electrical Engineering MS. I build things.">
+  <meta name="description" content="Engineer, racer, and builder. Software engineer with an MS in Electrical Engineering from UC San Diego — I race bikes and build cars.">
   <meta name="author" content="Dominic Orlando">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Dominic Orlando">
-  <meta property="og:description" content="Software Engineer. UCSD Electrical Engineering MS.">
+  <meta property="og:description" content="Engineer, racer, and builder. Software engineer with an MS in Electrical Engineering from UC San Diego — I race bikes and build cars.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://dorlando.tech">
+  <meta property="og:image" content="https://dorlando.tech/assets/og-cbr-1200x630.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://dorlando.tech/assets/og-cbr-1200x630.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
@@ -38,8 +45,9 @@
       </a>
 
       <nav class="header__nav" id="mainNav">
-        <a href="#projects" class="header__link">Projects</a>
         <a href="#about" class="header__link">About</a>
+        <a href="#cycling" class="header__link">Cycling</a>
+        <a href="#projects" class="header__link">Projects</a>
         <a href="#experience" class="header__link">Experience</a>
         <a href="#contact" class="header__link">Contact</a>
         <a href="assets/Resume.pdf" target="_blank" class="header__link">Resume</a>
@@ -62,15 +70,13 @@
       </div>
 
       <div class="container hero__content">
-        <p class="hero__eyebrow">Software Engineer</p>
-
         <h1 class="hero__title">
           <span class="hero__title-line">Dominic</span>
           <span class="hero__title-line text-gradient">Orlando</span>
         </h1>
 
         <p class="hero__subtitle">
-          I write software, work on cars, and race bikes.
+          Engineer, racer, builder.
         </p>
 
         <div class="hero__actions">
@@ -85,102 +91,6 @@
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="projects section" id="projects">
-      <div class="container">
-        <header class="section-header" data-animate>
-          <p class="section-label">What I've Built</p>
-          <h2 class="section-title">Projects</h2>
-        </header>
-
-        <div class="projects-grid">
-          <!-- Project 1: Aegis -->
-          <article class="project-card card" data-animate data-delay="1">
-            <div class="project-card__image-wrapper">
-              <div class="project-card__image project-card__placeholder">
-                <span>AEGIS</span>
-              </div>
-              <div class="project-card__overlay"></div>
-              <span class="project-card__number">01</span>
-            </div>
-            <div class="card__content">
-              <div class="project-card__tags">
-                <span class="tag">ECE 148</span>
-                <span class="tag">Autonomous Vehicles</span>
-              </div>
-              <h3 class="project-card__title">Aegis</h3>
-              <p class="project-card__description">
-                Autonomous vehicle project for ECE 148. I worked on the hardware platform and helped get the car driving autonomously.
-              </p>
-            </div>
-          </article>
-
-          <!-- Project 2: BMW E46 Turbo Build -->
-          <article class="project-card card" data-animate data-delay="2">
-            <div class="project-card__image-wrapper">
-              <div class="project-card__image project-card__placeholder">
-                <span>E46</span>
-              </div>
-              <div class="project-card__overlay"></div>
-              <span class="project-card__number">02</span>
-            </div>
-            <div class="card__content">
-              <div class="project-card__tags">
-                <span class="tag">Automotive</span>
-                <span class="tag">Fabrication</span>
-              </div>
-              <h3 class="project-card__title">E46 Turbo Build</h3>
-              <p class="project-card__description">
-                My 2002 BMW 325ci that I've been building. It started as an automatic but now has a 5-speed, a GT35 turbo, a built 3.0L motor, custom MS43 tune, and a welded diff.
-              </p>
-            </div>
-          </article>
-
-          <!-- Project 3: ProstheTech -->
-          <article class="project-card card" data-animate data-delay="3">
-            <div class="project-card__image-wrapper">
-              <div class="project-card__image project-card__placeholder">
-                <span>PROSTHETECH</span>
-              </div>
-              <div class="project-card__overlay"></div>
-              <span class="project-card__number">03</span>
-            </div>
-            <div class="card__content">
-              <div class="project-card__tags">
-                <span class="tag">Hackathon</span>
-                <span class="tag">Hardware</span>
-              </div>
-              <h3 class="project-card__title">ProstheTech</h3>
-              <p class="project-card__description">
-                A prosthetic device project that my team and I built at HARD Hack 2023. We came in as overall runner-up.
-              </p>
-            </div>
-          </article>
-
-          <!-- Project 4: This Website -->
-          <article class="project-card card" data-animate data-delay="4">
-            <div class="project-card__image-wrapper">
-              <div class="project-card__image project-card__placeholder">
-                <span class="text-gradient">DO</span>
-              </div>
-              <div class="project-card__overlay"></div>
-              <span class="project-card__number">04</span>
-            </div>
-            <div class="card__content">
-              <div class="project-card__tags">
-                <span class="tag">Web</span>
-                <span class="tag">Design</span>
-              </div>
-              <h3 class="project-card__title">This Site</h3>
-              <p class="project-card__description">
-                This portfolio site, which I built from scratch using HTML, CSS, and vanilla JavaScript.
-              </p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <!-- About Section -->
     <section class="about section" id="about">
       <div class="container">
@@ -191,7 +101,7 @@
 
         <div class="about__content">
           <div class="about__image-wrapper" data-animate="fade-left">
-            <div class="about__image about__placeholder"></div>
+            <img class="about__image" src="assets/dominic-grad.jpg" alt="Dominic Orlando at UCSD graduation">
             <div class="about__image-accent"></div>
           </div>
 
@@ -201,10 +111,7 @@
                 I'm a Software Engineer at <span class="about__highlight">CSC Global</span>. I got my MS in Electrical Engineering from UC San Diego in 2025, and my BS was in EE with a focus on Machine Learning and Controls.
               </p>
               <p>
-                I used to be president of the <span class="about__highlight">UCSD Cycling Team</span>. I still race when I can, and I still wrench on my turbo E46 when I have time.
-              </p>
-              <p>
-                I like building things that go fast.
+                I led the <span class="about__highlight">UCSD Cycling Team</span> through college, and I'm currently racing for <span class="about__highlight">Deus Velox</span>, a San Diego based cycling team, travelling and competing at a national level.
               </p>
             </div>
 
@@ -227,6 +134,223 @@
       </div>
     </section>
 
+    <!-- Cycling Section -->
+    <section class="cycling section" id="cycling">
+      <div class="container">
+        <header class="section-header" data-animate>
+          <p class="section-label">On Two Wheels</p>
+          <h2 class="section-title">Cycling</h2>
+        </header>
+
+        <div class="cycling__content">
+          <div class="cycling__hero" data-animate>
+            <img class="cycling__hero-image" src="assets/cbr-factor-sick.JPG" alt="Dominic Orlando racing in UCSD cycling kit">
+          </div>
+
+          <div class="cycling__stats" data-animate>
+            <div class="cycling__stat-card">
+              <div class="cycling__stat-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="5.5" cy="17.5" r="3.5"/>
+                  <circle cx="18.5" cy="17.5" r="3.5"/>
+                  <path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 11.5V14l-3-3 4-3 2 3h2"/>
+                </svg>
+              </div>
+              <p class="cycling__stat-value" id="statRides">--</p>
+              <p class="cycling__stat-label">Rides This Year</p>
+            </div>
+            <div class="cycling__stat-card">
+              <div class="cycling__stat-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="6" cy="19" r="3"/>
+                  <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/>
+                  <circle cx="18" cy="5" r="3"/>
+                </svg>
+              </div>
+              <p class="cycling__stat-value" id="statMiles">--</p>
+              <p class="cycling__stat-label">Miles This Year</p>
+            </div>
+            <div class="cycling__stat-card">
+              <div class="cycling__stat-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m8 3 4 8 5-5 5 14H2L8 3z"/>
+                </svg>
+              </div>
+              <p class="cycling__stat-value" id="statElevation">--</p>
+              <p class="cycling__stat-label">Feet Climbed</p>
+            </div>
+            <div class="cycling__stat-card">
+              <div class="cycling__stat-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <p class="cycling__stat-value" id="statHours">--</p>
+              <p class="cycling__stat-label">Hours in Saddle</p>
+            </div>
+          </div>
+
+          <div class="cycling__koms" data-animate data-delay="1">
+            <h3 class="cycling__koms-title">Recent KOMs</h3>
+            <div class="cycling__koms-list" id="komsList">
+              <p class="cycling__koms-loading">Loading...</p>
+            </div>
+          </div>
+
+          <div class="cycling__links" data-animate data-delay="2">
+            <a href="https://www.strava.com/athletes/79925918" target="_blank" class="social-link social-link--strava">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169"/>
+              </svg>
+              <span>Strava</span>
+            </a>
+            <a href="https://www.road-results.com/racer/235760" target="_blank" class="social-link">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M8 21h8M12 17v4M5 12l7-9 7 9M5 12h14v5H5z"/>
+              </svg>
+              <span>Race Results</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects section" id="projects">
+      <div class="container">
+        <header class="section-header" data-animate>
+          <p class="section-label">What I've Built</p>
+          <h2 class="section-title">Projects</h2>
+        </header>
+
+        <div class="projects-grid">
+          <!-- Project 1: Aegis -->
+          <article class="project-card card" data-animate data-delay="1" data-project="aegis">
+            <div class="project-card__image-wrapper">
+              <img class="project-card__image" src="assets/aegis-hardware.png" alt="Aegis smart electricity monitoring hardware setup">
+              <div class="project-card__overlay"></div>
+              <span class="project-card__number">01</span>
+            </div>
+            <div class="card__content">
+              <div class="project-card__tags">
+                <span class="tag">IoT</span>
+                <span class="tag">Smart Home</span>
+              </div>
+              <h3 class="project-card__title">Aegis</h3>
+              <p class="project-card__description">
+                A smart electricity monitoring system for the home. Uses an ESP32, current sensors, and MQTT to track power usage and control thermostat and HVAC.
+              </p>
+              <button class="btn btn-ghost project-card__btn">View Details</button>
+            </div>
+          </article>
+
+          <!-- Project 2: BMW E46 Turbo Build -->
+          <article class="project-card card" data-animate data-delay="2" data-project="e46">
+            <div class="project-card__image-wrapper">
+              <img class="project-card__image" src="assets/turbo-e46.jpeg" alt="Turbocharged BMW E46 325ci with angel-eye headlights at night">
+              <div class="project-card__overlay"></div>
+              <span class="project-card__number">02</span>
+            </div>
+            <div class="card__content">
+              <div class="project-card__tags">
+                <span class="tag">Automotive</span>
+                <span class="tag">Fabrication</span>
+              </div>
+              <h3 class="project-card__title">E46 Turbo Build</h3>
+              <p class="project-card__description">
+                My 2002 BMW 325ci that I've been building. It started as an automatic but now has a 5-speed, a GT35 turbo, a built 3.0L motor, custom MS43 tune, and a welded diff.
+              </p>
+              <button class="btn btn-ghost project-card__btn">View Details</button>
+            </div>
+          </article>
+
+          <!-- Project 3: ProstheTech -->
+          <article class="project-card card" data-animate data-delay="3" data-project="prosthetech">
+            <div class="project-card__image-wrapper">
+              <img class="project-card__image" src="assets/hard-hack-edited.webp" alt="ProstheTech team at HARD Hack 2023">
+              <div class="project-card__overlay"></div>
+              <span class="project-card__number">03</span>
+            </div>
+            <div class="card__content">
+              <div class="project-card__tags">
+                <span class="tag">Hackathon</span>
+                <span class="tag">Hardware</span>
+              </div>
+              <h3 class="project-card__title">ProstheTech</h3>
+              <p class="project-card__description">
+                A prosthetic device project that my team and I built at HARD Hack 2023. We came in as overall runner-up.
+              </p>
+              <button class="btn btn-ghost project-card__btn">View Details</button>
+            </div>
+          </article>
+
+          <!-- Project 4: ECE 148 Autonomous Car -->
+          <article class="project-card card" data-animate data-delay="4" data-project="ece148">
+            <div class="project-card__image-wrapper">
+              <div class="project-card__image project-card__placeholder">
+                <span>ECE 148</span>
+              </div>
+              <div class="project-card__overlay"></div>
+              <span class="project-card__number">04</span>
+            </div>
+            <div class="card__content">
+              <div class="project-card__tags">
+                <span class="tag">Autonomous Vehicles</span>
+                <span class="tag">Robotics</span>
+              </div>
+              <h3 class="project-card__title">Autonomous Car</h3>
+              <p class="project-card__description">
+                Autonomous vehicle project for ECE 148. I worked on the hardware platform and helped get the car driving autonomously.
+              </p>
+              <button class="btn btn-ghost project-card__btn">View Details</button>
+            </div>
+          </article>
+
+          <!-- Project 5: Triton Crit -->
+          <article class="project-card card" data-animate data-delay="5" data-project="tritoncrit">
+            <div class="project-card__image-wrapper">
+              <img class="project-card__image" src="assets/triton_crit.jpg" alt="Triton Crit cycling race in San Diego">
+              <div class="project-card__overlay"></div>
+              <span class="project-card__number">05</span>
+            </div>
+            <div class="card__content">
+              <div class="project-card__tags">
+                <span class="tag">Event Planning</span>
+                <span class="tag">Cycling</span>
+              </div>
+              <h3 class="project-card__title">Triton Crit</h3>
+              <p class="project-card__description">
+                Organized and hosted a cycling race in San Diego for the UCSD Cycling Team. Managed city permits, USAC sanctioning, insurance, business outreach, and race day logistics.
+              </p>
+              <button class="btn btn-ghost project-card__btn">View Details</button>
+            </div>
+          </article>
+
+          <!-- Project 6: This Website -->
+          <article class="project-card card" data-animate data-delay="6">
+            <div class="project-card__image-wrapper">
+              <div class="project-card__image project-card__placeholder">
+                <span class="text-gradient">DO</span>
+              </div>
+              <div class="project-card__overlay"></div>
+              <span class="project-card__number">06</span>
+            </div>
+            <div class="card__content">
+              <div class="project-card__tags">
+                <span class="tag">Web</span>
+                <span class="tag">Design</span>
+              </div>
+              <h3 class="project-card__title">This Site</h3>
+              <p class="project-card__description">
+                This portfolio site, which I built from scratch using HTML, CSS, and vanilla JavaScript.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- Experience Section -->
     <section class="experience section" id="experience">
       <div class="container">
@@ -244,18 +368,30 @@
             </article>
 
             <article class="timeline__item" data-animate data-delay="2">
+              <p class="timeline__date">Jun 2024 - Aug 2024</p>
+              <h3 class="timeline__title">Sensing Intern</h3>
+              <p class="timeline__company">Shield AI</p>
+            </article>
+
+            <article class="timeline__item" data-animate data-delay="3">
+              <p class="timeline__date">Mar 2024 - Jun 2024</p>
+              <h3 class="timeline__title">Software Engineer</h3>
+              <p class="timeline__company">Terrascope</p>
+            </article>
+
+            <article class="timeline__item" data-animate data-delay="4">
               <p class="timeline__date">2023 - 2024</p>
               <h3 class="timeline__title">Software Engineering Intern</h3>
               <p class="timeline__company">Agile Displays</p>
             </article>
 
-            <article class="timeline__item" data-animate data-delay="3">
+            <article class="timeline__item" data-animate data-delay="5">
               <p class="timeline__date">2022 - 2023</p>
               <h3 class="timeline__title">Hardware Engineering Intern</h3>
               <p class="timeline__company">Capsulaser</p>
             </article>
 
-            <article class="timeline__item" data-animate data-delay="4">
+            <article class="timeline__item" data-animate data-delay="6">
               <p class="timeline__date">2021 - 2024</p>
               <h3 class="timeline__title">President / Road Captain</h3>
               <p class="timeline__company">UCSD Cycling Team</p>
@@ -305,6 +441,20 @@
       </div>
     </section>
   </main>
+
+  <!-- Project Modal -->
+  <div class="modal" id="projectModal">
+    <div class="modal__backdrop"></div>
+    <div class="modal__content">
+      <button class="modal__close" aria-label="Close modal">&times;</button>
+      <div class="modal__image" id="modalImage"></div>
+      <div class="modal__body">
+        <div class="modal__tags" id="modalTags"></div>
+        <h2 class="modal__title" id="modalTitle"></h2>
+        <div class="modal__description" id="modalDescription"></div>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">

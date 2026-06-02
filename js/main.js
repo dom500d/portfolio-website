@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeader();
   initMobileMenu();
   initSmoothScroll();
+  initProjectModal();
 });
 
 /* ---- Scroll Animations (Intersection Observer) ---- */
@@ -271,6 +272,142 @@ function initContactForm() {
 // Initialize additional features
 initActiveNavLink();
 initEmailObfuscation();
+initStravaStats();
+
+/* ---- Project Modal ---- */
+
+function initProjectModal() {
+  const modal = document.getElementById('projectModal');
+  if (!modal) return;
+
+  const modalImage = document.getElementById('modalImage');
+  const modalTags = document.getElementById('modalTags');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDescription = document.getElementById('modalDescription');
+  const closeBtn = modal.querySelector('.modal__close');
+  const backdrop = modal.querySelector('.modal__backdrop');
+
+  // Project data
+  const projects = {
+    aegis: {
+      title: 'Aegis',
+      tags: ['IoT', 'Smart Home'],
+      image: 'assets/aegis-hardware.png',
+      description: `
+        <p>Aegis is a smart electricity monitoring system designed to give homeowners visibility and control over their power usage.</p>
+        <p><strong>Technical Details:</strong></p>
+        <ul>
+          <li>ESP32 microcontroller as the main processing unit</li>
+          <li>Current sensors to monitor electricity consumption</li>
+          <li>Temperature and humidity sensors for environmental data</li>
+          <li>MQTT protocol for publish/subscribe messaging</li>
+          <li>Raspberry Pi as central hub running the thermostat logic</li>
+          <li>Web interface for data visualization and controls</li>
+          <li>Integration with furnace and AC for HVAC control</li>
+        </ul>
+      `
+    },
+    e46: {
+      title: 'E46 Turbo Build',
+      tags: ['Automotive', 'Fabrication'],
+      image: null,
+      description: `
+        <p>My 2002 BMW 325ci that I've been building from the ground up. Started as an automatic daily driver, now it's a turbocharged drift car.</p>
+        <p><strong>Modifications:</strong></p>
+        <ul>
+          <li>Manual swapped with a 5-speed from an E46</li>
+          <li>Lightened flywheel with stronger clutch and pressure plate</li>
+          <li>Custom exhaust header and downpipe</li>
+          <li>GT35-clone turbocharger</li>
+          <li>Electronic boost control</li>
+          <li>Wideband O2 sensor</li>
+          <li>Custom MS43 (ECU) tuning</li>
+          <li>MAF from an Audi RS4</li>
+          <li>M50 manifold conversion</li>
+          <li>Freshly built 3.0L engine with thicker head gasket and cutting rings</li>
+          <li>Welded differential (3.46 ratio) for drifting</li>
+        </ul>
+      `
+    },
+    prosthetech: {
+      title: 'ProstheTech',
+      tags: ['Hackathon', 'Hardware'],
+      image: 'assets/hard-hack-edited.webp',
+      description: `
+        <p>A prosthetic device project built at HARD Hack 2023, where my team and I came in as overall runner-up.</p>
+        <p>HARD Hack is a hardware-focused hackathon hosted by UCSD students, challenging teams to build physical devices in a limited time.</p>
+        <p><a href="https://github.com/ymorsi7/ProstheTech" target="_blank">View on GitHub</a></p>
+      `
+    },
+    ece148: {
+      title: 'Autonomous Car',
+      tags: ['Autonomous Vehicles', 'Robotics'],
+      image: null,
+      description: `
+        <p>Autonomous vehicle project for ECE 148 (Introduction to Autonomous Vehicles) at UC San Diego.</p>
+        <p>I worked on the hardware platform and helped get the car driving autonomously using computer vision and control systems.</p>
+      `
+    },
+    tritoncrit: {
+      title: 'Triton Crit',
+      tags: ['Event Planning', 'Cycling'],
+      image: 'assets/triton_crit.jpg',
+      description: `
+        <p>Organized and hosted a criterium cycling race in San Diego for the UCSD Cycling Team.</p>
+        <p><strong>Responsibilities:</strong></p>
+        <ul>
+          <li>Secured venue and submitted permit application with City of San Diego (2+ months in advance)</li>
+          <li>Obtained USAC (USA Cycling) permit and sanctioning</li>
+          <li>Coordinated with police for cost estimates and required safety equipment</li>
+          <li>Managed special event insurance requirements</li>
+          <li>Conducted business outreach - distributed flyers and coordinated access for businesses open on race day</li>
+          <li>Handled race day logistics and safety coordination</li>
+        </ul>
+      `
+    }
+  };
+
+  function openModal(projectId) {
+    const project = projects[projectId];
+    if (!project) return;
+
+    // Set content
+    modalTitle.textContent = project.title;
+    modalTags.innerHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+    modalDescription.innerHTML = project.description;
+
+    if (project.image) {
+      modalImage.innerHTML = `<img src="${project.image}" alt="${project.title}">`;
+    } else {
+      modalImage.innerHTML = `<span class="modal__image-placeholder">${project.title.substring(0, 3).toUpperCase()}</span>`;
+    }
+
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  // Event listeners - make entire card clickable
+  document.querySelectorAll('[data-project]').forEach(card => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal(card.dataset.project);
+    });
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+      closeModal();
+    }
+  });
+}
 
 /* ---- Email Obfuscation ---- */
 
@@ -287,4 +424,132 @@ function initEmailObfuscation() {
     e.preventDefault();
     window.location.href = 'mailto:' + user + '@' + domain + '.' + tld;
   });
+}
+
+/* ---- Strava Stats ---- */
+
+function initStravaStats() {
+  // Update this URL to your deployed Cloudflare Worker
+  const STRAVA_WORKER_URL = 'https://strava-stats.domvorlando.workers.dev';
+
+  const statElements = {
+    rides: document.getElementById('statRides'),
+    miles: document.getElementById('statMiles'),
+    elevation: document.getElementById('statElevation'),
+    hours: document.getElementById('statHours'),
+  };
+
+  // Check if all elements exist
+  if (!Object.values(statElements).every(el => el)) return;
+
+  async function fetchStats() {
+    try {
+      const response = await fetch(`${STRAVA_WORKER_URL}/stats`);
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch stats');
+      }
+
+      const data = await response.json();
+
+      // Animate the numbers
+      animateNumber(statElements.rides, data.ytd_ride.count);
+      animateNumber(statElements.miles, data.ytd_ride.distance_miles, ',');
+      animateNumber(statElements.elevation, data.ytd_ride.elevation_feet, ',');
+      animateNumber(statElements.hours, data.ytd_ride.moving_time_hours);
+
+    } catch (error) {
+      console.warn('Could not load Strava stats:', error);
+      // Show placeholder values on error
+      statElements.rides.textContent = '--';
+      statElements.miles.textContent = '--';
+      statElements.elevation.textContent = '--';
+      statElements.hours.textContent = '--';
+    }
+  }
+
+  // Simple number animation
+  function animateNumber(element, target, separator = '') {
+    const duration = 1000;
+    const start = 0;
+    const startTime = performance.now();
+
+    function update(currentTime) {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // Ease out cubic
+      const easeProgress = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(start + (target - start) * easeProgress);
+
+      element.textContent = separator
+        ? current.toLocaleString()
+        : current.toString();
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  // Fetch KOMs
+  const komsList = document.getElementById('komsList');
+
+  async function fetchKOMs() {
+    if (!komsList) return;
+
+    try {
+      const response = await fetch(`${STRAVA_WORKER_URL}/koms`);
+
+      if (!response.ok) {
+        throw new Error('Failed to fetch KOMs');
+      }
+
+      const koms = await response.json();
+
+      if (koms.length === 0) {
+        komsList.innerHTML = '<p class="cycling__koms-loading">No KOMs yet</p>';
+        return;
+      }
+
+      komsList.innerHTML = koms.map(kom => `
+        <div class="cycling__kom-item">
+          <div>
+            <p class="cycling__kom-segment">${kom.segment_name}</p>
+            <div class="cycling__kom-meta">
+              ${kom.distance ? `<span>${kom.distance}</span>` : ''}
+              ${kom.speed ? `<span>${kom.speed}</span>` : ''}
+              ${kom.average_grade ? `<span>${kom.average_grade}</span>` : ''}
+            </div>
+          </div>
+          <div class="cycling__kom-stats">
+            <span class="cycling__kom-time">${kom.time}</span>
+            <span class="cycling__kom-power">${kom.average_watts ? `${kom.average_watts}W` : ''}</span>
+          </div>
+        </div>
+      `).join('');
+
+    } catch (error) {
+      console.warn('Could not load KOMs:', error);
+      komsList.innerHTML = '<p class="cycling__koms-loading">--</p>';
+    }
+  }
+
+  // Fetch stats when cycling section is in view
+  const cyclingSection = document.getElementById('cycling');
+  if (!cyclingSection) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        fetchStats();
+        fetchKOMs();
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  observer.observe(cyclingSection);
 }

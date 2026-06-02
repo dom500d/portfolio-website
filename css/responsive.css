@@ -122,6 +122,24 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* Cycling Mobile */
+  .cycling__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cycling__kom-item {
+    grid-template-columns: 1fr;
+    gap: var(--space-xs);
+  }
+
+  .cycling__kom-stats {
+    justify-content: flex-start;
+  }
+
+  .cycling__links {
+    flex-wrap: wrap;
+  }
+
   /* Timeline Mobile */
   .timeline {
     padding-left: var(--space-lg);
@@ -162,6 +180,10 @@
   }
 
   .about__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .cycling__stats {
     grid-template-columns: 1fr;
   }
 

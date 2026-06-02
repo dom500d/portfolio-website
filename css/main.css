@@ -60,27 +60,6 @@
   z-index: 1;
 }
 
-.hero__eyebrow {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  font-family: var(--font-mono);
-  font-size: var(--text-small);
-  color: var(--velocity);
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  margin-bottom: var(--space-md);
-  opacity: 0;
-  animation: fadeInUp 0.6s var(--ease-out) 0.1s forwards;
-}
-
-.hero__eyebrow::before {
-  content: '';
-  width: 40px;
-  height: 1px;
-  background: var(--velocity);
-}
-
 .hero__title {
   font-size: var(--text-hero);
   line-height: 0.95;
@@ -123,6 +102,7 @@
 
 .project-card {
   position: relative;
+  cursor: pointer;
 }
 
 .project-card__image-wrapper {
@@ -266,6 +246,189 @@
   color: var(--smoke);
   text-transform: uppercase;
   letter-spacing: 0.1em;
+}
+
+/* ---- Cycling Section ---- */
+
+.cycling {
+  background: var(--carbon);
+}
+
+.cycling__content {
+  max-width: 900px;
+}
+
+.cycling__hero {
+  margin-bottom: var(--space-xl);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--steel);
+}
+
+.cycling__hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.cycling__stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  margin-bottom: var(--space-xl);
+}
+
+.cycling__stat-card {
+  background: var(--carbon);
+  border: 1px solid var(--steel);
+  border-radius: var(--radius-sm);
+  padding: var(--space-lg);
+  text-align: center;
+  transition: border-color var(--duration-fast) var(--ease-out),
+              transform var(--duration-fast) var(--ease-out);
+}
+
+.cycling__stat-card:hover {
+  border-color: var(--velocity);
+  transform: translateY(-2px);
+}
+
+.cycling__stat-icon {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto var(--space-sm);
+  color: var(--velocity);
+}
+
+.cycling__stat-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.cycling__stat-value {
+  font-family: var(--font-display);
+  font-size: var(--text-h2);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: var(--space-xs);
+}
+
+.cycling__stat-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  color: var(--smoke);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.cycling__koms {
+  margin-bottom: var(--space-xl);
+}
+
+.cycling__koms-title {
+  font-size: var(--text-h3);
+  margin-bottom: var(--space-md);
+}
+
+.cycling__koms-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.cycling__koms-loading {
+  color: var(--smoke);
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+}
+
+.cycling__kom-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-md);
+  align-items: center;
+  background: var(--graphite);
+  border: 1px solid var(--steel);
+  border-radius: var(--radius-sm);
+  padding: var(--space-sm) var(--space-md);
+  transition: border-color var(--duration-fast) var(--ease-out);
+}
+
+.cycling__kom-item:hover {
+  border-color: var(--velocity);
+}
+
+.cycling__kom-segment {
+  font-weight: 500;
+  color: var(--white);
+}
+
+.cycling__kom-meta {
+  display: flex;
+  gap: var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  color: var(--smoke);
+  margin-top: 4px;
+}
+
+.cycling__kom-meta span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cycling__kom-stats {
+  display: flex;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+.cycling__kom-time {
+  font-family: var(--font-mono);
+  font-size: var(--text-body);
+  color: var(--velocity);
+  font-weight: 600;
+}
+
+.cycling__kom-power {
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  color: var(--smoke);
+  min-width: 50px;
+  text-align: right;
+}
+
+.cycling__links {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.cycling__links .social-link {
+  width: auto;
+  height: auto;
+  padding: var(--space-sm) var(--space-md);
+  gap: var(--space-xs);
+}
+
+.cycling__links .social-link svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.cycling__links .social-link span {
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.social-link--strava:hover {
+  color: #fc4c02;
+  border-color: #fc4c02;
 }
 
 /* ---- Experience Section ---- */

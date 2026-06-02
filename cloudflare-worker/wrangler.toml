@@ -1,0 +1,22 @@
+name = "strava-stats"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+# Non-sensitive config
+ATHLETE_ID = "79925918"
+
+# Secrets (set via `wrangler secret put`):
+# STRAVA_CLIENT_ID
+# STRAVA_CLIENT_SECRET
+# STRAVA_REFRESH_TOKEN
+
+# KV namespace for caching tokens
+[[kv_namespaces]]
+binding = "STRAVA_CACHE"
+id = "03cc018ea05f40989608acbe53cdb983"
+
+# CORS - your domain
+[vars.ALLOWED_ORIGIN]
+# Set this to your actual domain
+default = "https://dorlando.tech"

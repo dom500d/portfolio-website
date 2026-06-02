@@ -1,1 +1,3 @@
 *.py
+.claude/settings.local.json
+.wrangler/
