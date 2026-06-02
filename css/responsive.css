@@ -81,7 +81,8 @@
     transform: rotate(-45deg) translate(5px, -6px);
   }
 
-  /* Mobile overlay */
+  /* Mobile overlay — must sit below the header so the slide-in nav
+     (nested in .header's stacking context) stays clickable */
   .nav-overlay {
     position: fixed;
     inset: 0;
@@ -90,7 +91,7 @@
     visibility: hidden;
     transition: opacity var(--duration-normal) var(--ease-out),
                 visibility var(--duration-normal) var(--ease-out);
-    z-index: calc(var(--z-modal) - 1);
+    z-index: calc(var(--z-fixed) - 1);
   }
 
   .nav-overlay.is-visible {
