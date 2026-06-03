@@ -11,15 +11,27 @@
   right: 0;
   height: var(--header-height);
   z-index: var(--z-fixed);
-  transition: background-color var(--duration-normal) var(--ease-out),
-              backdrop-filter var(--duration-normal) var(--ease-out);
 }
 
-.header.scrolled {
+/* Blurred bar lives on a pseudo-element, NOT on .header itself. Applying
+   backdrop-filter to .header would make it the containing block for its
+   position:fixed descendants — trapping the mobile nav drawer and clipping it
+   to the header height once scrolled. The pseudo-element avoids that. */
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
   background-color: rgba(10, 10, 10, 0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--steel);
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-out);
+  z-index: -1;
+}
+
+.header.scrolled::before {
+  opacity: 1;
 }
 
 .header__inner {
