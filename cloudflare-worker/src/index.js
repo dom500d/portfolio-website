@@ -237,9 +237,10 @@ async function handleKOMs(env, corsHeaders) {
     };
   });
 
-  // Cache for 1 hour (KOMs don't change often)
+  // Cache for 30 minutes to match the /stats cadence, so the KOM count
+  // (served by /stats) and this Recent KOMs list refresh together.
   await env.STRAVA_CACHE.put(cacheKey, JSON.stringify(transformed), {
-    expirationTtl: 3600,
+    expirationTtl: 1800,
   });
 
   return new Response(JSON.stringify(transformed), { headers: corsHeaders });
