@@ -156,12 +156,19 @@ function initSmoothScroll() {
 
       e.preventDefault();
 
+      // The mobile menu locks body scroll (overflow:hidden) while open; that
+      // would make scrollTo a no-op. Release it before scrolling, and defer a
+      // frame so the unlock is applied first.
+      document.body.style.overflow = '';
+
       const headerHeight = document.getElementById('header')?.offsetHeight || 0;
       const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
 
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
+      requestAnimationFrame(() => {
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
       });
 
       // Update URL without jumping
