@@ -185,8 +185,27 @@ function initActiveNavLink() {
 
   if (!sections.length || !navLinks.length) return;
 
+  function setActive(sectionId) {
+    navLinks.forEach(link => {
+      link.classList.remove('header__link--active');
+      if (link.getAttribute('href') === `#${sectionId}`) {
+        link.classList.add('header__link--active');
+      }
+    });
+  }
+
   function updateActiveLink() {
     const scrollPosition = window.pageYOffset + 100;
+
+    // Short trailing sections (e.g. contact) never reach the top boundary
+    // because the page runs out of scroll room. Once we're near the bottom,
+    // pin the last section as active.
+    const nearBottom = window.innerHeight + window.pageYOffset >=
+      document.documentElement.scrollHeight - 120;
+    if (nearBottom) {
+      setActive(sections[sections.length - 1].getAttribute('id'));
+      return;
+    }
 
     sections.forEach(section => {
       const sectionTop = section.offsetTop;
@@ -194,12 +213,7 @@ function initActiveNavLink() {
       const sectionId = section.getAttribute('id');
 
       if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-        navLinks.forEach(link => {
-          link.classList.remove('header__link--active');
-          if (link.getAttribute('href') === `#${sectionId}`) {
-            link.classList.add('header__link--active');
-          }
-        });
+        setActive(sectionId);
       }
     });
   }
@@ -300,6 +314,7 @@ function initProjectModal() {
       title: 'Aegis',
       tags: ['IoT', 'Smart Home'],
       image: 'assets/aegis-hardware.png',
+      imageWebp: 'assets/aegis-hardware.webp',
       description: `
         <p>Aegis is a smart electricity monitoring system designed to give homeowners visibility and control over their power usage.</p>
         <p><strong>Technical Details:</strong></p>
@@ -339,7 +354,8 @@ function initProjectModal() {
     prosthetech: {
       title: 'ProstheTech',
       tags: ['Hackathon', 'Hardware'],
-      image: 'assets/hard-hack-edited.webp',
+      image: 'assets/hard-hack-edited.jpg',
+      imageWebp: 'assets/hard-hack-edited.webp',
       description: `
         <p>A prosthetic device project built at HARD Hack 2023, where my team and I came in as overall runner-up.</p>
         <p>HARD Hack is a hardware-focused hackathon hosted by UCSD students, challenging teams to build physical devices in a limited time.</p>
@@ -359,6 +375,7 @@ function initProjectModal() {
       title: 'Triton Crit',
       tags: ['Event Planning', 'Cycling'],
       image: 'assets/triton_crit.jpg',
+      imageWebp: 'assets/triton_crit.webp',
       description: `
         <p>Organized and hosted a criterium cycling race in San Diego for the UCSD Cycling Team.</p>
         <p><strong>Responsibilities:</strong></p>
@@ -384,7 +401,8 @@ function initProjectModal() {
     modalDescription.innerHTML = project.description;
 
     if (project.image) {
-      modalImage.innerHTML = `<img src="${project.image}" alt="${project.title}">`;
+      const webpSource = project.imageWebp ? `<source srcset="${project.imageWebp}" type="image/webp">` : '';
+      modalImage.innerHTML = `<picture style="display: contents">${webpSource}<img src="${project.image}" alt="${project.title}"></picture>`;
     } else {
       modalImage.innerHTML = `<span class="modal__image-placeholder">${project.title.substring(0, 3).toUpperCase()}</span>`;
     }
