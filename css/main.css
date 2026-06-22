@@ -315,6 +315,42 @@
   margin-bottom: var(--space-xs);
 }
 
+/* Skeleton shimmer shown until Strava data loads (toggled via JS) */
+.skeleton-bar,
+.cycling__stat-value.is-loading {
+  border-radius: var(--radius-sm);
+  background: linear-gradient(100deg,
+    var(--skeleton-base) 30%, var(--skeleton-highlight) 50%, var(--skeleton-base) 70%);
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.4s ease-in-out infinite;
+  user-select: none;
+}
+
+.cycling__stat-value.is-loading {
+  display: inline-block;
+  width: 72px;
+  height: var(--text-h2);
+  color: transparent;
+}
+
+.skeleton-bar {
+  display: block;
+  height: 0.85em;
+}
+
+@keyframes skeletonShimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-bar,
+  .cycling__stat-value.is-loading {
+    animation: none;
+    background-position: 0 0;
+  }
+}
+
 .cycling__stat-label {
   font-family: var(--font-mono);
   font-size: var(--text-micro);
@@ -400,6 +436,25 @@
   min-width: 50px;
   text-align: right;
 }
+
+/* Skeleton KOM rows (rendered via JS until /koms resolves) */
+.cycling__kom-item--skeleton {
+  pointer-events: none;
+}
+
+.cycling__kom-item--skeleton:hover {
+  border-color: var(--steel);
+}
+
+.cycling__kom-skeleton-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.skeleton-bar--title { width: 70%; height: 1em; }
+.skeleton-bar--meta  { width: 45%; }
+.skeleton-bar--time  { width: 56px; height: 1em; }
 
 .cycling__links {
   display: flex;

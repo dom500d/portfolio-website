@@ -9,6 +9,10 @@
   --graphite: #1f1f1f;
   --steel: #2a2a2a;
 
+  /* ---- Skeleton loading ---- */
+  --skeleton-base: #2a2a2a;
+  --skeleton-highlight: #3a3a3a;
+
   /* ---- Colors: Accents ---- */
   --velocity: #00ff87;
   --heat: #ff6b35;

@@ -469,6 +469,13 @@ function initStravaStats() {
   // Check if all elements exist
   if (!Object.values(statElements).every(el => el)) return;
 
+  // Show skeleton placeholders until data arrives (progressive enhancement:
+  // no-JS visitors keep the static "--" fallback in the markup)
+  Object.values(statElements).forEach(el => {
+    el.textContent = '';
+    el.classList.add('is-loading');
+  });
+
   async function fetchStats() {
     try {
       const response = await fetch(`${STRAVA_WORKER_URL}/stats`);
@@ -489,13 +496,17 @@ function initStravaStats() {
 
     } catch (error) {
       console.warn('Could not load Strava stats:', error);
-      // Show placeholder values on error
-      Object.values(statElements).forEach(el => { el.textContent = '--'; });
+      // Clear skeletons and show placeholder values on error
+      Object.values(statElements).forEach(el => {
+        el.classList.remove('is-loading');
+        el.textContent = '--';
+      });
     }
   }
 
   // Simple number animation
   function animateNumber(element, target, separator = '') {
+    element.classList.remove('is-loading');
     const duration = 1000;
     const start = 0;
     const startTime = performance.now();
@@ -525,6 +536,17 @@ function initStravaStats() {
 
   async function fetchKOMs() {
     if (!komsList) return;
+
+    // Show 5 skeleton rows while loading (we always render up to 5 KOMs)
+    komsList.innerHTML = Array.from({ length: 5 }, () => `
+      <div class="cycling__kom-item cycling__kom-item--skeleton" aria-hidden="true">
+        <div class="cycling__kom-skeleton-text">
+          <span class="skeleton-bar skeleton-bar--title"></span>
+          <span class="skeleton-bar skeleton-bar--meta"></span>
+        </div>
+        <span class="skeleton-bar skeleton-bar--time"></span>
+      </div>
+    `).join('');
 
     try {
       const response = await fetch(`${STRAVA_WORKER_URL}/koms`);
