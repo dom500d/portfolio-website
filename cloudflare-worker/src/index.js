@@ -145,7 +145,7 @@ async function handleStats(env, corsHeaders) {
     );
     if (komsResp.ok) {
       const komsList = await komsResp.json();
-      komsCount = Array.isArray(komsList) ? komsList.length : 0;
+      komsCount = Array.isArray(komsList) ? komsList.filter(isRideEffort).length : 0;
     }
   } catch (e) {
     komsCount = 0;
@@ -178,6 +178,16 @@ async function handleStats(env, corsHeaders) {
 }
 
 /**
+ * Keep only cycling crowns. Strava's /koms feed mixes in running CRs, whose
+ * segments carry activity_type 'Run'. Efforts missing the field are kept so a
+ * schema change doesn't silently empty the list.
+ */
+function isRideEffort(effort) {
+  const type = effort?.segment?.activity_type;
+  return type == null || type === 'Ride';
+}
+
+/**
  * Get athlete's KOMs
  */
 async function handleKOMs(env, corsHeaders) {
@@ -190,9 +200,10 @@ async function handleKOMs(env, corsHeaders) {
 
   const accessToken = await getAccessToken(env);
 
-  // Fetch KOMs (segment efforts where athlete is KOM holder)
+  // Fetch KOMs (segment efforts where athlete is KOM holder). Over-fetch so
+  // that after dropping non-cycling segments we still have 5 to show.
   const response = await fetch(
-    `${STRAVA_API_BASE}/athletes/${env.ATHLETE_ID}/koms?per_page=5`,
+    `${STRAVA_API_BASE}/athletes/${env.ATHLETE_ID}/koms?per_page=50`,
     {
       headers: { Authorization: `Bearer ${accessToken}` },
     }
@@ -205,7 +216,7 @@ async function handleKOMs(env, corsHeaders) {
   const koms = await response.json();
 
   // Transform to display-friendly data
-  const transformed = koms.map((effort) => {
+  const transformed = koms.filter(isRideEffort).slice(0, 5).map((effort) => {
     const minutes = Math.floor(effort.elapsed_time / 60);
     const seconds = effort.elapsed_time % 60;
     const timeStr = minutes > 0
