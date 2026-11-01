@@ -30,9 +30,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Styles: the shared design system, then this site's own layout -->
+  <!-- Styles: the shared design system, then this site's own layout.
+       Browsers keep site files for 4 hours, so raise ?v= when site.css or main.js changes. -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dom500d/design-system@v0.1.1/dist/sectional.css">
-  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/site.css?v=2">
 </head>
 <body>
   <header class="ds-header" id="header">
@@ -330,6 +331,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=2"></script>
 </body>
 </html>
