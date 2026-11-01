@@ -5,6 +5,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initProjectModal();
+  initAnalytics();
 });
 
 /* ---- Smooth Scroll for Anchor Links ---- */
@@ -217,7 +218,7 @@ function initProjectModal() {
       description: `
         <p>A prosthetic device project built at HARD Hack 2023, where my team and I came in as overall runner-up.</p>
         <p>HARD Hack is a hardware-focused hackathon hosted by UCSD students, challenging teams to build physical devices in a limited time.</p>
-        <p><a href="https://github.com/ymorsi7/ProstheTech" target="_blank">View on GitHub</a></p>
+        <p><a href="https://github.com/ymorsi7/ProstheTech" target="_blank" data-track="prosthetech_github">View on GitHub</a></p>
       `
     },
     ece148: {
@@ -269,6 +270,8 @@ function initProjectModal() {
 
     modal.showModal();
     document.body.style.overflow = 'hidden';
+
+    track('project_opened', { project: projectId });
   }
 
   // Event listeners - make entire card clickable
@@ -288,6 +291,46 @@ function initProjectModal() {
   modal.addEventListener('click', (e) => {
     if (e.target === modal) modal.close();
   });
+}
+
+/* ---- Analytics ---- */
+
+// PostHog loads from the snippet in index.html. Tracking must never break the
+// page, so do nothing if that snippet is missing.
+function track(event, properties) {
+  window.posthog?.capture?.(event, properties);
+}
+
+function initAnalytics() {
+  // Any link with data-track reports a click, including links added to the
+  // page later such as the ones inside the project dialog.
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('[data-track]');
+    if (!link) return;
+
+    const area = link.closest('section[id], header, footer, dialog');
+    track('link_clicked', {
+      link: link.dataset.track,
+      location: area?.id || area?.localName
+    });
+  });
+
+  // Report each section once per visit, when half of it is showing or it fills
+  // half the screen. Both are needed: Projects can be too tall to ever be half
+  // showing, and Contact too short to ever fill half the screen.
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const halfShowing = entry.intersectionRatio >= 0.5;
+      const fillsHalfScreen = entry.intersectionRect.height >= entry.rootBounds.height / 2;
+
+      if (halfShowing || fillsHalfScreen) {
+        track('section_viewed', { section: entry.target.id });
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5] });
+
+  document.querySelectorAll('main section[id]').forEach(section => observer.observe(section));
 }
 
 /* ---- Email Obfuscation ---- */

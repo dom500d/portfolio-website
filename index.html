@@ -34,6 +34,13 @@
        Browsers keep site files for 4 hours, so raise ?v= when site.css or main.js changes. -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dom500d/design-system@v0.1.1/dist/sectional.css">
   <link rel="stylesheet" href="css/site.css?v=2">
+  <script>
+    !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],Object.defineProperty(u,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e}}),Object.defineProperty(u.people,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(){return u.toString(1)+".people (stub)"}}),o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    posthog.init('phc_D7bRGoXPijxw9gxKEdmGqLkfcAtm5Dw58W9uvrHaqEbi', {
+        api_host: 'https://us.i.posthog.com',
+        defaults: '2026-08-30',
+    })
+</script>
 </head>
 <body>
   <header class="ds-header" id="header">
@@ -46,7 +53,7 @@
         <a href="#projects">Projects</a>
         <a href="#experience">Experience</a>
         <a href="#contact">Contact</a>
-        <a href="assets/Resume.pdf" target="_blank" rel="noopener">Resume</a>
+        <a href="assets/Resume.pdf" target="_blank" rel="noopener" data-track="resume">Resume</a>
       </nav>
     </div>
   </header>
@@ -137,13 +144,13 @@
         </div>
 
         <div class="ds-row">
-          <a href="https://www.strava.com/athletes/79925918" target="_blank" rel="noopener" class="ds-btn">
+          <a href="https://www.strava.com/athletes/79925918" target="_blank" rel="noopener" class="ds-btn" data-track="strava">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169"/>
             </svg>
             Strava
           </a>
-          <a href="https://www.road-results.com/racer/235760" target="_blank" rel="noopener" class="ds-btn">
+          <a href="https://www.road-results.com/racer/235760" target="_blank" rel="noopener" class="ds-btn" data-track="race_results">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M8 21h8M12 17v4M5 12l7-9 7 9M5 12h14v5H5z"/>
             </svg>
@@ -283,7 +290,7 @@
         <p>The best way to reach me is through LinkedIn or email.</p>
 
         <div class="ds-row">
-          <a href="https://www.linkedin.com/in/dominic-orlando-/" target="_blank" rel="noopener" class="ds-btn">
+          <a href="https://www.linkedin.com/in/dominic-orlando-/" target="_blank" rel="noopener" class="ds-btn" data-track="linkedin">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
               <rect x="2" y="9" width="4" height="12"/>
@@ -291,14 +298,14 @@
             </svg>
             LinkedIn
           </a>
-          <a href="#" class="ds-btn" id="emailLink">
+          <a href="#" class="ds-btn" id="emailLink" data-track="email">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
               <polyline points="22,6 12,13 2,6"/>
             </svg>
             Email
           </a>
-          <a href="https://github.com/dom500d" target="_blank" rel="noopener" class="ds-btn">
+          <a href="https://github.com/dom500d" target="_blank" rel="noopener" class="ds-btn" data-track="github">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
             </svg>
@@ -325,12 +332,12 @@
     <div class="ds-container ds-footer__inner">
       <span>Dominic Orlando</span>
       <div class="ds-row" style="--ds-gap: var(--ds-4)">
-        <a href="https://github.com/dom500d" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/dominic-orlando-/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/dom500d" target="_blank" rel="noopener" data-track="github">GitHub</a>
+        <a href="https://www.linkedin.com/in/dominic-orlando-/" target="_blank" rel="noopener" data-track="linkedin">LinkedIn</a>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js?v=2"></script>
+  <script src="js/main.js?v=3"></script>
 </body>
 </html>
