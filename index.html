@@ -51,8 +51,10 @@
   </header>
 
   <main>
-    <section class="hero" id="hero">
-      <svg class="hero__chart" viewBox="0 0 1200 420" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+    <h1 class="ds-visually-hidden">Dominic Orlando</h1>
+
+    <section class="section section--charted" id="about">
+      <svg class="section__chart" viewBox="0 0 1200 420" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
         <g fill="none" stroke="var(--ds-line)">
           <g transform="rotate(-8 880 230)">
             <ellipse cx="880" cy="230" rx="420" ry="190"/>
@@ -69,18 +71,7 @@
         </g>
       </svg>
 
-      <div class="ds-container hero__content">
-        <h1>Dominic Orlando</h1>
-        <p class="hero__subtitle">Engineer, racer, builder.</p>
-        <div class="ds-row">
-          <a href="#projects" class="ds-btn ds-btn--primary">Projects</a>
-          <a href="#contact" class="ds-btn">Contact</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="ds-container">
+      <div class="ds-container section__content">
         <h2 class="section__title">About</h2>
 
         <div class="about">
@@ -89,7 +80,7 @@
             <img class="about__image" src="assets/dominic-grad.jpg" alt="Dominic Orlando at UCSD graduation">
           </picture>
 
-          <div class="ds-stack" style="--ds-gap: var(--ds-5)">
+          <div class="ds-card about__card">
             <div class="ds-stack">
               <p>I'm a Software Engineer at <strong>CSC Global</strong>. I got my MS in Electrical Engineering from UC San Diego in 2025, and my BS was in EE with a focus on Machine Learning and Controls.</p>
               <p>I led the <strong>UCSD Cycling Team</strong> through college, and I'm currently racing for <strong>Deus Velox</strong>, a San Diego based cycling team, traveling and competing at a national level.</p>

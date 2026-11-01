@@ -8,33 +8,34 @@
   scroll-margin-top: var(--ds-7);
 }
 
-.section__title {
-  margin-bottom: var(--ds-5);
-}
-
-/* Hero */
-.hero {
+.section--charted {
   position: relative;
   overflow: hidden;
 }
 
-.hero__chart {
+/* The first section meets the header's own bottom line. */
+main > .section:first-of-type {
+  border-top: 0;
+}
+
+.section__chart {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
 }
 
-.hero__content {
-  position: relative;
-  display: grid;
-  gap: var(--ds-4);
-  padding-block: var(--ds-8);
+/* The drawing scales with the screen, but its lines stay thin. */
+.section__chart ellipse {
+  vector-effect: non-scaling-stroke;
 }
 
-.hero__subtitle {
-  color: var(--ds-fg2);
-  font-size: var(--ds-text-lg);
+.section__content {
+  position: relative;
+}
+
+.section__title {
+  margin-bottom: var(--ds-5);
 }
 
 /* About */
@@ -58,6 +59,11 @@
   object-fit: cover;
   object-position: 50% 0; /* Crop from the bottom so the head stays in frame. */
   border-radius: var(--ds-radius-lg);
+}
+
+.about__card {
+  gap: var(--ds-5);
+  padding: var(--ds-5);
 }
 
 .about strong {
