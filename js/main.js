@@ -1,145 +1,11 @@
 /* ========================================
-   MAIN JAVASCRIPT - Dynamic Motion
+   MAIN JAVASCRIPT
    ======================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  initScrollAnimations();
-  initHeader();
-  initMobileMenu();
   initSmoothScroll();
   initProjectModal();
 });
-
-/* ---- Scroll Animations (Intersection Observer) ---- */
-
-function initScrollAnimations() {
-  const animatedElements = document.querySelectorAll('[data-animate]');
-
-  if (!animatedElements.length) return;
-
-  // Check for reduced motion preference
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (prefersReducedMotion) {
-    // Show all elements immediately if user prefers reduced motion
-    animatedElements.forEach(el => el.classList.add('is-visible'));
-    return;
-  }
-
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px 0px -10% 0px',
-    threshold: 0.1
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        // Optionally unobserve after animation
-        // observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  animatedElements.forEach(el => observer.observe(el));
-}
-
-/* ---- Header Scroll Behavior ---- */
-
-function initHeader() {
-  const header = document.getElementById('header');
-  if (!header) return;
-
-  let lastScroll = 0;
-  let ticking = false;
-
-  function updateHeader() {
-    const currentScroll = window.pageYOffset;
-
-    // Add/remove scrolled class for background
-    if (currentScroll > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-
-    lastScroll = currentScroll;
-    ticking = false;
-  }
-
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(updateHeader);
-      ticking = true;
-    }
-  }, { passive: true });
-
-  // Initial check
-  updateHeader();
-}
-
-/* ---- Mobile Menu ---- */
-
-function initMobileMenu() {
-  const menuToggle = document.getElementById('menuToggle');
-  const mainNav = document.getElementById('mainNav');
-  const navOverlay = document.getElementById('navOverlay');
-
-  if (!menuToggle || !mainNav) return;
-
-  function toggleMenu() {
-    const isOpen = mainNav.classList.contains('is-open');
-
-    menuToggle.classList.toggle('is-open');
-    mainNav.classList.toggle('is-open');
-
-    if (navOverlay) {
-      navOverlay.classList.toggle('is-visible');
-    }
-
-    // Prevent body scroll when menu is open
-    document.body.style.overflow = isOpen ? '' : 'hidden';
-
-    // Update ARIA
-    menuToggle.setAttribute('aria-expanded', !isOpen);
-  }
-
-  function closeMenu() {
-    menuToggle.classList.remove('is-open');
-    mainNav.classList.remove('is-open');
-    if (navOverlay) {
-      navOverlay.classList.remove('is-visible');
-    }
-    document.body.style.overflow = '';
-    menuToggle.setAttribute('aria-expanded', 'false');
-  }
-
-  menuToggle.addEventListener('click', toggleMenu);
-
-  if (navOverlay) {
-    navOverlay.addEventListener('click', closeMenu);
-  }
-
-  // Close menu when clicking nav links
-  mainNav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-
-  // Close menu on escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mainNav.classList.contains('is-open')) {
-      closeMenu();
-    }
-  });
-
-  // Close menu on resize to desktop
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 767 && mainNav.classList.contains('is-open')) {
-      closeMenu();
-    }
-  });
-}
 
 /* ---- Smooth Scroll for Anchor Links ---- */
 
@@ -156,19 +22,12 @@ function initSmoothScroll() {
 
       e.preventDefault();
 
-      // The mobile menu locks body scroll (overflow:hidden) while open; that
-      // would make scrollTo a no-op. Release it before scrolling, and defer a
-      // frame so the unlock is applied first.
-      document.body.style.overflow = '';
-
       const headerHeight = document.getElementById('header')?.offsetHeight || 0;
       const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
 
-      requestAnimationFrame(() => {
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth'
       });
 
       // Update URL without jumping
@@ -181,15 +40,16 @@ function initSmoothScroll() {
 
 function initActiveNavLink() {
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.header__link');
+  const navLinks = document.querySelectorAll('.ds-nav a');
 
   if (!sections.length || !navLinks.length) return;
 
   function setActive(sectionId) {
     navLinks.forEach(link => {
-      link.classList.remove('header__link--active');
       if (link.getAttribute('href') === `#${sectionId}`) {
-        link.classList.add('header__link--active');
+        link.setAttribute('aria-current', 'true');
+      } else {
+        link.removeAttribute('aria-current');
       }
     });
   }
@@ -305,8 +165,6 @@ function initProjectModal() {
   const modalTags = document.getElementById('modalTags');
   const modalTitle = document.getElementById('modalTitle');
   const modalDescription = document.getElementById('modalDescription');
-  const closeBtn = modal.querySelector('.modal__close');
-  const backdrop = modal.querySelector('.modal__backdrop');
 
   // Project data
   const projects = {
@@ -397,23 +255,20 @@ function initProjectModal() {
 
     // Set content
     modalTitle.textContent = project.title;
-    modalTags.innerHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+    modalTags.innerHTML = project.tags.map(tag => `<span class="ds-tag">${tag}</span>`).join('');
     modalDescription.innerHTML = project.description;
+
+    modalImage.hidden = !project.image;
 
     if (project.image) {
       const webpSource = project.imageWebp ? `<source srcset="${project.imageWebp}" type="image/webp">` : '';
-      modalImage.innerHTML = `<picture style="display: contents">${webpSource}<img src="${project.image}" alt="${project.title}"></picture>`;
+      modalImage.innerHTML = `<picture>${webpSource}<img src="${project.image}" alt="${project.title}"></picture>`;
     } else {
-      modalImage.innerHTML = `<span class="modal__image-placeholder">${project.title.substring(0, 3).toUpperCase()}</span>`;
+      modalImage.innerHTML = '';
     }
 
-    modal.classList.add('is-open');
+    modal.showModal();
     document.body.style.overflow = 'hidden';
-  }
-
-  function closeModal() {
-    modal.classList.remove('is-open');
-    document.body.style.overflow = '';
   }
 
   // Event listeners - make entire card clickable
@@ -424,13 +279,14 @@ function initProjectModal() {
     });
   });
 
-  closeBtn.addEventListener('click', closeModal);
-  backdrop.addEventListener('click', closeModal);
+  // Escape and the Close button are handled by <dialog> itself
+  modal.addEventListener('close', () => {
+    document.body.style.overflow = '';
+  });
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('is-open')) {
-      closeModal();
-    }
+  // A click on the backdrop lands on the dialog element, not its contents
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.close();
   });
 }
 
@@ -473,7 +329,7 @@ function initStravaStats() {
   // no-JS visitors keep the static "--" fallback in the markup)
   Object.values(statElements).forEach(el => {
     el.textContent = '';
-    el.classList.add('is-loading');
+    el.classList.add('ds-skeleton');
   });
 
   async function fetchStats() {
@@ -498,7 +354,7 @@ function initStravaStats() {
       console.warn('Could not load Strava stats:', error);
       // Clear skeletons and show placeholder values on error
       Object.values(statElements).forEach(el => {
-        el.classList.remove('is-loading');
+        el.classList.remove('ds-skeleton');
         el.textContent = '--';
       });
     }
@@ -506,7 +362,7 @@ function initStravaStats() {
 
   // Simple number animation
   function animateNumber(element, target, separator = '') {
-    element.classList.remove('is-loading');
+    element.classList.remove('ds-skeleton');
     const duration = 1000;
     const start = 0;
     const startTime = performance.now();
@@ -533,19 +389,19 @@ function initStravaStats() {
 
   // Fetch KOMs
   const komsList = document.getElementById('komsList');
+  const komsMessage = (text) => `<tr><td colspan="6" class="ds-quiet">${text}</td></tr>`;
+
+  // Segment names are written by Strava users, so never trust them as HTML
+  const escapeHtml = (value) => String(value).replace(/[&<>"]/g, (c) => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'
+  })[c]);
 
   async function fetchKOMs() {
     if (!komsList) return;
 
     // Show 5 skeleton rows while loading (we always render up to 5 KOMs)
     komsList.innerHTML = Array.from({ length: 5 }, () => `
-      <div class="cycling__kom-item cycling__kom-item--skeleton" aria-hidden="true">
-        <div class="cycling__kom-skeleton-text">
-          <span class="skeleton-bar skeleton-bar--title"></span>
-          <span class="skeleton-bar skeleton-bar--meta"></span>
-        </div>
-        <span class="skeleton-bar skeleton-bar--time"></span>
-      </div>
+      <tr aria-hidden="true">${'<td><span class="ds-skeleton"></span></td>'.repeat(6)}</tr>
     `).join('');
 
     try {
@@ -558,30 +414,24 @@ function initStravaStats() {
       const koms = await response.json();
 
       if (koms.length === 0) {
-        komsList.innerHTML = '<p class="cycling__koms-loading">No KOMs yet</p>';
+        komsList.innerHTML = komsMessage('No KOMs yet');
         return;
       }
 
       komsList.innerHTML = koms.map(kom => `
-        <div class="cycling__kom-item">
-          <div>
-            <p class="cycling__kom-segment">${kom.segment_name}</p>
-            <div class="cycling__kom-meta">
-              ${kom.distance ? `<span>${kom.distance}</span>` : ''}
-              ${kom.speed ? `<span>${kom.speed}</span>` : ''}
-              ${kom.average_grade ? `<span>${kom.average_grade}</span>` : ''}
-            </div>
-          </div>
-          <div class="cycling__kom-stats">
-            <span class="cycling__kom-time">${kom.time}</span>
-            <span class="cycling__kom-power">${kom.average_watts ? `${kom.average_watts}W` : ''}</span>
-          </div>
-        </div>
+        <tr>
+          <td>${escapeHtml(kom.segment_name)}</td>
+          <td data-num>${escapeHtml(kom.distance ?? '')}</td>
+          <td data-num>${escapeHtml(kom.speed ?? '')}</td>
+          <td data-num>${escapeHtml(kom.average_grade ?? '')}</td>
+          <td data-num>${escapeHtml(kom.time)}</td>
+          <td data-num>${kom.average_watts ? `${Math.round(kom.average_watts)} W` : ''}</td>
+        </tr>
       `).join('');
 
     } catch (error) {
       console.warn('Could not load KOMs:', error);
-      komsList.innerHTML = '<p class="cycling__koms-loading">--</p>';
+      komsList.innerHTML = komsMessage('Could not load KOMs');
     }
   }
 

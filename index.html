@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Dominic Orlando</title>
 
   <!-- SEO -->
@@ -28,495 +28,317 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/responsive.css">
+  <!-- Styles: the shared design system, then this site's own layout -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dom500d/design-system@v0.1.1/dist/sectional.css">
+  <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-  <!-- Navigation Overlay (Mobile) -->
-  <div class="nav-overlay" id="navOverlay"></div>
+  <header class="ds-header" id="header">
+    <div class="ds-container ds-header__inner">
+      <a href="/" class="ds-brand">Dominic Orlando</a>
 
-  <!-- Header -->
-  <header class="header" id="header">
-    <div class="header__inner">
-      <a href="/" class="header__logo">
-        <span class="text-gradient">DO</span>
-      </a>
-
-      <nav class="header__nav" id="mainNav">
-        <a href="#about" class="header__link">About</a>
-        <a href="#cycling" class="header__link">Cycling</a>
-        <a href="#projects" class="header__link">Projects</a>
-        <a href="#experience" class="header__link">Experience</a>
-        <a href="#contact" class="header__link">Contact</a>
-        <a href="assets/Resume.pdf" target="_blank" class="header__link">Resume</a>
+      <nav class="ds-nav" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#cycling">Cycling</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+        <a href="assets/Resume.pdf" target="_blank" rel="noopener">Resume</a>
       </nav>
-
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
     </div>
   </header>
 
   <main>
-    <!-- Hero Section -->
-    <section class="hero section" id="hero">
-      <div class="hero__background">
-        <div class="hero__gradient"></div>
-        <div class="hero__lines"></div>
-      </div>
+    <section class="hero" id="hero">
+      <svg class="hero__chart" viewBox="0 0 1200 420" preserveAspectRatio="xMaxYMid slice" aria-hidden="true">
+        <g fill="none" stroke="var(--ds-line)">
+          <g transform="rotate(-8 880 230)">
+            <ellipse cx="880" cy="230" rx="420" ry="190"/>
+            <ellipse cx="880" cy="230" rx="330" ry="146"/>
+            <ellipse cx="880" cy="230" rx="240" ry="104"/>
+            <ellipse cx="880" cy="230" rx="150" ry="62"/>
+            <ellipse cx="880" cy="230" rx="66" ry="24"/>
+          </g>
+          <g transform="rotate(12 1180 40)">
+            <ellipse cx="1180" cy="40" rx="210" ry="110"/>
+            <ellipse cx="1180" cy="40" rx="130" ry="66"/>
+            <ellipse cx="1180" cy="40" rx="56" ry="26"/>
+          </g>
+        </g>
+      </svg>
 
-      <div class="container hero__content">
-        <h1 class="hero__title">
-          <span class="hero__title-line">Dominic</span>
-          <span class="hero__title-line text-gradient">Orlando</span>
-        </h1>
-
-        <p class="hero__subtitle">
-          Engineer, racer, builder.
-        </p>
-
-        <div class="hero__actions">
-          <a href="#projects" class="btn btn-primary">Projects</a>
-          <a href="#contact" class="btn btn-secondary">Contact</a>
+      <div class="ds-container hero__content">
+        <h1>Dominic Orlando</h1>
+        <p class="hero__subtitle">Engineer, racer, builder.</p>
+        <div class="ds-row">
+          <a href="#projects" class="ds-btn ds-btn--primary">Projects</a>
+          <a href="#contact" class="ds-btn">Contact</a>
         </div>
-      </div>
-
-      <div class="hero__scroll scroll-indicator">
-        <span class="scroll-indicator__text">Scroll</span>
-        <div class="scroll-indicator__arrow"></div>
       </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about section" id="about">
-      <div class="container">
-        <header class="section-header" data-animate>
-          <h2 class="section-title">About</h2>
-        </header>
+    <section class="section" id="about">
+      <div class="ds-container">
+        <h2 class="section__title">About</h2>
 
-        <div class="about__content">
-          <div class="about__image-wrapper" data-animate="fade-left">
-            <picture style="display: contents">
-              <source srcset="assets/dominic-grad.webp" type="image/webp">
-              <img class="about__image" src="assets/dominic-grad.jpg" alt="Dominic Orlando at UCSD graduation">
+        <div class="about">
+          <picture>
+            <source srcset="assets/dominic-grad.webp" type="image/webp">
+            <img class="about__image" src="assets/dominic-grad.jpg" alt="Dominic Orlando at UCSD graduation">
+          </picture>
+
+          <div class="ds-stack" style="--ds-gap: var(--ds-5)">
+            <div class="ds-stack">
+              <p>I'm a Software Engineer at <strong>CSC Global</strong>. I got my MS in Electrical Engineering from UC San Diego in 2025, and my BS was in EE with a focus on Machine Learning and Controls.</p>
+              <p>I led the <strong>UCSD Cycling Team</strong> through college, and I'm currently racing for <strong>Deus Velox</strong>, a San Diego based cycling team, traveling and competing at a national level.</p>
+            </div>
+
+            <dl class="ds-stats">
+              <div class="ds-stat"><dt>Master's</dt><dd>UCSD EE '25</dd></div>
+              <div class="ds-stat"><dt>Bachelor's</dt><dd>UCSD EE '24</dd></div>
+              <div class="ds-stat"><dt>Focus</dt><dd>ML &amp; Controls</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cycling">
+      <div class="ds-container ds-stack" style="--ds-gap: var(--ds-5)">
+        <h2>Cycling</h2>
+
+        <picture>
+          <source srcset="assets/cbr-factor-sick.webp" type="image/webp">
+          <img class="cycling__image" src="assets/cbr-factor-sick.JPG" alt="Dominic Orlando racing in UCSD cycling kit">
+        </picture>
+
+        <dl class="ds-stats">
+          <div class="ds-stat"><dt>Rides this year</dt><dd id="statRides">--</dd></div>
+          <div class="ds-stat"><dt>Miles this year</dt><dd id="statMiles">--</dd></div>
+          <div class="ds-stat"><dt>Feet climbed</dt><dd id="statElevation">--</dd></div>
+          <div class="ds-stat"><dt>Hours in saddle</dt><dd id="statHours">--</dd></div>
+          <div class="ds-stat"><dt>KOMs</dt><dd id="statKoms">--</dd></div>
+          <div class="ds-stat"><dt>Career miles</dt><dd id="statCareerMiles">--</dd></div>
+        </dl>
+
+        <div class="ds-stack" style="--ds-gap: var(--ds-3)">
+          <h3>Recent KOMs</h3>
+          <div class="ds-table-wrap">
+            <table class="ds-table koms">
+              <thead>
+                <tr>
+                  <th scope="col">Segment</th>
+                  <th scope="col" data-num>Distance</th>
+                  <th scope="col" data-num>Speed</th>
+                  <th scope="col" data-num>Grade</th>
+                  <th scope="col" data-num>Time</th>
+                  <th scope="col" data-num>Power</th>
+                </tr>
+              </thead>
+              <tbody id="komsList">
+                <tr><td colspan="6" class="ds-quiet">Loading...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="ds-row">
+          <a href="https://www.strava.com/athletes/79925918" target="_blank" rel="noopener" class="ds-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169"/>
+            </svg>
+            Strava
+          </a>
+          <a href="https://www.road-results.com/racer/235760" target="_blank" rel="noopener" class="ds-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M8 21h8M12 17v4M5 12l7-9 7 9M5 12h14v5H5z"/>
+            </svg>
+            Race results
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="ds-container">
+        <h2 class="section__title">Projects</h2>
+
+        <div class="ds-grid" style="--ds-min: 20rem">
+          <a class="ds-card" href="#projects" data-project="aegis" aria-haspopup="dialog">
+            <picture>
+              <source srcset="assets/aegis-hardware.webp" type="image/webp">
+              <img class="ds-card__media" src="assets/aegis-hardware.png" alt="Aegis smart electricity monitoring hardware setup">
             </picture>
-            <div class="about__image-accent"></div>
-          </div>
-
-          <div class="about__info" data-animate="fade-right">
-            <div class="about__text">
-              <p>
-                I'm a Software Engineer at <span class="about__highlight">CSC Global</span>. I got my MS in Electrical Engineering from UC San Diego in 2025, and my BS was in EE with a focus on Machine Learning and Controls.
-              </p>
-              <p>
-                I led the <span class="about__highlight">UCSD Cycling Team</span> through college, and I'm currently racing for <span class="about__highlight">Deus Velox</span>, a San Diego based cycling team, traveling and competing at a national level.
-              </p>
+            <div class="ds-card__body">
+              <h3 class="ds-card__title">Aegis</h3>
+              <p class="ds-quiet ds-small">A smart electricity monitoring system for the home. Uses an ESP32, current sensors, and MQTT to track power usage and control thermostat and HVAC.</p>
+              <div class="project-tags"><span class="ds-tag">IoT</span><span class="ds-tag">Smart Home</span></div>
+              <span class="project-more">View details</span>
             </div>
+          </a>
 
-            <div class="about__stats">
-              <div class="stat">
-                <p class="stat__number">MS</p>
-                <p class="stat__label">UCSD EE '25</p>
-              </div>
-              <div class="stat">
-                <p class="stat__number">BS</p>
-                <p class="stat__label">UCSD EE '24</p>
-              </div>
-              <div class="stat">
-                <p class="stat__number">ML</p>
-                <p class="stat__label">& Controls</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Cycling Section -->
-    <section class="cycling section" id="cycling">
-      <div class="container">
-        <header class="section-header" data-animate>
-          <h2 class="section-title">Cycling</h2>
-        </header>
-
-        <div class="cycling__content">
-          <div class="cycling__hero" data-animate>
-            <picture style="display: contents">
-              <source srcset="assets/cbr-factor-sick.webp" type="image/webp">
-              <img class="cycling__hero-image" src="assets/cbr-factor-sick.JPG" alt="Dominic Orlando racing in UCSD cycling kit">
+          <a class="ds-card" href="#projects" data-project="e46" aria-haspopup="dialog">
+            <picture>
+              <source srcset="assets/turbo-e46.webp" type="image/webp">
+              <img class="ds-card__media" src="assets/turbo-e46.jpeg" alt="Turbocharged BMW E46 325ci with angel-eye headlights at night">
             </picture>
-          </div>
+            <div class="ds-card__body">
+              <h3 class="ds-card__title">E46 Turbo Build</h3>
+              <p class="ds-quiet ds-small">My 2002 BMW 325ci that I've been building. It started as an automatic but now has a 5-speed, a GT35 turbo, a built 3.0L motor, custom MS43 tune, and a welded diff.</p>
+              <div class="project-tags"><span class="ds-tag">Automotive</span><span class="ds-tag">Fabrication</span></div>
+              <span class="project-more">View details</span>
+            </div>
+          </a>
 
-          <div class="cycling__stats" data-animate>
-            <div class="cycling__stat-card">
-              <div class="cycling__stat-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="5.5" cy="17.5" r="3.5"/>
-                  <circle cx="18.5" cy="17.5" r="3.5"/>
-                  <path d="M15 6a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-3 11.5V14l-3-3 4-3 2 3h2"/>
-                </svg>
-              </div>
-              <p class="cycling__stat-value" id="statRides">--</p>
-              <p class="cycling__stat-label">Rides This Year</p>
+          <a class="ds-card" href="#projects" data-project="prosthetech" aria-haspopup="dialog">
+            <img class="ds-card__media" src="assets/hard-hack-edited.webp" alt="ProstheTech team at HARD Hack 2023">
+            <div class="ds-card__body">
+              <h3 class="ds-card__title">ProstheTech</h3>
+              <p class="ds-quiet ds-small">A prosthetic device project that my team and I built at HARD Hack 2023. We came in as overall runner-up.</p>
+              <div class="project-tags"><span class="ds-tag">Hackathon</span><span class="ds-tag">Hardware</span></div>
+              <span class="project-more">View details</span>
             </div>
-            <div class="cycling__stat-card">
-              <div class="cycling__stat-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="6" cy="19" r="3"/>
-                  <path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/>
-                  <circle cx="18" cy="5" r="3"/>
-                </svg>
-              </div>
-              <p class="cycling__stat-value" id="statMiles">--</p>
-              <p class="cycling__stat-label">Miles This Year</p>
-            </div>
-            <div class="cycling__stat-card">
-              <div class="cycling__stat-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="m8 3 4 8 5-5 5 14H2L8 3z"/>
-                </svg>
-              </div>
-              <p class="cycling__stat-value" id="statElevation">--</p>
-              <p class="cycling__stat-label">Feet Climbed</p>
-            </div>
-            <div class="cycling__stat-card">
-              <div class="cycling__stat-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <polyline points="12 6 12 12 16 14"/>
-                </svg>
-              </div>
-              <p class="cycling__stat-value" id="statHours">--</p>
-              <p class="cycling__stat-label">Hours in Saddle</p>
-            </div>
-            <div class="cycling__stat-card">
-              <div class="cycling__stat-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/>
-                  <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/>
-                  <path d="M4 22h16"/>
-                  <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/>
-                  <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/>
-                  <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/>
-                </svg>
-              </div>
-              <p class="cycling__stat-value" id="statKoms">--</p>
-              <p class="cycling__stat-label">KOMs</p>
-            </div>
-            <div class="cycling__stat-card">
-              <div class="cycling__stat-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"/>
-                  <path d="M2 12h20"/>
-                  <path d="M12 2a14.5 14.5 0 0 1 0 20 14.5 14.5 0 0 1 0-20"/>
-                </svg>
-              </div>
-              <p class="cycling__stat-value" id="statCareerMiles">--</p>
-              <p class="cycling__stat-label">Career Miles</p>
-            </div>
-          </div>
+          </a>
 
-          <div class="cycling__koms" data-animate data-delay="1">
-            <h3 class="cycling__koms-title">Recent KOMs</h3>
-            <div class="cycling__koms-list" id="komsList">
-              <p class="cycling__koms-loading">Loading...</p>
+          <a class="ds-card" href="#projects" data-project="ece148" aria-haspopup="dialog">
+            <picture>
+              <source srcset="assets/auto-car.webp" type="image/webp">
+              <img class="ds-card__media" src="assets/auto-car.jpeg" alt="ECE 148 autonomous RC car platform with sensors and electronics">
+            </picture>
+            <div class="ds-card__body">
+              <h3 class="ds-card__title">Autonomous Car</h3>
+              <p class="ds-quiet ds-small">Autonomous vehicle project for ECE 148. I worked on the hardware platform, integrating LiDAR, an Intel RealSense depth camera, and GNSS with DonkeyCar to get the car driving autonomously.</p>
+              <div class="project-tags"><span class="ds-tag">Autonomous Vehicles</span><span class="ds-tag">Robotics</span></div>
+              <span class="project-more">View details</span>
             </div>
-          </div>
+          </a>
 
-          <div class="cycling__links" data-animate data-delay="2">
-            <a href="https://www.strava.com/athletes/79925918" target="_blank" class="social-link social-link--strava">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M15.387 17.944l-2.089-4.116h-3.065L15.387 24l5.15-10.172h-3.066m-7.008-5.599l2.836 5.598h4.172L10.463 0l-7 13.828h4.169"/>
-              </svg>
-              <span>Strava</span>
-            </a>
-            <a href="https://www.road-results.com/racer/235760" target="_blank" class="social-link">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M8 21h8M12 17v4M5 12l7-9 7 9M5 12h14v5H5z"/>
-              </svg>
-              <span>Race Results</span>
-            </a>
+          <a class="ds-card" href="#projects" data-project="tritoncrit" aria-haspopup="dialog">
+            <picture>
+              <source srcset="assets/triton_crit.webp" type="image/webp">
+              <img class="ds-card__media" src="assets/triton_crit.jpg" alt="Triton Crit cycling race in San Diego">
+            </picture>
+            <div class="ds-card__body">
+              <h3 class="ds-card__title">Triton Crit</h3>
+              <p class="ds-quiet ds-small">Organized and hosted a cycling race in San Diego for the UCSD Cycling Team. Managed city permits, USAC sanctioning, insurance, business outreach, and race day logistics.</p>
+              <div class="project-tags"><span class="ds-tag">Event Planning</span><span class="ds-tag">Cycling</span></div>
+              <span class="project-more">View details</span>
+            </div>
+          </a>
+
+          <div class="ds-card">
+            <svg class="ds-card__media" viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <g fill="none" stroke="var(--ds-line-strong)">
+                <ellipse cx="160" cy="90" rx="136" ry="72"/>
+                <ellipse cx="160" cy="90" rx="92" ry="46"/>
+                <ellipse cx="160" cy="90" rx="46" ry="20"/>
+              </g>
+            </svg>
+            <div class="ds-card__body">
+              <h3 class="ds-card__title">This Site</h3>
+              <p class="ds-quiet ds-small">This portfolio site, which I built from scratch using HTML, CSS, and vanilla JavaScript.</p>
+              <div class="project-tags"><span class="ds-tag">Web</span><span class="ds-tag">Design</span></div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects Section -->
-    <section class="projects section" id="projects">
-      <div class="container">
-        <header class="section-header" data-animate>
-          <h2 class="section-title">Projects</h2>
-        </header>
+    <section class="section" id="experience">
+      <div class="ds-container">
+        <h2 class="section__title">Experience</h2>
 
-        <div class="projects-grid">
-          <!-- Project 1: Aegis -->
-          <article class="project-card card" data-animate data-delay="1" data-project="aegis">
-            <div class="project-card__image-wrapper">
-              <picture style="display: contents">
-                <source srcset="assets/aegis-hardware.webp" type="image/webp">
-                <img class="project-card__image" src="assets/aegis-hardware.png" alt="Aegis smart electricity monitoring hardware setup">
-              </picture>
-              <div class="project-card__overlay"></div>
-              <span class="project-card__number">01</span>
-            </div>
-            <div class="card__content">
-              <div class="project-card__tags">
-                <span class="tag">IoT</span>
-                <span class="tag">Smart Home</span>
-              </div>
-              <h3 class="project-card__title">Aegis</h3>
-              <p class="project-card__description">
-                A smart electricity monitoring system for the home. Uses an ESP32, current sensors, and MQTT to track power usage and control thermostat and HVAC.
-              </p>
-              <button class="btn btn-ghost project-card__btn">View Details</button>
-            </div>
-          </article>
-
-          <!-- Project 2: BMW E46 Turbo Build -->
-          <article class="project-card card" data-animate data-delay="2" data-project="e46">
-            <div class="project-card__image-wrapper">
-              <picture style="display: contents">
-                <source srcset="assets/turbo-e46.webp" type="image/webp">
-                <img class="project-card__image" src="assets/turbo-e46.jpeg" alt="Turbocharged BMW E46 325ci with angel-eye headlights at night">
-              </picture>
-              <div class="project-card__overlay"></div>
-              <span class="project-card__number">02</span>
-            </div>
-            <div class="card__content">
-              <div class="project-card__tags">
-                <span class="tag">Automotive</span>
-                <span class="tag">Fabrication</span>
-              </div>
-              <h3 class="project-card__title">E46 Turbo Build</h3>
-              <p class="project-card__description">
-                My 2002 BMW 325ci that I've been building. It started as an automatic but now has a 5-speed, a GT35 turbo, a built 3.0L motor, custom MS43 tune, and a welded diff.
-              </p>
-              <button class="btn btn-ghost project-card__btn">View Details</button>
-            </div>
-          </article>
-
-          <!-- Project 3: ProstheTech -->
-          <article class="project-card card" data-animate data-delay="3" data-project="prosthetech">
-            <div class="project-card__image-wrapper">
-              <img class="project-card__image" src="assets/hard-hack-edited.webp" alt="ProstheTech team at HARD Hack 2023">
-              <div class="project-card__overlay"></div>
-              <span class="project-card__number">03</span>
-            </div>
-            <div class="card__content">
-              <div class="project-card__tags">
-                <span class="tag">Hackathon</span>
-                <span class="tag">Hardware</span>
-              </div>
-              <h3 class="project-card__title">ProstheTech</h3>
-              <p class="project-card__description">
-                A prosthetic device project that my team and I built at HARD Hack 2023. We came in as overall runner-up.
-              </p>
-              <button class="btn btn-ghost project-card__btn">View Details</button>
-            </div>
-          </article>
-
-          <!-- Project 4: ECE 148 Autonomous Car -->
-          <article class="project-card card" data-animate data-delay="4" data-project="ece148">
-            <div class="project-card__image-wrapper">
-              <picture style="display: contents">
-                <source srcset="assets/auto-car.webp" type="image/webp">
-                <img class="project-card__image" src="assets/auto-car.jpeg" alt="ECE 148 autonomous RC car platform with sensors and electronics">
-              </picture>
-              <div class="project-card__overlay"></div>
-              <span class="project-card__number">04</span>
-            </div>
-            <div class="card__content">
-              <div class="project-card__tags">
-                <span class="tag">Autonomous Vehicles</span>
-                <span class="tag">Robotics</span>
-              </div>
-              <h3 class="project-card__title">Autonomous Car</h3>
-              <p class="project-card__description">
-                Autonomous vehicle project for ECE 148. I worked on the hardware platform, integrating LiDAR, an Intel RealSense depth camera, and GNSS with DonkeyCar to get the car driving autonomously.
-              </p>
-              <button class="btn btn-ghost project-card__btn">View Details</button>
-            </div>
-          </article>
-
-          <!-- Project 5: Triton Crit -->
-          <article class="project-card card" data-animate data-delay="5" data-project="tritoncrit">
-            <div class="project-card__image-wrapper">
-              <picture style="display: contents">
-                <source srcset="assets/triton_crit.webp" type="image/webp">
-                <img class="project-card__image" src="assets/triton_crit.jpg" alt="Triton Crit cycling race in San Diego">
-              </picture>
-              <div class="project-card__overlay"></div>
-              <span class="project-card__number">05</span>
-            </div>
-            <div class="card__content">
-              <div class="project-card__tags">
-                <span class="tag">Event Planning</span>
-                <span class="tag">Cycling</span>
-              </div>
-              <h3 class="project-card__title">Triton Crit</h3>
-              <p class="project-card__description">
-                Organized and hosted a cycling race in San Diego for the UCSD Cycling Team. Managed city permits, USAC sanctioning, insurance, business outreach, and race day logistics.
-              </p>
-              <button class="btn btn-ghost project-card__btn">View Details</button>
-            </div>
-          </article>
-
-          <!-- Project 6: This Website -->
-          <article class="project-card card" data-animate data-delay="6">
-            <div class="project-card__image-wrapper">
-              <div class="project-card__image project-card__placeholder">
-                <span class="text-gradient">DO</span>
-              </div>
-              <div class="project-card__overlay"></div>
-              <span class="project-card__number">06</span>
-            </div>
-            <div class="card__content">
-              <div class="project-card__tags">
-                <span class="tag">Web</span>
-                <span class="tag">Design</span>
-              </div>
-              <h3 class="project-card__title">This Site</h3>
-              <p class="project-card__description">
-                This portfolio site, which I built from scratch using HTML, CSS, and vanilla JavaScript.
-              </p>
-            </div>
-          </article>
-        </div>
+        <ol class="ds-route">
+          <li>
+            <span class="ds-route__meta">2025 - Present</span>
+            <span class="ds-route__title">Software Engineer</span>
+            <span class="ds-route__meta">CSC Global</span>
+          </li>
+          <li>
+            <span class="ds-route__meta">Jun 2024 - Aug 2024</span>
+            <span class="ds-route__title">Sensing Intern</span>
+            <span class="ds-route__meta">Shield AI</span>
+          </li>
+          <li>
+            <span class="ds-route__meta">Mar 2024 - Jun 2024</span>
+            <span class="ds-route__title">Software Engineer</span>
+            <span class="ds-route__meta">Terrascope</span>
+          </li>
+          <li>
+            <span class="ds-route__meta">2023 - 2024</span>
+            <span class="ds-route__title">Software Engineering Intern</span>
+            <span class="ds-route__meta">Agile Displays</span>
+          </li>
+          <li>
+            <span class="ds-route__meta">2022 - 2023</span>
+            <span class="ds-route__title">Hardware Engineering Intern</span>
+            <span class="ds-route__meta">Capsulaser</span>
+          </li>
+          <li>
+            <span class="ds-route__meta">2021 - 2024</span>
+            <span class="ds-route__title">President / Road Captain</span>
+            <span class="ds-route__meta">UCSD Cycling Team</span>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <!-- Experience Section -->
-    <section class="experience section" id="experience">
-      <div class="container">
-        <header class="section-header" data-animate>
-          <h2 class="section-title">Experience</h2>
-        </header>
+    <section class="section" id="contact">
+      <div class="ds-container ds-stack">
+        <h2>Contact</h2>
+        <p>The best way to reach me is through LinkedIn or email.</p>
 
-        <div class="experience__content">
-          <div class="timeline">
-            <article class="timeline__item" data-animate data-delay="1">
-              <p class="timeline__date">2025 - Present</p>
-              <h3 class="timeline__title">Software Engineer</h3>
-              <p class="timeline__company">CSC Global</p>
-            </article>
-
-            <article class="timeline__item" data-animate data-delay="2">
-              <p class="timeline__date">Jun 2024 - Aug 2024</p>
-              <h3 class="timeline__title">Sensing Intern</h3>
-              <p class="timeline__company">Shield AI</p>
-            </article>
-
-            <article class="timeline__item" data-animate data-delay="3">
-              <p class="timeline__date">Mar 2024 - Jun 2024</p>
-              <h3 class="timeline__title">Software Engineer</h3>
-              <p class="timeline__company">Terrascope</p>
-            </article>
-
-            <article class="timeline__item" data-animate data-delay="4">
-              <p class="timeline__date">2023 - 2024</p>
-              <h3 class="timeline__title">Software Engineering Intern</h3>
-              <p class="timeline__company">Agile Displays</p>
-            </article>
-
-            <article class="timeline__item" data-animate data-delay="5">
-              <p class="timeline__date">2022 - 2023</p>
-              <h3 class="timeline__title">Hardware Engineering Intern</h3>
-              <p class="timeline__company">Capsulaser</p>
-            </article>
-
-            <article class="timeline__item" data-animate data-delay="6">
-              <p class="timeline__date">2021 - 2024</p>
-              <h3 class="timeline__title">President / Road Captain</h3>
-              <p class="timeline__company">UCSD Cycling Team</p>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact section" id="contact">
-      <div class="container">
-        <header class="section-header" data-animate>
-          <h2 class="section-title">Contact</h2>
-        </header>
-
-        <div class="contact__simple" data-animate>
-          <p class="contact__text">
-            The best way to reach me is through LinkedIn or email.
-          </p>
-
-          <div class="social-links social-links--large">
-            <a href="https://www.linkedin.com/in/dominic-orlando-/" target="_blank" class="social-link" aria-label="LinkedIn">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-                <rect x="2" y="9" width="4" height="12"/>
-                <circle cx="4" cy="4" r="2"/>
-              </svg>
-              <span>LinkedIn</span>
-            </a>
-            <a href="#" class="social-link" id="emailLink" aria-label="Email">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-              </svg>
-              <span>Email</span>
-            </a>
-            <a href="https://github.com/dom500d" target="_blank" class="social-link" aria-label="GitHub">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-              </svg>
-              <span>GitHub</span>
-            </a>
-          </div>
+        <div class="ds-row">
+          <a href="https://www.linkedin.com/in/dominic-orlando-/" target="_blank" rel="noopener" class="ds-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+            LinkedIn
+          </a>
+          <a href="#" class="ds-btn" id="emailLink">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            Email
+          </a>
+          <a href="https://github.com/dom500d" target="_blank" rel="noopener" class="ds-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+            GitHub
+          </a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Project Modal -->
-  <div class="modal" id="projectModal">
-    <div class="modal__backdrop"></div>
-    <div class="modal__content">
-      <button class="modal__close" aria-label="Close modal">&times;</button>
-      <div class="modal__image" id="modalImage"></div>
-      <div class="modal__body">
-        <div class="modal__tags" id="modalTags"></div>
-        <h2 class="modal__title" id="modalTitle"></h2>
-        <div class="modal__description" id="modalDescription"></div>
-      </div>
+  <dialog class="ds-dialog project-dialog" id="projectModal" aria-labelledby="modalTitle">
+    <div id="modalImage"></div>
+    <div class="ds-dialog__body">
+      <h2 id="modalTitle" tabindex="-1" autofocus></h2>
+      <div class="project-tags" id="modalTags"></div>
+      <div class="project-dialog__text" id="modalDescription"></div>
     </div>
-  </div>
+    <form class="ds-dialog__actions" method="dialog">
+      <button class="ds-btn">Close</button>
+    </form>
+  </dialog>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p class="footer__text">
-        Dominic Orlando
-      </p>
-      <div class="social-links">
-        <a href="https://github.com/dom500d" target="_blank" class="social-link" aria-label="GitHub">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-          </svg>
-        </a>
-        <a href="https://www.linkedin.com/in/dominic-orlando-/" target="_blank" class="social-link" aria-label="LinkedIn">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-            <rect x="2" y="9" width="4" height="12"/>
-            <circle cx="4" cy="4" r="2"/>
-          </svg>
-        </a>
+  <footer class="ds-footer">
+    <div class="ds-container ds-footer__inner">
+      <span>Dominic Orlando</span>
+      <div class="ds-row" style="--ds-gap: var(--ds-4)">
+        <a href="https://github.com/dom500d" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/dominic-orlando-/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script src="js/main.js"></script>
 </body>
 </html>
