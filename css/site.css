@@ -56,6 +56,7 @@
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: 50% 0; /* Crop from the bottom so the head stays in frame. */
   border-radius: var(--ds-radius-lg);
 }
 
@@ -67,8 +68,9 @@
 .cycling__image {
   display: block;
   width: 100%;
-  aspect-ratio: 21 / 9;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
+  object-position: 50% 70%; /* Keeps the helmet and front wheel in frame. */
   border-radius: var(--ds-radius-lg);
 }
 
