@@ -297,9 +297,9 @@ function initEmailObfuscation() {
   if (!emailLink) return;
 
   // Split up to avoid scrapers
-  const user = 'dorlando';
-  const domain = 'ucsd';
-  const tld = 'edu';
+  const user = 'domvorlando';
+  const domain = 'gmail';
+  const tld = 'com';
 
   emailLink.addEventListener('click', (e) => {
     e.preventDefault();
