@@ -191,7 +191,8 @@ function initProjectModal() {
     e46: {
       title: 'E46 Turbo Build',
       tags: ['Automotive', 'Fabrication'],
-      image: null,
+      image: 'assets/turbo-e46.jpeg',
+      imageWebp: 'assets/turbo-e46.webp',
       description: `
         <p>My 2002 BMW 325ci that I've been building from the ground up. Started as an automatic daily driver, now it's a turbocharged drift car.</p>
         <p><strong>Modifications:</strong></p>
@@ -224,7 +225,8 @@ function initProjectModal() {
     ece148: {
       title: 'Autonomous Car',
       tags: ['Autonomous Vehicles', 'Robotics'],
-      image: null,
+      image: 'assets/auto-car.jpeg',
+      imageWebp: 'assets/auto-car.webp',
       description: `
         <p>Autonomous vehicle project for ECE 148 (Introduction to Autonomous Vehicles) at UC San Diego.</p>
         <p>I worked on the hardware platform and helped get the car driving autonomously using computer vision and control systems.</p>
