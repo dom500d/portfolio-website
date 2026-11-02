@@ -169,6 +169,60 @@ function initProjectModal() {
 
   // Project data
   const projects = {
+    routeplanner: {
+      title: 'AI Route Planner for Cycling and Running',
+      tags: ['TypeScript', 'Cloudflare', 'MapLibre'],
+      image: null,
+      description: `
+        <p>Describe the ride or run you want in plain language, and the planner turns it into a route using A* search over a graph built from road data.</p>
+        <ul>
+          <li>Chat interface for planning and adjusting routes</li>
+          <li>Strava sync</li>
+          <li>Post-ride road annotation: mark roads you liked or want to avoid, and future routes follow those notes</li>
+        </ul>
+      `
+    },
+    tutoring: {
+      title: 'AI Tutoring App for Education',
+      tags: ['Next.js', 'LangGraph', 'Supabase'],
+      image: null,
+      description: `
+        <ul>
+          <li>Built a document ingestion pipeline that turns an instructor's course documents into text, using a vision LLM for visuals</li>
+          <li>Grounded the agentic tutor chat and quiz generation in course material with RAG</li>
+        </ul>
+        <p>The client returned for a second engagement.</p>
+      `
+    },
+    lpr: {
+      title: 'License Plate Recognition for Parking Enforcement',
+      tags: ['React', 'Supabase', 'OpenALPR'],
+      image: null,
+      description: `
+        <p>I led development of a system that reads plates from camera feeds, streams them live over WebSockets, and checks each one against active parking sessions.</p>
+        <p>Business outreach showed weak-to-nonexistent market signals.</p>
+      `
+    },
+    segments: {
+      title: 'Strava Segment Time Predictor',
+      tags: ['TypeScript', 'Cloudflare D1'],
+      image: null,
+      description: `
+        <p>Predicts segment times with a cycling power model run along each segment's real elevation profile, then ranks the segments that are winnable.</p>
+      `
+    },
+    slam: {
+      title: 'Robot Localization, Mapping, and Planning',
+      tags: ['Python', 'GTSAM', 'OMPL'],
+      image: null,
+      description: `
+        <ul>
+          <li>LiDAR and visual-inertial SLAM</li>
+          <li>3D motion planning with search- and sampling-based methods</li>
+          <li>Trajectory tracking under noise</li>
+        </ul>
+      `
+    },
     aegis: {
       title: 'Aegis',
       tags: ['IoT', 'Smart Home'],
@@ -238,7 +292,7 @@ function initProjectModal() {
       image: 'assets/triton_crit.jpg',
       imageWebp: 'assets/triton_crit.webp',
       description: `
-        <p>Organized and hosted a criterium cycling race in San Diego for the UCSD Cycling Team.</p>
+        <p>Launched an annual criterium cycling race in San Diego for the UCSD Cycling Team. It draws 120+ unique racers, and running it means coordinating with the City of San Diego, university administration, USA Cycling, and local businesses.</p>
         <p><strong>Responsibilities:</strong></p>
         <ul>
           <li>Secured venue and submitted permit application with City of San Diego (2+ months in advance)</li>
