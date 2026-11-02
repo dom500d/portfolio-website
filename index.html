@@ -40,6 +40,8 @@
         api_host: 'https://relay.dorlando.tech',
         ui_host: 'https://us.posthog.com',
         defaults: '2026-08-30',
+        // This PostHog project holds several apps, so tag every event with this one.
+        loaded: (ph) => ph.register({ app: 'portfolio-website' }),
     })
 </script>
 </head>
