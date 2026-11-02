@@ -172,7 +172,8 @@ function initProjectModal() {
     routeplanner: {
       title: 'AI Route Planner for Cycling and Running',
       tags: ['TypeScript', 'Cloudflare', 'MapLibre'],
-      image: null,
+      image: 'assets/route-planner.jpg',
+      imageWebp: 'assets/route-planner.webp',
       description: `
         <p>A website that plans road rides and runs. Ask for something like "a 40 mile loop with some climbing" and it builds a route that fits, then gives you the forecast along the way and a GPX file for your bike computer or watch.</p>
         <p><strong>How it works:</strong></p>
@@ -240,7 +241,8 @@ function initProjectModal() {
     slam: {
       title: 'Robot Localization, Mapping, and Planning',
       tags: ['Python', 'GTSAM', 'OMPL'],
-      image: null,
+      image: 'assets/trajectory-tracking.jpg',
+      imageWebp: 'assets/trajectory-tracking.webp',
       description: `
         <p>A set of projects from graduate courses in sensing, estimation, and planning at UC San Diego.</p>
         <ul>
