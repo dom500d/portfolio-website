@@ -174,11 +174,21 @@ function initProjectModal() {
       tags: ['TypeScript', 'Cloudflare', 'MapLibre'],
       image: null,
       description: `
-        <p>Describe the ride or run you want in plain language, and the planner turns it into a route using A* search over a graph built from road data.</p>
+        <p>A website that plans road rides and runs. Ask for something like "a 40 mile loop with some climbing" and it builds a route that fits, then gives you the forecast along the way and a GPX file for your bike computer or watch.</p>
+        <p><strong>How it works:</strong></p>
         <ul>
-          <li>Chat interface for planning and adjusting routes</li>
-          <li>Strava sync</li>
-          <li>Post-ride road annotation: mark roads you liked or want to avoid, and future routes follow those notes</li>
+          <li>Road data from OpenStreetMap is turned into a graph in the browser, with hills added from elevation tiles</li>
+          <li>Each road is scored on how good it is to ride or run, and A* search keeps the route closest to what you asked for</li>
+          <li>Routes are built in the browser because a large area's road data can take about 400 MB of memory</li>
+          <li>A Cloudflare Worker runs the chat with Claude, caches road data in R2, and handles sign-in, Strava, and email</li>
+        </ul>
+        <p><strong>Features:</strong></p>
+        <ul>
+          <li>Plan by chat, or by hand with distance, climbing, surface, and traffic controls</li>
+          <li>Drag the route on the map, add stops, or draw areas to stay out of</li>
+          <li>Weather for the time you'd actually reach each part of the route, plus what to wear</li>
+          <li>Strava sync, so routes can favor roads you know or find new ones</li>
+          <li>After a ride, an email links to a page where you mark roads you liked or want to avoid, and future routes follow those notes</li>
         </ul>
       `
     },
@@ -187,9 +197,12 @@ function initProjectModal() {
       tags: ['Next.js', 'LangGraph', 'Supabase'],
       image: null,
       description: `
+        <p>A tutoring app built for a client, where students learn from their instructor's own course material.</p>
         <ul>
-          <li>Built a document ingestion pipeline that turns an instructor's course documents into text, using a vision LLM for visuals</li>
+          <li>Built a document ingestion pipeline that turns course documents (Word files and slide decks) into text, using a vision LLM to describe slides and visuals</li>
           <li>Grounded the agentic tutor chat and quiz generation in course material with RAG</li>
+          <li>Students can take generated quizzes, review their answers, and track progress and milestones through a course</li>
+          <li>Next.js on Cloudflare Workers, with Supabase for auth and Postgres</li>
         </ul>
         <p>The client returned for a second engagement.</p>
       `
@@ -199,7 +212,13 @@ function initProjectModal() {
       tags: ['React', 'Supabase', 'OpenALPR'],
       image: null,
       description: `
-        <p>I led development of a system that reads plates from camera feeds, streams them live over WebSockets, and checks each one against active parking sessions.</p>
+        <p>I led development of a parking validation system that reads plates from camera feeds, streams them live over WebSockets, and checks each one against active parking sessions.</p>
+        <ul>
+          <li>Drivers scan a QR code at the lot, verify their phone number by SMS, and register their plate</li>
+          <li>They then validate parking by paying, uploading a receipt, or getting validated by an employee</li>
+          <li>Employees watch a live video feed with plate detections, with sound cues for detection confidence, and an admin dashboard per lot</li>
+          <li>Plate reading runs on OpenALPR, with React Router and Supabase for the app</li>
+        </ul>
         <p>Business outreach showed weak-to-nonexistent market signals.</p>
       `
     },
@@ -208,7 +227,14 @@ function initProjectModal() {
       tags: ['TypeScript', 'Cloudflare D1'],
       image: null,
       description: `
-        <p>Predicts segment times with a cycling power model run along each segment's real elevation profile, then ranks the segments that are winnable.</p>
+        <p>Finds Strava segments in an area where I could realistically take a top-10 or KOM, given my weight and power PRs.</p>
+        <ul>
+          <li>Predicts segment times with a validated cycling power model (Martin et al., 1998)</li>
+          <li>Integrates the equation of motion along the segment's real elevation profile, instead of using one average grade, which under-predicts time because the slow uphill sections dominate</li>
+          <li>Builds a power-duration curve from my PRs, so a 45 second sprint uses sprint power and a 6 minute climb uses threshold power</li>
+          <li>Ranks segments by how winnable they are, and can back-solve the watts a leaderboard holder likely needed</li>
+          <li>A TypeScript engine on Cloudflare Workers, with a React front end</li>
+        </ul>
       `
     },
     slam: {
@@ -216,10 +242,12 @@ function initProjectModal() {
       tags: ['Python', 'GTSAM', 'OMPL'],
       image: null,
       description: `
+        <p>A set of projects from graduate courses in sensing, estimation, and planning at UC San Diego.</p>
         <ul>
-          <li>LiDAR and visual-inertial SLAM</li>
-          <li>3D motion planning with search- and sampling-based methods</li>
-          <li>Trajectory tracking under noise</li>
+          <li><strong>LiDAR SLAM:</strong> ICP scan matching, an occupancy grid map, and a GTSAM factor graph with loop closures to correct drift</li>
+          <li><strong>Visual-inertial SLAM:</strong> IMU localization, landmark triangulation from stereo features, and an EKF that updates the robot's pose and the landmarks together</li>
+          <li><strong>3D motion planning:</strong> weighted A* on a discretized space and RRT from OMPL in continuous space, comparing path length and nodes explored</li>
+          <li><strong>Trajectory tracking under noise:</strong> receding-horizon certainty equivalent control and generalized policy iteration for a differential-drive robot avoiding obstacles</li>
         </ul>
       `
     },
