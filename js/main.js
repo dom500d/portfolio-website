@@ -205,7 +205,7 @@ function initProjectModal() {
           <li>Students can take generated quizzes, review their answers, and track progress and milestones through a course</li>
           <li>Next.js on Cloudflare Workers, with Supabase for auth and Postgres</li>
         </ul>
-        <p>The client returned for a second engagement.</p>
+        <p>I scoped and prioritized features directly with a non-technical client. The app reached 1,800+ unique users, and the client returned for a second engagement.</p>
       `
     },
     lpr: {
@@ -220,7 +220,7 @@ function initProjectModal() {
           <li>Employees watch a live video feed with plate detections, with sound cues for detection confidence, and an admin dashboard per lot</li>
           <li>Plate reading runs on OpenALPR, with React Router and Supabase for the app</li>
         </ul>
-        <p>Business outreach showed weak-to-nonexistent market signals.</p>
+        <p>I ran business outreach to validate demand, found weak-to-nonexistent market signals, and decided not to pursue it further.</p>
       `
     },
     segments: {
