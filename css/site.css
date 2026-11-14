@@ -71,18 +71,60 @@ main > .section:first-of-type {
 }
 
 /* Cycling */
-.cycling__image {
+/* Photo strip: every photo is the same height, so landscape and portrait
+   photos sit side by side. It scrolls sideways and snaps to each photo. */
+.gallery {
+  --gallery-height: clamp(20rem, 45vw, 30rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+  gap: var(--ds-3);
+}
+
+.gallery__track {
+  container-type: inline-size;
+  display: flex;
+  gap: var(--ds-3);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  border-radius: var(--ds-radius-lg);
+}
+
+.gallery__track::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery__track:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.gallery__slide {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+.gallery__slide img {
   display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
+  height: var(--gallery-height);
+  width: auto;
+  max-width: 100cqw; /* A wide photo never gets wider than the strip. */
   object-fit: cover;
   object-position: 50% 70%; /* Keeps the helmet and front wheel in frame. */
   border-radius: var(--ds-radius-lg);
 }
 
+.gallery__controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--ds-2);
+}
+
 @media (max-width: 40rem) {
-  .cycling__image {
-    aspect-ratio: 4 / 3;
+  .gallery {
+    --gallery-height: 26rem;
   }
 }
 

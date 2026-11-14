@@ -6,7 +6,44 @@ document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
   initProjectModal();
   initAnalytics();
+  initGallery();
 });
+
+/* ---- Photo Strip ---- */
+
+function initGallery() {
+  document.querySelectorAll('[data-gallery]').forEach(gallery => {
+    const track = gallery.querySelector('.gallery__track');
+    const prev = gallery.querySelector('[data-gallery-prev]');
+    const next = gallery.querySelector('[data-gallery-next]');
+    const slides = [...track.children];
+    const smooth = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+
+    // Move to the next photo that starts past (or before) the current edge
+    function go(direction) {
+      const left = track.scrollLeft;
+      const offsets = slides.map(slide => slide.offsetLeft - track.offsetLeft);
+      const target = direction > 0
+        ? offsets.find(x => x > left + 4)
+        : offsets.reverse().find(x => x < left - 4);
+      track.scrollTo({ left: target ?? (direction > 0 ? track.scrollWidth : 0), behavior: smooth });
+    }
+
+    function update() {
+      const max = track.scrollWidth - track.clientWidth;
+      prev.disabled = track.scrollLeft <= 4;
+      next.disabled = track.scrollLeft >= max - 4;
+      gallery.querySelector('.gallery__controls').hidden = max <= 4;
+    }
+
+    prev.addEventListener('click', () => go(-1));
+    next.addEventListener('click', () => go(1));
+    track.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+    window.addEventListener('resize', update);
+    track.querySelectorAll('img').forEach(img => img.addEventListener('load', update));
+    update();
+  });
+}
 
 /* ---- Smooth Scroll for Anchor Links ---- */
 
