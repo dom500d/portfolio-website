@@ -33,7 +33,7 @@
   <!-- Styles: the shared design system, then this site's own layout.
        Browsers keep site files for 4 hours, so raise ?v= when site.css or main.js changes. -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dom500d/design-system@v0.1.1/dist/sectional.css">
-  <link rel="stylesheet" href="css/site.css?v=2">
+  <link rel="stylesheet" href="css/site.css?v=3">
   <script>
     !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],Object.defineProperty(u,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e}}),Object.defineProperty(u.people,"toString",{configurable:!0,enumerable:!0,writable:!0,value:function(){return u.toString(1)+".people (stub)"}}),o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagResult isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
     posthog.init('phc_D7bRGoXPijxw9gxKEdmGqLkfcAtm5Dw58W9uvrHaqEbi', {
@@ -111,10 +111,34 @@
       <div class="ds-container ds-stack" style="--ds-gap: var(--ds-5)">
         <h2>Cycling</h2>
 
-        <picture>
-          <source srcset="assets/cbr-factor-sick.webp" type="image/webp">
-          <img class="cycling__image" src="assets/cbr-factor-sick.JPG" alt="Dominic Orlando racing in UCSD cycling kit">
-        </picture>
+        <div class="gallery" data-gallery>
+          <div class="gallery__track" role="region" aria-label="Racing photos" tabindex="0">
+            <picture class="gallery__slide">
+              <source srcset="assets/cbr-factor-sick.webp" type="image/webp">
+              <img src="assets/cbr-factor-sick.JPG" alt="Dominic Orlando racing in UCSD cycling kit" width="5477" height="3651">
+            </picture>
+            <picture class="gallery__slide">
+              <source srcset="assets/deus-velox-sprint.webp" type="image/webp">
+              <img src="assets/deus-velox-sprint.jpg" alt="Dominic Orlando sprinting in a white Deus Velox kit" width="1080" height="1350" loading="lazy">
+            </picture>
+            <picture class="gallery__slide">
+              <source srcset="assets/deus-velox-corner.webp" type="image/webp">
+              <img src="assets/deus-velox-corner.jpg" alt="Dominic Orlando leaning through a corner in a black Deus Velox kit" width="1080" height="1350" loading="lazy">
+            </picture>
+            <picture class="gallery__slide">
+              <source srcset="assets/deus-velox-pack.webp" type="image/webp">
+              <img src="assets/deus-velox-pack.jpg" alt="Dominic Orlando racing in the pack in a Deus Velox kit" width="1080" height="1350" loading="lazy">
+            </picture>
+          </div>
+          <div class="gallery__controls">
+            <button class="ds-btn ds-btn--icon" type="button" data-gallery-prev aria-label="Previous photo">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="ds-btn ds-btn--icon" type="button" data-gallery-next aria-label="Next photo">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+          </div>
+        </div>
 
         <dl class="ds-stats">
           <div class="ds-stat"><dt>Rides this year</dt><dd id="statRides">--</dd></div>
@@ -419,6 +443,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=8"></script>
+  <script src="js/main.js?v=9"></script>
 </body>
 </html>
