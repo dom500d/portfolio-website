@@ -207,18 +207,20 @@ function initProjectModal() {
   // Project data
   const projects = {
     routeplanner: {
-      title: 'AI Route Planner for Cycling and Running',
+      title: 'Route Builder: AI Route Planner for Cycling and Running',
       tags: ['TypeScript', 'Cloudflare', 'MapLibre'],
       image: 'assets/route-planner.jpg',
       imageWebp: 'assets/route-planner.webp',
       description: `
+        <p><a href="https://ride.dorlando.tech/build" target="_blank" rel="noopener" data-track="route_builder_live">Open Route Builder</a> (sign in with Strava)</p>
         <p>A website that plans road rides and runs. Ask for something like "a 40 mile loop with some climbing" and it builds a route that fits, then gives you the forecast along the way and a GPX file for your bike computer or watch.</p>
         <p><strong>How it works:</strong></p>
         <ul>
           <li>Road data from OpenStreetMap is turned into a graph in the browser, with hills added from elevation tiles</li>
           <li>Each road is scored on how good it is to ride or run, and A* search keeps the route closest to what you asked for</li>
           <li>Routes are built in the browser because a large area's road data can take about 400 MB of memory</li>
-          <li>A Cloudflare Worker runs the chat with Claude, caches road data in R2, and handles sign-in, Strava, and email</li>
+          <li>A Cloudflare Worker runs the chat, caches road data in R2, and handles sign-in, Strava, and email</li>
+          <li>The chat tries a self-hosted model first, reached over a Cloudflare Tunnel, and falls back to Claude through Cloudflare AI Gateway</li>
         </ul>
         <p><strong>Features:</strong></p>
         <ul>
@@ -261,16 +263,19 @@ function initProjectModal() {
       `
     },
     segments: {
-      title: 'Strava Segment Time Predictor',
+      title: 'Segment Hunter: Strava Segment Time Predictor',
       tags: ['TypeScript', 'Cloudflare D1'],
-      image: null,
+      image: 'assets/segment-hunter.jpg',
+      imageWebp: 'assets/segment-hunter.webp',
       description: `
+        <p><a href="https://ride.dorlando.tech/segments" target="_blank" rel="noopener" data-track="segment_hunter_live">Open Segment Hunter</a> (sign in with Strava)</p>
         <p>Finds Strava segments in an area where I could realistically take a top-10 or KOM, given my weight and power PRs.</p>
         <ul>
           <li>Predicts segment times with a validated cycling power model (Martin et al., 1998)</li>
           <li>Integrates the equation of motion along the segment's real elevation profile, instead of using one average grade, which under-predicts time because the slow uphill sections dominate</li>
           <li>Builds a power-duration curve from my PRs, so a 45 second sprint uses sprint power and a 6 minute climb uses threshold power</li>
           <li>Ranks segments by how winnable they are, and can back-solve the watts a leaderboard holder likely needed</li>
+          <li>Tick up to 5 segments and Route Builder plans a ride through them</li>
           <li>A TypeScript engine on Cloudflare Workers, with a React front end</li>
         </ul>
       `
