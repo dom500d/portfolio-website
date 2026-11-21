@@ -251,7 +251,8 @@ function initProjectModal() {
     lpr: {
       title: 'License Plate Recognition for Parking Enforcement',
       tags: ['React', 'Supabase', 'OpenALPR'],
-      image: null,
+      image: 'assets/lpr-dashboard.jpg',
+      imageWebp: 'assets/lpr-dashboard.webp',
       description: `
         <p>I led development of a parking validation system that reads plates from camera feeds, streams them live over WebSockets, and checks each one against active parking sessions.</p>
         <ul>
