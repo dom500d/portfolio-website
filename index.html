@@ -219,13 +219,10 @@
           </a>
 
           <a class="ds-card" href="#projects" data-project="lpr" aria-haspopup="dialog">
-            <svg class="ds-card__media" viewBox="0 0 320 180" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-              <g fill="none" stroke="var(--ds-line-strong)" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="90" y="55" width="140" height="70" rx="8"/>
-                <rect x="80" y="45" width="160" height="90" rx="12" stroke-dasharray="6 6"/>
-                <path d="M110 90 H210"/>
-              </g>
-            </svg>
+            <picture>
+              <source srcset="assets/license-plate.webp" type="image/webp">
+              <img class="ds-card__media" src="assets/license-plate.jpg" alt="Rear of a red Mustang with a California license plate, a test image for plate recognition">
+            </picture>
             <div class="ds-card__body">
               <h3 class="ds-card__title">License Plate Recognition for Parking Enforcement</h3>
               <p class="ds-quiet ds-small">Reads plates from camera feeds, streams them live over WebSockets, and checks each one against active parking sessions.</p>
@@ -438,6 +435,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js?v=10"></script>
+  <script src="js/main.js?v=11"></script>
 </body>
 </html>
