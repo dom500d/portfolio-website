@@ -235,7 +235,8 @@ function initProjectModal() {
     tutoring: {
       title: 'AI Tutoring App for Education',
       tags: ['Next.js', 'LangGraph', 'Supabase'],
-      image: null,
+      image: 'assets/tutoring-app.jpg',
+      imageWebp: 'assets/tutoring-app.webp',
       description: `
         <p>A tutoring app built for a client, where students learn from their instructor's own course material.</p>
         <ul>
